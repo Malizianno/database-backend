@@ -1,5 +1,6 @@
-package ro.cristiansterie.database_backend.security;
+package ro.cristiansterie.database_backend.security.userpass;
 
+import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +17,7 @@ public class DatabaseUserPassUserDetails implements UserDetails {
     }
 
     @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
+    public @NonNull Collection<? extends GrantedAuthority> getAuthorities() {
         var authorities = user.getGrantedAuthorities();
         return authorities != null ? authorities : new ArrayList<>();
     }
@@ -27,7 +28,7 @@ public class DatabaseUserPassUserDetails implements UserDetails {
     }
 
     @Override
-    public String getUsername() {
+    public @NonNull String getUsername() {
         return user.getUsername();
     }
 
