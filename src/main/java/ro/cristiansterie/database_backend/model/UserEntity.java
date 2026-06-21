@@ -7,7 +7,7 @@ import java.util.*;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class UserEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,12 +28,12 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private Set<Role> roles = new HashSet<>();
+    private Set<RoleEntity> roles = new HashSet<>();
 
-    public User() {
+    public UserEntity() {
     }
 
-    public User(String username, String password, String email, Set<Role> roles) {
+    public UserEntity(String username, String password, String email, Set<RoleEntity> roles) {
         setUsername(username);
         setPassword(password);
         setEmail(email);
@@ -72,11 +72,11 @@ public class User {
         this.email = email;
     }
 
-    public Set<Role> getRoles() {
+    public Set<RoleEntity> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(Set<RoleEntity> roles) {
         this.roles = roles;
     }
 
@@ -86,7 +86,7 @@ public class User {
 
         this.roles.stream()
                 .filter(Objects::nonNull)
-                .map(Role::parseToGrantedAuthority)
+                .map(RoleEntity::parseToGrantedAuthority)
                 .forEach(authorities::add);
 
         return authorities;

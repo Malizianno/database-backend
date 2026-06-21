@@ -4,15 +4,15 @@ import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ro.cristiansterie.database_backend.model.User;
+import ro.cristiansterie.database_backend.model.UserEntity;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class DatabaseUserPassUserDetails implements UserDetails {
-    private final User user;
+    private final UserEntity user;
 
-    public DatabaseUserPassUserDetails(User user) {
+    public DatabaseUserPassUserDetails(UserEntity user) {
         this.user = user;
     }
 

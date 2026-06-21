@@ -21,17 +21,20 @@ import java.util.List;
 public class SecurityConfig {
 
     private final DatabaseUserPassUserDetailsService userDetailsService;
-    private final DatabaseUserPassAuthenticationProvider authProvider;
-    // XXX: implement here another way for login like, face or another methods should be injected here
 
-    public SecurityConfig(DatabaseUserPassUserDetailsService userDetailsService,  DatabaseUserPassAuthenticationProvider authProvider) {
+    public SecurityConfig(DatabaseUserPassUserDetailsService userDetailsService) {
         this.userDetailsService = userDetailsService;
-        this.authProvider = authProvider;
     }
 
     @Bean
     public AuthenticationManager authenticationManager() {
-        return new ProviderManager(List.of(authProvider));
+        // XXX: implement here another way for login like, face or another methods should be injected here
+        return new ProviderManager(List.of(databaseUserPassAuthenticationProvider()));
+    }
+
+    @Bean
+    public DatabaseUserPassAuthenticationProvider databaseUserPassAuthenticationProvider() {
+        return new DatabaseUserPassAuthenticationProvider(userDetailsService, passwordEncoder());
     }
 
     @Bean
