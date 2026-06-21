@@ -20,8 +20,8 @@ public class User {
     }
 
     public User(String username, String email) {
-        this.username = username;
-        this.email = email;
+        setUsername(username);
+        setEmail(email);
     }
 
     public Long getId() {
