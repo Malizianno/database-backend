@@ -10,7 +10,7 @@
     </parent>
     <groupId>ro.cristiansterie</groupId>
     <artifactId>database-backend</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name/>
     <description/>
     <url/>
