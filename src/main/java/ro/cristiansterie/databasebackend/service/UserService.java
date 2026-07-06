@@ -21,9 +21,20 @@ public class UserService {
     public List<UserDTO> getAll() {
         return converter.toDtoList(repo.findAll());
     }
-	
+
 	public UserDTO getById(Long id) {
 		return converter.toDto(repo.findById(id));
+	}
+
+	public Boolean deleteById(Long id) {
+		try {
+			repo.deleteById(id);
+
+			return true;
+		} catch (Exception e) {
+			// XXX: log this event;
+			return false;
+		}
 	}
 
 }
