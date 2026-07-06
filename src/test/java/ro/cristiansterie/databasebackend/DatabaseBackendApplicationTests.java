@@ -1,4 +1,4 @@
-package ro.cristiansterie.database_backend;
+package ro.cristiansterie.databasebackend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
