@@ -39,3 +39,13 @@ jobs:
         uses: JetBrains/qodana-action@v2024.1
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+
+  # Job 3 - Notify Render.com after the 2 jobs are completed
+  deploy:
+    needs: [ test-and-build, code-quality ] # The gatekeeper rule
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push' # Only deploy on main branch pushes
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render Deploy Hook
+        run: |
+          curl -X POST "https://api.render.com/deploy/srv-d95pmltckfvc73bkmg6g?key=w-6jQ5gsGFw"
