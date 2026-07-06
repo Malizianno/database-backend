@@ -26,7 +26,7 @@ jobs:
       - name: Run Tests with H2 (Maven)
         run: mvn clean test
 
-  # Job 2: Run Qodana analysis at the exact same time
+  # Job 2: Run Qodana analysis at the exact same time and cache .m2 folder
   code-quality:
     runs-on: ubuntu-latest
     steps:
@@ -35,10 +35,23 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Cache: Cache Qodana data and Maven dependencies
+      - name: Cache Qodana data
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cache/JetBrains/Qodana
+            ~/.m2/repository
+          key: ${{ runner.os }}-qodana-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-qodana-
+
       - name: Qodana Scan
         uses: JetBrains/qodana-action@v2024.1
         env:
           QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
+        with:
+          use-caches: true
 
   # Job 3 - Notify Render.com after the 2 jobs are completed
   deploy:
