@@ -18,7 +18,7 @@ WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 
 # Expose the dynamic port Render provides
-EXPOSE 8081
+EXPOSE 8881
 
 # Run the app with the production profile active
 ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=prod"]
