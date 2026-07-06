@@ -2,6 +2,7 @@ package ro.cristiansterie.databasebackend.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
 import ro.cristiansterie.databasebackend.service.UserService;
@@ -23,4 +24,11 @@ public class UserController {
 
         return ResponseEntity.ok(users);
     }
+
+	@GetMapping("/{id}")
+	public ResponseEntity<UserDTO> findById(@PathVariable Long id) {
+		UserDTO user = service.getById(id);
+
+		return ResponseEntity.ok(user);
+	}
 }

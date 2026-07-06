@@ -21,5 +21,9 @@ public class UserService {
     public List<UserDTO> getAll() {
         return converter.toDtoList(repo.findAll());
     }
+	
+	public UserDTO getById(Long id) {
+		return converter.toDto(repo.findById(id));
+	}
 
 }

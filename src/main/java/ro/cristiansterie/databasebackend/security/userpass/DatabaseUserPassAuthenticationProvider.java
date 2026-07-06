@@ -15,7 +15,6 @@ public class DatabaseUserPassAuthenticationProvider implements AuthenticationPro
     private final DatabaseUserPassUserDetailsService userDetailsService;
     private final PasswordEncoder passwordEncoder;
 
-    // Standard constructor injection
     public DatabaseUserPassAuthenticationProvider(DatabaseUserPassUserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
         this.userDetailsService = userDetailsService;
         this.passwordEncoder = passwordEncoder;
