@@ -8,7 +8,7 @@ import ro.cristiansterie.databasebackend.util.converter.AbstractModelConverter;
 @Service
 public class UserModelConverter extends AbstractModelConverter<UserEntity, UserDTO> {
 
-    protected UserModelConverter() {
-        super(UserEntity.class, UserDTO.class);
-    }
+	protected UserModelConverter() {
+		super(UserEntity.class, UserDTO.class);
+	}
 }

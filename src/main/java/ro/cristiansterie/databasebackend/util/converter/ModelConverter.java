@@ -2,11 +2,14 @@ package ro.cristiansterie.databasebackend.util.converter;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 public interface ModelConverter<E, D> {
 
     D toDto(E entity);
+
+	D toDto(Optional<E> optional);
 
     E toEntity(D dto);
 
