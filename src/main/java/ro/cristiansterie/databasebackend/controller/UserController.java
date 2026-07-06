@@ -13,18 +13,18 @@ import java.util.List;
 @RestController("/users")
 public class UserController {
 
-    private final UserService service;
+	private final UserService service;
 
-    public UserController(UserService service) {
-        this.service = service;
-    }
+	public UserController(UserService service) {
+		this.service = service;
+	}
 
-    @GetMapping("/")
-    public ResponseEntity<List<UserDTO>> findAll() {
-        List<UserDTO> users = service.getAll();
+	@GetMapping("/")
+	public ResponseEntity<List<UserDTO>> findAll() {
+		List<UserDTO> users = service.getAll();
 
-        return ResponseEntity.ok(users);
-    }
+		return ResponseEntity.ok(users);
+	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<UserDTO> findById(@PathVariable Long id) {
@@ -35,6 +35,8 @@ public class UserController {
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deleteById(@PathVariable Long id) {
+		Boolean deleted = service.deleteById(id);
 
+		return  deleted ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
 	}
 }
