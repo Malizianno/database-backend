@@ -1,4 +1,4 @@
-name: Database-Backend CI/CD Pipeline
+name: Java CI/CD Pipeline
 
 on:
   push:
@@ -7,15 +7,17 @@ on:
     branches: [ main ]
 
 jobs:
+  # Job 1: Run your H2 database tests
   test-and-build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -23,3 +25,17 @@ jobs:
 
       - name: Run Tests with H2 (Maven)
         run: mvn clean test
+
+  # Job 2: Run Qodana analysis at the exact same time
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Qodana Scan
+        uses: JetBrains/qodana-action@v2024.1
+        env:
+          QODANA_TOKEN: ${{ secrets.QODANA_TOKEN }}
