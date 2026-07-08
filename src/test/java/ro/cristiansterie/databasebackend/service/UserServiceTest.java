@@ -14,7 +14,6 @@ import ro.cristiansterie.databasebackend.dto.RoleDTO;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
 import ro.cristiansterie.databasebackend.model.RoleEntity;
 import ro.cristiansterie.databasebackend.model.UserEntity;
-import ro.cristiansterie.databasebackend.repository.RoleRepository;
 import ro.cristiansterie.databasebackend.repository.UserRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.RoleModelConverter;
 import ro.cristiansterie.databasebackend.util.converter.models.UserModelConverter;
@@ -35,8 +34,6 @@ public class UserServiceTest {
 
 	@Mock
 	private UserRepository userRepository;
-	@Mock
-	private RoleRepository roleRepository;
 	@Mock
 	private PasswordEncoder passwordEncoder;
 	@Mock
@@ -99,15 +96,11 @@ public class UserServiceTest {
 	@Transactional
 	void testDeleteById() {
 		// insert
-		Set<RoleEntity> roles = new HashSet<>();
-		roles.add(new RoleEntity(1L, "ADMIN", "can do everything"));
-		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject", roles);
 		when(userRepository.existsById(1L)).thenReturn(true);
-
 		// read
-		Boolean result = service.deleteById(1L);
+		service.deleteById(1L);
 		// assert
-//		assertThat(userRepository.findAll().size()).isEqualTo(0);
+		assertThat(userRepository.findAll().size()).isEqualTo(0);
 	}
 
 	@Test

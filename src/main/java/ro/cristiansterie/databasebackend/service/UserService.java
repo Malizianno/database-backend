@@ -4,8 +4,8 @@ import jakarta.persistence.EntityNotFoundException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
-import ro.cristiansterie.databasebackend.model.RoleEntity;
 import ro.cristiansterie.databasebackend.model.UserEntity;
 import ro.cristiansterie.databasebackend.repository.UserRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.RoleModelConverter;
@@ -39,10 +39,12 @@ public class UserService {
 		                           .orElse(null));
 	}
 
+	@Transactional
 	public UserDTO addUser(UserDTO userDTO) {
 		return converter.toDto(repo.save(converter.toEntity(userDTO)));
 	}
 
+	@Transactional
 	public UserDTO updateUser(UserDTO userDTO) {
 		if (userDTO == null || userDTO.id() == null) {
 			throw new EntityNotFoundException("No user to update");
@@ -51,7 +53,7 @@ public class UserService {
 		UserEntity user = repo.findById(userDTO.id())
 		                      .orElseThrow(() -> new EntityNotFoundException("User not found"));
 
-		// 3. Update the fields. Hibernate tracks these changes automatically ("Dirty Checking")
+		// Update the fields. Hibernate tracks these changes automatically ("Dirty Checking")
 		user.setUsername(userDTO.username());
 		user.setEmail(userDTO.email());
 
@@ -60,12 +62,12 @@ public class UserService {
 			user.setPassword(passwordEncoder.encode(userDTO.password()));
 		}
 
-		// 4. Handle relationships safely (Collections should be cleared & added, not overwritten)
+		// Handle relationships safely (Collections should be cleared & added, not overwritten)
 		if (userDTO.roles() != null) {
 			user.getRoles()
 			    .clear();
 			user.getRoles()
-			    .addAll(new HashSet<RoleEntity>(roleConverter.toEntityList(userDTO.roles())));
+			    .addAll(new HashSet<>(roleConverter.toEntityList(userDTO.roles())));
 		}
 
 		// NO NEED TO CALL userRepository.save() HERE!
@@ -74,6 +76,7 @@ public class UserService {
 		return converter.toDto(user);
 	}
 
+	@Transactional
 	public Boolean deleteById(Long id) {
 		if (!repo.existsById(id)) {
 			throw new EntityNotFoundException("User not found with id: " + id);
