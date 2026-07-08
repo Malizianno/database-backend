@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.security.userpass;
 
+import lombok.Getter;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
@@ -9,6 +10,7 @@ import ro.cristiansterie.databasebackend.model.UserEntity;
 import java.util.ArrayList;
 import java.util.Collection;
 
+@Getter
 public class DatabaseUserPassUserDetails implements UserDetails {
     private final UserEntity user;
 
@@ -16,7 +18,7 @@ public class DatabaseUserPassUserDetails implements UserDetails {
         this.user = user;
     }
 
-    @Override
+	@Override
     public @NonNull Collection<? extends GrantedAuthority> getAuthorities() {
         var authorities = user.getGrantedAuthorities();
         return authorities != null ? authorities : new ArrayList<>();

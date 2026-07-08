@@ -1,14 +1,11 @@
 package ro.cristiansterie.databasebackend.util.converter.models;
 
-import org.springframework.stereotype.Service;
+import org.mapstruct.Mapper;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
 import ro.cristiansterie.databasebackend.model.UserEntity;
-import ro.cristiansterie.databasebackend.util.converter.AbstractModelConverter;
+import ro.cristiansterie.databasebackend.util.converter.ModelConverter;
 
-@Service
-public class UserModelConverter extends AbstractModelConverter<UserEntity, UserDTO> {
+@Mapper(componentModel = "spring")
+public interface UserModelConverter extends ModelConverter<UserEntity, UserDTO> {
 
-	protected UserModelConverter() {
-		super(UserEntity.class, UserDTO.class);
-	}
 }

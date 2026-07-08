@@ -1,16 +1,17 @@
 package ro.cristiansterie.databasebackend.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
 import ro.cristiansterie.databasebackend.service.UserService;
 
 import java.util.List;
 
-@RestController("/users")
+@RestController
+@RequestMapping("/users")
+@Slf4j
 public class UserController {
 
 	private final UserService service;
@@ -20,23 +21,37 @@ public class UserController {
 	}
 
 	@GetMapping("/")
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<List<UserDTO>> findAll() {
-		List<UserDTO> users = service.getAll();
-
-		return ResponseEntity.ok(users);
+		log.info("UserCtrl:: Find all users");
+		return ResponseEntity.ok(service.getAll());
 	}
 
 	@GetMapping("/{id}")
+	@PreAuthorize("#id == authentication.principal.user.id or hasAuthority('ADMIN')")
 	public ResponseEntity<UserDTO> findById(@PathVariable Long id) {
-		UserDTO user = service.getById(id);
+		log.info("UserCtrl:: Find user by id: {}", id);
+		return ResponseEntity.ok(service.getById(id));
+	}
 
-		return ResponseEntity.ok(user);
+	@PostMapping("/{id}")
+	@PreAuthorize("hasAuthority('ADMIN')")
+	public ResponseEntity<UserDTO> addUser(@PathVariable Long id, @RequestBody UserDTO user) {
+		log.info("UserCtrl:: Add user by id: {}", id);
+		return ResponseEntity.ok(service.addUser(user));
+	}
+
+	@PutMapping("/{id}")
+	@PreAuthorize("#id == authentication.principal.user.id or hasAuthority('ADMIN')")
+	public ResponseEntity<UserDTO> updateUser(@PathVariable Long id, @RequestBody UserDTO user) {
+		log.info("UserCtrl:: Update user by id: {}", id);
+		return ResponseEntity.ok(service.updateUser(user));
 	}
 
 	@DeleteMapping("/{id}")
+	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<?> deleteById(@PathVariable Long id) {
-		Boolean deleted = service.deleteById(id);
-
-		return  deleted ? ResponseEntity.ok().build() : ResponseEntity.notFound().build();
+		log.info("UserCtrl:: Delete user by id: {}", id);
+		return ResponseEntity.ok(service.deleteById(id));
 	}
 }

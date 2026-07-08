@@ -1,25 +1,26 @@
 package ro.cristiansterie.databasebackend.util.converter;
 
+import org.mapstruct.Mapper;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+
 public interface ModelConverter<E, D> {
 
-    D toDto(E entity);
+    abstract D toDto(E entity);
 
-	D toDto(Optional<E> optional);
-
-    E toEntity(D dto);
+    abstract E toEntity(D dto);
 
     // Convert Collections
 
-    List<D> toDtoList(Collection<E> entities);
+    abstract List<D> toDtoList(Collection<E> entities);
 
-    List<E> toEntityList(Collection<D> dtos);
+    abstract List<E> toEntityList(Collection<D> dtos);
 
-    Set<D> toDtoSet(Collection<E> entities);
+    abstract Set<D> toDtoSet(Collection<E> entities);
 
-    Set<E> toEntitySet(Collection<D> dtos);
+    abstract Set<E> toEntitySet(Collection<D> dtos);
 }
