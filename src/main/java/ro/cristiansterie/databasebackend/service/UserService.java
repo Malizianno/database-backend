@@ -39,6 +39,11 @@ public class UserService {
 		                           .orElse(null));
 	}
 
+	public UserDTO getByUsername(String username) {
+		return converter.toDto(repo.findByUsername(username)
+		                           .orElse(null));
+	}
+
 	@Transactional
 	public UserDTO addUser(UserDTO userDTO) {
 		return converter.toDto(repo.save(converter.toEntity(userDTO)));

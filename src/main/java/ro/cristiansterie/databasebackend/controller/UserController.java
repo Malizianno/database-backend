@@ -22,16 +22,23 @@ public class UserController {
 
 	@GetMapping("/")
 	@PreAuthorize("hasAuthority('ADMIN')")
-	public ResponseEntity<List<UserDTO>> findAll() {
+	public ResponseEntity<List<UserDTO>> getAll() {
 		log.info("UserCtrl:: Find all users");
 		return ResponseEntity.ok(service.getAll());
 	}
 
 	@GetMapping("/{id}")
-	@PreAuthorize("#id == authentication.principal.user.id or hasAuthority('ADMIN')")
-	public ResponseEntity<UserDTO> findById(@PathVariable Long id) {
+	@PreAuthorize("hasAuthority('ADMIN')")
+	public ResponseEntity<UserDTO> getById(@PathVariable Long id) {
 		log.info("UserCtrl:: Find user by id: {}", id);
 		return ResponseEntity.ok(service.getById(id));
+	}
+
+	@GetMapping("/profile")
+	@PreAuthorize("#username == authentication.principal.user.username")
+	public ResponseEntity<UserDTO> getByUsername(@RequestParam String username) {
+		log.info("UserCtrl:: Find user by username: {}", username);
+		return ResponseEntity.ok(service.getByUsername(username));
 	}
 
 	@PostMapping("/{id}")
