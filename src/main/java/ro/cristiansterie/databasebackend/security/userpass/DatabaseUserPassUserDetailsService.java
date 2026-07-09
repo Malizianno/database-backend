@@ -14,18 +14,17 @@ import ro.cristiansterie.databasebackend.util.AppConstants;
 @Slf4j
 public class DatabaseUserPassUserDetailsService implements UserDetailsService {
 
-    private final UserRepository userRepository;
+	private final UserRepository userRepository;
 
-    public DatabaseUserPassUserDetailsService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+	public DatabaseUserPassUserDetailsService(UserRepository userRepository) {
+		this.userRepository = userRepository;
+	}
 
-    @Override
-    public @NonNull UserDetails loadUserByUsername(@NonNull String username) throws UsernameNotFoundException {
-//		log.info("DUPUDS:: Loading user by username: {}", username);
-        UserEntity user = userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException(AppConstants.USERNAME_NOT_FOUND_MESSAGE + username));
+	@Override
+	public @NonNull UserDetails loadUserByUsername(@NonNull String username) throws UsernameNotFoundException {
+		UserEntity user = userRepository.findByUsername(username)
+		                                .orElseThrow(() -> new UsernameNotFoundException(AppConstants.USERNAME_NOT_FOUND_MESSAGE + username));
 
-        return new DatabaseUserPassUserDetails(user);
-    }
+		return new DatabaseUserPassUserDetails(user);
+	}
 }
