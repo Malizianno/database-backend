@@ -6,6 +6,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import ro.cristiansterie.databasebackend.dto.LoginRequestDTO;
+import ro.cristiansterie.databasebackend.dto.LoginResponseDTO;
 import ro.cristiansterie.databasebackend.security.jwt.JwtUtils;
 
 @Service
@@ -19,13 +20,13 @@ public class AuthService {
 	}
 
 	@Transactional
-	public String authenticate(LoginRequestDTO loginRequest) {
+	public LoginResponseDTO authenticate(LoginRequestDTO loginRequest) {
 		// Triggers the background UserDetailsService lookup and validation checks automatically
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.username(), loginRequest.password())
 		);
 
 		// return token
-		return jwtUtils.generateToken(authentication);
+		return new LoginResponseDTO(authentication.getName(), jwtUtils.generateToken(authentication));
 	}
 }

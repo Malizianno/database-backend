@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ro.cristiansterie.databasebackend.dto.LoginRequestDTO;
+import ro.cristiansterie.databasebackend.dto.LoginResponseDTO;
 import ro.cristiansterie.databasebackend.service.AuthService;
 
 @RestController
@@ -19,7 +20,7 @@ public class AuthController {
 	}
 
 	@PostMapping("/login")
-	public ResponseEntity<String> login(@RequestBody LoginRequestDTO loginRequest) {
+	public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO loginRequest) {
 		return ResponseEntity.ok(service.authenticate(loginRequest));
 	}
 }
