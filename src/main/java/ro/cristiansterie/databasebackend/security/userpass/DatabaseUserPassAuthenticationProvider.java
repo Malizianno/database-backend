@@ -24,7 +24,7 @@ public class DatabaseUserPassAuthenticationProvider implements AuthenticationPro
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
-//		log.info("DUPAP:: Authenticating user {}", authentication.getName());
+//		log.info("Authenticating user {}", authentication.getName());
         String username = authentication.getName();
         String password = Objects.requireNonNull(authentication.getCredentials()).toString();
 
@@ -32,14 +32,14 @@ public class DatabaseUserPassAuthenticationProvider implements AuthenticationPro
 
         // Validating the password securely
         if (passwordEncoder.matches(password, userDetails.getPassword())) {
-			log.info("DUPAP:: User {} authenticated successfully with roles {}", username, userDetails.getAuthorities());
+			log.info("User {} authenticated successfully with roles {}", username, userDetails.getAuthorities());
             return UsernamePasswordAuthenticationToken.authenticated(
                     userDetails,
                     null,
                     userDetails.getAuthorities()
             );
         } else {
-			log.error("DUPAP:: Invalid username or password");
+			log.error("Invalid username or password");
             throw new BadCredentialsException("Invalid username or password.");
         }
     }

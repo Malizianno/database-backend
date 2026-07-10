@@ -23,42 +23,42 @@ public class UserController {
 	@GetMapping("/")
 	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<List<UserDTO>> getAll() {
-		log.info("UserCtrl:: Find all users");
+		log.info("Find all users");
 		return ResponseEntity.ok(service.getAll());
 	}
 
 	@GetMapping("/{id}")
 	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<UserDTO> getById(@PathVariable Long id) {
-		log.info("UserCtrl:: Find user by id: {}", id);
+		log.info("Find user by id: {}", id);
 		return ResponseEntity.ok(service.getById(id));
 	}
 
 	@GetMapping("/profile")
 	@PreAuthorize("#username == authentication.principal.user.username")
 	public ResponseEntity<UserDTO> getByUsername(@RequestParam String username) {
-		log.info("UserCtrl:: Find user by username: {}", username);
+		log.info("Find user by username: {}", username);
 		return ResponseEntity.ok(service.getByUsername(username));
 	}
 
 	@PostMapping("/{id}")
 	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<UserDTO> addUser(@PathVariable Long id, @RequestBody UserDTO user) {
-		log.info("UserCtrl:: Add user by id: {}", id);
+		log.info("Add user by id: {}", id);
 		return ResponseEntity.ok(service.addUser(user));
 	}
 
 	@PutMapping("/{id}")
 	@PreAuthorize("#id == authentication.principal.user.id or hasAuthority('ADMIN')")
 	public ResponseEntity<UserDTO> updateUser(@PathVariable Long id, @RequestBody UserDTO user) {
-		log.info("UserCtrl:: Update user by id: {}", id);
+		log.info("Update user by id: {}", id);
 		return ResponseEntity.ok(service.updateUser(user));
 	}
 
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<?> deleteById(@PathVariable Long id) {
-		log.info("UserCtrl:: Delete user by id: {}", id);
+		log.info("Delete user by id: {}", id);
 		return ResponseEntity.ok(service.deleteById(id));
 	}
 }

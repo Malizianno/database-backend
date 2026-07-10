@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Component;
+import ro.cristiansterie.databasebackend.properties.JWTProperties;
 import ro.cristiansterie.databasebackend.util.AppConstants;
 
 import javax.crypto.SecretKey;
@@ -17,11 +18,15 @@ import java.util.List;
 @Slf4j
 public class JwtUtils {
 
-	private final String SECRET_KEY = "your-super-secret-hex-string-that-is-long-enough-for-sha256";
-	private final long EXPIRATION_TIME = 86400000; // 24 hours in milliseconds
+	private final JWTProperties props;
+
+	public JwtUtils(JWTProperties props) {
+		this.props = props;
+	}
 
 	private SecretKey getSigningKey() {
-		return Keys.hmacShaKeyFor(SECRET_KEY.getBytes(StandardCharsets.UTF_8));
+		return Keys.hmacShaKeyFor(props.getSecretKey()
+		                               .getBytes(StandardCharsets.UTF_8));
 	}
 
 	public String generateToken(Authentication authentication) {
@@ -36,7 +41,7 @@ public class JwtUtils {
 		           .subject(username)
 		           .claim("roles", roles)
 		           .issuedAt(new Date())
-		           .expiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+		           .expiration(new Date(System.currentTimeMillis() + props.getExpiration()))
 		           .signWith(getSigningKey())
 		           .compact();
 	}
@@ -60,7 +65,8 @@ public class JwtUtils {
 		} catch (
 				Exception e) {
 			log.error(AppConstants.JWT_INVALID_TOKEN, token);
-			return false;
 		}
+
+		return false;
 	}
 }
