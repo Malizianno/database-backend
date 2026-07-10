@@ -12,7 +12,7 @@ public class JWTProperties implements InitializingBean {
 
 
 	@Override
-	public void afterPropertiesSet() throws Exception {
+	public void afterPropertiesSet() {
 		if (secretKey == null || secretKey.isEmpty()) {
 			throw new IllegalArgumentException("secretKey cannot be null or empty");
 		}
