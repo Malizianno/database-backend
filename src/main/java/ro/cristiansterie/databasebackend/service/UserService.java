@@ -68,7 +68,7 @@ public class UserService {
 		}
 
 		// Handle relationships safely (Collections should be cleared & added, not overwritten)
-		if (userDTO.roles() != null) {
+		if (userDTO.roles() != null && !userDTO.roles().isEmpty()) {
 			user.getRoles()
 			    .clear();
 			user.getRoles()
