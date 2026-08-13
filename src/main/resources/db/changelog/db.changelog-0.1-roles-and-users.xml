@@ -108,4 +108,18 @@
         </insert>
     </changeSet>
 
+    <changeSet id="7-insert andreea" author="admin">
+        <insert tableName="users">
+            <column name="id" valueNumeric="3"/>
+            <column name="username" value="andreea"/>
+            <column name="password"
+                    value="$2a$12$ITZPVKc7LJnxlgaZ2p63TOsCiP.MEyknSlvrTZ6HekZoDqnHXRyGe"/>
+            <column name="email" value="andreea@databaseproject.ro"/>
+        </insert>
+        <insert tableName="users_roles_mapping">
+            <column name="user_id" valueNumeric="3"/> <!-- MEMBER -->
+            <column name="role_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+
 </databaseChangeLog>
