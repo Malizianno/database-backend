@@ -27,6 +27,6 @@ public class AuthService {
 		);
 
 		// return token
-		return new LoginResponseDTO(authentication.getName(), jwtUtils.generateToken(authentication));
+		return new LoginResponseDTO(authentication.getName(), authentication.getAuthorities(), jwtUtils.generateToken(authentication));
 	}
 }
