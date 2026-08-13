@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import ro.cristiansterie.databasebackend.dto.RoleDTO;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
 import ro.cristiansterie.databasebackend.service.UserService;
 
@@ -25,6 +26,13 @@ public class UserController {
 	public ResponseEntity<List<UserDTO>> getAll() {
 		log.info("Find all users");
 		return ResponseEntity.ok(service.getAll());
+	}
+
+	@GetMapping("/roles")
+	@PreAuthorize("hasAuthority('ADMIN')")
+	public ResponseEntity<List<RoleDTO>> getAllRoles() {
+		log.info("Find all roles");
+		return ResponseEntity.ok(service.getAllRoles());
 	}
 
 	@GetMapping("/{id}")

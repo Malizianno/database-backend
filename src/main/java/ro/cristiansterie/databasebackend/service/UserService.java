@@ -5,8 +5,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ro.cristiansterie.databasebackend.dto.RoleDTO;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
 import ro.cristiansterie.databasebackend.model.UserEntity;
+import ro.cristiansterie.databasebackend.repository.RoleRepository;
 import ro.cristiansterie.databasebackend.repository.UserRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.RoleModelConverter;
 import ro.cristiansterie.databasebackend.util.converter.models.UserModelConverter;
@@ -19,12 +21,14 @@ import java.util.List;
 public class UserService {
 
 	private final UserRepository repo;
+	private final RoleRepository roleRepo;
 	private final UserModelConverter converter;
 	private final RoleModelConverter roleConverter;
 	private final PasswordEncoder passwordEncoder;
 
-	public UserService(UserRepository repo, UserModelConverter converter, RoleModelConverter roleConverter, PasswordEncoder passwordEncoder) {
+	public UserService(UserRepository repo, RoleRepository roleRepo, UserModelConverter converter, RoleModelConverter roleConverter, PasswordEncoder passwordEncoder) {
 		this.repo = repo;
+		this.roleRepo = roleRepo;
 		this.converter = converter;
 		this.roleConverter = roleConverter;
 		this.passwordEncoder = passwordEncoder;
@@ -32,6 +36,10 @@ public class UserService {
 
 	public List<UserDTO> getAll() {
 		return converter.toDtoList(repo.findAll());
+	}
+
+	public List<RoleDTO> getAllRoles() {
+		return roleConverter.toDtoList(roleRepo.findAll());
 	}
 
 	public UserDTO getById(Long id) {
