@@ -55,8 +55,13 @@ public class SecurityConfig {
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration config = new CorsConfiguration();
+		List<String> allowed = List.of(
+				"http://localhost:4221",
+				"https://database-frontend-muhs.onrender.com",
+				"https://www.cristiansterie.dev"
+		);
 
-		config.setAllowedOrigins(List.of("http://localhost:4221", "https://database-frontend-muhs.onrender.com"));
+		config.setAllowedOrigins(allowed);
 		config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 		config.setAllowedHeaders(List.of("*"));
 		config.setAllowCredentials(true);
@@ -74,7 +79,7 @@ public class SecurityConfig {
 				.csrf(AbstractHttpConfigurer::disable)
 				.cors(cors -> cors.configurationSource(corsConfigurationSource()))
 				.authorizeHttpRequests(auth -> auth
-						.requestMatchers("/auth/login", "/actuator/health")
+						.requestMatchers("/auth/login", "/db/actuator/health")
 						.permitAll()
 						.anyRequest()
 						.authenticated()
