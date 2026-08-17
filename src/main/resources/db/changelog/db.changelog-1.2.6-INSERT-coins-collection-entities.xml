@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Insert Collections and Items Initial Data -->
+    <changeSet id="insert-collections-entities" author="admin">
+        <!-- Collection -->
+        <insert tableName="collections">
+            <column name="id" valueNumeric="3"/>
+            <column name="name" value="Coins"/>
+            <column name="description" value="Personal collection of coins."/>
+            <column name="user_id" valueNumeric="1"/>
+            <column name="type" value="COINS"/>
+        </insert>
+
+        <!-- Coins -->
+        <insert tableName="coins">
+            <column name="id" valueNumeric="1"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="1"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2018"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.75"/>
+            <column name="description" value="Unirea de la Alba Iulia"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-bani-2018/?tid=81036"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="5"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="2"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1963"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="27.0"/>
+            <column name="description" value="deteriorata"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-3-lei-1963/?tid=20171"/>
+            <column name="value" valueNumeric="3.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="3"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1966"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="27.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-3-lei-1966/?tid=20221"/>
+            <column name="value" valueNumeric="3.0"/>
+            <column name="units" valueNumeric="3"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="4"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1942"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.0"/>
+            <column name="description" value="deteriorata"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-5-lei-1942/?tid=38294"/>
+            <column name="value" valueNumeric="5.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="5"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="4"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="3"/>
+            <column name="year" valueNumeric="1942"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="24.0"/>
+            <column name="description" value="stearsa"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-200-lei-1942/?tid=38309"/>
+            <column name="value" valueNumeric="200.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="6"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1941"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="20.0"/>
+            <column name="description" value="stearsa"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-2-lei-1941/?tid=38255"/>
+            <column name="value" valueNumeric="2.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="7"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1966"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="16.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-5-bani-1966/?tid=20214"/>
+            <column name="value" valueNumeric="5.0"/>
+            <column name="units" valueNumeric="4"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="8"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1975"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="16.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-5-bani-1975/?tid=20215"/>
+            <column name="value" valueNumeric="5.0"/>
+            <column name="units" valueNumeric="4"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="9"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="6"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1906"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="22.0"/>
+            <column name="description" value="murdara"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-10-bani-1905-1906/?tid=38191"/>
+            <column name="value" valueNumeric="10.0"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="10"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="6"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1906"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="19.0"/>
+            <column name="description" value="deteriorata"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-5-bani-1905-1906/?tid=38189"/>
+            <column name="value" valueNumeric="5.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="11"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="7"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="3"/>
+            <column name="year" valueNumeric="1946"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="24.0"/>
+            <column name="description" value="una e deteriorata"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-2000-lei-1946/?tid=38340"/>
+            <column name="value" valueNumeric="2000.0"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="12"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="8"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1953"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="20.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-5-bani-1953-1957/?tid=20158"/>
+            <column name="value" valueNumeric="5.0"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="13"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="3"/>
+            <column name="year" valueNumeric="1999"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="25.0"/>
+            <column name="description" value="Model special eclipsa"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-500-lei-1999/?tid=19259"/>
+            <column name="value" valueNumeric="500.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="14"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="3"/>
+            <column name="year" valueNumeric="1999"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="25.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-500-lei-1999-2006/?tid=18793"/>
+            <column name="value" valueNumeric="500.0"/>
+            <column name="units" valueNumeric="8"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="15"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="3"/>
+            <column name="year" valueNumeric="1943"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="28.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-100-lei-1943-1944/?tid=38307"/>
+            <column name="value" valueNumeric="100.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="16"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="6"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1924"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="25.0"/>
+            <column name="description" value="murdara"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-2-lei-1924/?tid=38254"/>
+            <column name="value" valueNumeric="2.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="17"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1978"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="29.0"/>
+            <column name="description" value="una murdara"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-5-lei-1978/?tid=20222"/>
+            <column name="value" valueNumeric="5.0"/>
+            <column name="units" valueNumeric="8"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="18"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="3"/>
+            <column name="year" valueNumeric="1993"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="29.1"/>
+            <column name="description" value="una e neagra"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-100-lei-1991-2006/?tid=18780"/>
+            <column name="value" valueNumeric="100.0"/>
+            <column name="units" valueNumeric="13"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="19"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1942"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="26.3"/>
+            <column name="description" value="deteriorata"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-20-lei-1942-1944/?tid=38298"/>
+            <column name="value" valueNumeric="20.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="20"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="9"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1993"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="26.1"/>
+            <column name="description" value="murdara (mai multe)"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-lei-1991-2003/?tid=18771"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="11"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="21"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1963"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="24.0"/>
+            <column name="description" value="una murdara"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-1-leu-1963/?tid=20170"/>
+            <column name="value" valueNumeric="1.0"/>
+            <column name="units" valueNumeric="3"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="22"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1966"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="24.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-1-leu-1966/?tid=20220"/>
+            <column name="value" valueNumeric="1.0"/>
+            <column name="units" valueNumeric="3"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="23"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="9"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1993"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="24.1"/>
+            <column name="description" value="sunt murdare (a.k.a. negre)"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-20-lei-1991-2003/?tid=18741"/>
+            <column name="value" valueNumeric="20.0"/>
+            <column name="units" valueNumeric="10"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="24"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="10"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1992"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="19.0"/>
+            <column name="description" value="3 sunt murdare"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-1-leu-1992/?tid=18684"/>
+            <column name="value" valueNumeric="1.0"/>
+            <column name="units" valueNumeric="7"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="25"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="10"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1993"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="19.1"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-1-leu-1993-2006/?tid=18685"/>
+            <column name="value" valueNumeric="1.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="26"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1948"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.0"/>
+            <column name="description" value="murdara + deteriorata"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-5-lei-1948-1951/?tid=20200"/>
+            <column name="value" valueNumeric="5.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="27"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="3"/>
+            <column name="year" valueNumeric="2002"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.5"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-5000-lei-2001-2005/?tid=18808"/>
+            <column name="value" valueNumeric="5000.0"/>
+            <column name="units" valueNumeric="4"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="28"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1992"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.1"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-10-lei-1990-1992/?tid=18728"/>
+            <column name="value" valueNumeric="10.0"/>
+            <column name="units" valueNumeric="5"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="29"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1993"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-10-lei-1993-2003/?tid=18721"/>
+            <column name="value" valueNumeric="10.0"/>
+            <column name="units" valueNumeric="3"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="30"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1993"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="21.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-5-lei-1992-2005/?tid=18711"/>
+            <column name="value" valueNumeric="5.0"/>
+            <column name="units" valueNumeric="10"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="31"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1966"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="22.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-25-bani-1966/?tid=20218"/>
+            <column name="value" valueNumeric="25.0"/>
+            <column name="units" valueNumeric="7"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="32"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1982"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="22.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-25-bani-1982/?tid=20219"/>
+            <column name="value" valueNumeric="25.0"/>
+            <column name="units" valueNumeric="24"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="33"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="3"/>
+            <column name="year" valueNumeric="2003"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="22.2"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-1000-lei-2000-2005/?tid=18801"/>
+            <column name="value" valueNumeric="1000.0"/>
+            <column name="units" valueNumeric="16"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="34"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1975"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="19.5"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-15-bani-1975/?tid=20217"/>
+            <column name="value" valueNumeric="15.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="35"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1966"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="19.5"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-15-bani-1966/?tid=20216"/>
+            <column name="value" valueNumeric="15.0"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="36"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1951"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="18.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-2-lei-1951-1952/?tid=20247"/>
+            <column name="value" valueNumeric="2.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="37"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2006"/>
+            <column name="country" value="Moldova"/>
+            <column name="diameter" valueNumeric="16.6"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/moldova-10-bani-1995-2020/?tid=14495"/>
+            <column name="value" valueNumeric="10.0"/>
+            <column name="units" valueNumeric="14"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="38"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1951"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="16.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-1-leu-1951-1952/?tid=20144"/>
+            <column name="value" valueNumeric="1.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="39"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="1"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2016"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.75"/>
+            <column name="description" value="Iancu de Hunedoara"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-bani-2016/?tid=57202"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="8"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="40"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="1"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2019"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.75"/>
+            <column name="description" value="Revolutia de la 1989"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-bani-2019/?tid=90378"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="9"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="41"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="7"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2019"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.75"/>
+            <column name="description" value="Regina Maria"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-bani-2019/?tid=89215"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="9"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="42"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="7"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2019"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.75"/>
+            <column name="description" value="Ferdinand I"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-bani-2019/?tid=87174"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="8"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="43"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="1"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2012"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.75"/>
+            <column name="description" value="Neagoe Basarab"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-bani-2012-2014/?tid=16151"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="5"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="44"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="1"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2011"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.75"/>
+            <column name="description" value="Mircea cel Batran"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-bani-2011-2016/?tid=14400"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="16"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="45"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2016"/>
+            <column name="country" value="Moldova"/>
+            <column name="diameter" valueNumeric="16.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/moldova-5-bani-1993-2021/?tid=14481"/>
+            <column name="value" valueNumeric="5.0"/>
+            <column name="units" valueNumeric="6"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="46"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="5"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2010"/>
+            <column name="country" value="Moldova"/>
+            <column name="diameter" valueNumeric="17.5"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/moldova-25-bani-1993-2020/?tid=14511"/>
+            <column name="value" valueNumeric="25.0"/>
+            <column name="units" valueNumeric="17"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="47"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="1"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2014"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.75"/>
+            <column name="description" value="Vladislav I Vlaicu"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-bani-2014/?tid=35069"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="6"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="48"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="1"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2010"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.75"/>
+            <column name="description" value="Aurel Vlaicu"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-bani-2010-2016/?tid=14374"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="3"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="49"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="12"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="2018"/>
+            <column name="country" value="Moldova"/>
+            <column name="diameter" valueNumeric="21.5"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/moldova-1-leu-2018-2020/?tid=75991"/>
+            <column name="value" valueNumeric="1.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="50"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="11"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2017"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.75"/>
+            <column name="description" value="10 ani de la aderarea la UE"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-bani-2017/?tid=71964"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="9"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="51"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="11"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2015"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="23.75"/>
+            <column name="description" value="10 ani de la denominarea monedei nationale"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-50-bani-2015/?tid=49489"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="4"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="52"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="13"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2008"/>
+            <column name="country" value="Moldova"/>
+            <column name="diameter" valueNumeric="19.0"/>
+            <column name="description" value="-"/>
+            <column name="link" value="https://ro.ucoin.net/coin/moldova-50-bani-1997-2008/?tid=14525"/>
+            <column name="value" valueNumeric="50.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="53"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="7"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2024"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="35.0"/>
+            <column name="description" value="Peles Sinaia Romania - Regele Carol I - Regina Elisabeta"/>
+            <column name="link" value="-"/>
+            <column name="value" valueNumeric="0.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="54"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="7"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2024"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="35.0"/>
+            <column name="description" value="Pelisor Sinaia Romania - Regele Ferdinand I - Regina Maria"/>
+            <column name="link" value="-"/>
+            <column name="value" valueNumeric="0.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+        <insert tableName="coins">
+            <column name="id" valueNumeric="55"/>
+            <column name="collection_id" valueNumeric="3"/>
+            <column name="material_id" valueNumeric="7"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="3"/>
+            <column name="year" valueNumeric="1947"/>
+            <column name="country" value="Romania"/>
+            <column name="diameter" valueNumeric="27.0"/>
+            <column name="description" value="usor murdara"/>
+            <column name="link" value="https://ro.ucoin.net/coin/romania-10000-lei-1947/?cid=38341"/>
+            <column name="value" valueNumeric="10000.0"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- XXX: finish adding the rest of the coins as well and implement JPA entities and UI for these -->
+
+    </changeSet>
+</databaseChangeLog>

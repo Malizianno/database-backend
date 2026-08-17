@@ -5,6 +5,15 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <include file="db/changelog/db.changelog-0.1-roles-and-users.xml"/>
+    <include file="db/changelog/db.changelog-1.0.0-roles-and-users.xml"/>
+
+    <include file="db/changelog/db.changelog-1.2.0-CREATE-collection-entities.xml"/>
+    <include file="db/changelog/db.changelog-1.2.0-INSERT-simple-collection-entities.xml"/>
+    <include file="db/changelog/db.changelog-1.2.1-INSERT-countries-collection-entities.xml"/>
+    <include file="db/changelog/db.changelog-1.2.2-INSERT-denominations-collection-entities.xml"/>
+    <include file="db/changelog/db.changelog-1.2.3-INSERT-materials-collection-entities.xml"/>
+    <include file="db/changelog/db.changelog-1.2.4-INSERT-books-collection-entities.xml"/>
+    <include file="db/changelog/db.changelog-1.2.5-INSERT-banknotes-collection-entities.xml"/>
+    <include file="db/changelog/db.changelog-1.2.6-INSERT-coins-collection-entities.xml"/>
 
 </databaseChangeLog>

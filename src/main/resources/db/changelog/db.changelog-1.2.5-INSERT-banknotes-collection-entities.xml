@@ -1,0 +1,2013 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Insert Collections and Items Initial Data -->
+    <changeSet id="insert-collections-entities" author="admin">
+        <!-- Collection -->
+        <insert tableName="collections">
+            <column name="id" valueNumeric="2"/>
+            <column name="name" value="Banknotes"/>
+            <column name="description" value="Personal collection of banknotes."/>
+            <column name="user_id" valueNumeric="1"/>
+            <column name="type" value="BANKNOTES"/>
+        </insert>
+
+        <!-- Banknotes -->
+        <!-- 1 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="1"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="1945"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="90.0"/>
+            <column name="width" valueNumeric="65.0"/>
+            <column name="description" value="rupta in partea stanga sus (fata)"/>
+            <column name="link" value="https://en.numista.com/catalogue/note201757.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 2 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="2"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5000"/>
+            <column name="year" valueNumeric="1945"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="166.0"/>
+            <column name="width" valueNumeric="91.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206915.html"/>
+            <column name="value" valueNumeric="5000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 3 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="3"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10000"/>
+            <column name="year" valueNumeric="1946"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="194.0"/>
+            <column name="width" valueNumeric="107.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205757.html"/>
+            <column name="value" valueNumeric="10000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 4 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="4"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2000"/>
+            <column name="year" valueNumeric="1943"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="201.0"/>
+            <column name="width" valueNumeric="113.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205764.html"/>
+            <column name="value" valueNumeric="2000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 5 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="5"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20000"/>
+            <column name="year" valueNumeric="1991"/>
+            <column name="country" value="Vietnam"/>
+            <column name="length" valueNumeric="141.0"/>
+            <column name="width" valueNumeric="68.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note213751.html"/>
+            <column name="value" valueNumeric="20000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 6 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="6"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="1984"/>
+            <column name="country" value="Austria"/>
+            <column name="length" valueNumeric="137.0"/>
+            <column name="width" valueNumeric="69.0"/>
+            <column name="description" value="rupta stanga jos (fata)"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203235.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 7 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="7"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="2009"/>
+            <column name="country" value="Turcia"/>
+            <column name="length" valueNumeric="130.0"/>
+            <column name="width" valueNumeric="64.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206382.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 8 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="8"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="2013"/>
+            <column name="country" value="Serbia"/>
+            <column name="length" valueNumeric="131.0"/>
+            <column name="width" valueNumeric="62.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204324.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 9 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="9"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="1972"/>
+            <column name="country" value="Norvegia"/>
+            <column name="length" valueNumeric="125.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="description" value="muscata drepta sus (fata) si murdara"/>
+            <column name="link" value="https://en.numista.com/catalogue/note212486.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 10 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="10"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="2009"/>
+            <column name="country" value="Scotia"/>
+            <column name="length" valueNumeric="142.0"/>
+            <column name="width" valueNumeric="75.0"/>
+            <column name="description" value="cerneala sntaga jos (fata)"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202753.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 11 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="11"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="5000"/>
+            <column name="year" valueNumeric="1985"/>
+            <column name="country" value="Italia"/>
+            <column name="length" valueNumeric="126.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="description" value="pasta de pix pe fata si pe spate"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202451.html"/>
+            <column name="value" valueNumeric="5000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 12 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="12"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="1994"/>
+            <column name="country" value="Polonia"/>
+            <column name="length" valueNumeric="120.0"/>
+            <column name="width" valueNumeric="60.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202134.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 13 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="13"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="1997"/>
+            <column name="country" value="Cehia"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="69.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202675.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 14 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="14"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="2005"/>
+            <column name="country" value="Bulgaria"/>
+            <column name="length" valueNumeric="116.0"/>
+            <column name="width" valueNumeric="64.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note201676.html"/>
+            <column name="value" valueNumeric="2.00"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+
+        <!-- 15 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="15"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="2003"/>
+            <column name="country" value="Mauritius"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="68.0"/>
+            <column name="description" value="elementul de siguranta rupt in partea de jos"/>
+            <column name="link" value="https://en.numista.com/catalogue/note208226.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 16 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="16"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="2003"/>
+            <column name="country" value="Guatemala"/>
+            <column name="length" valueNumeric="156.0"/>
+            <column name="width" valueNumeric="67.0"/>
+            <column name="description" value="invechita"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204582.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 17 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="17"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10000"/>
+            <column name="year" valueNumeric="1989"/>
+            <column name="country" value="Chile"/>
+            <column name="length" valueNumeric="145.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note214912.html"/>
+            <column name="value" valueNumeric="10000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 18 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="18"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="1995"/>
+            <column name="country" value="Venezuela"/>
+            <column name="length" valueNumeric="156.0"/>
+            <column name="width" valueNumeric="69.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204523.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 19 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="19"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="2003"/>
+            <column name="country" value="Argentina"/>
+            <column name="length" valueNumeric="155.0"/>
+            <column name="width" valueNumeric="65.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203840.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 20 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="20"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="2"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1988"/>
+            <column name="country" value="SUA"/>
+            <column name="length" valueNumeric="156.0"/>
+            <column name="width" valueNumeric="67.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note201805.html"/>
+            <column name="value" valueNumeric="1.00"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+
+        <!-- 21 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="21"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="1910"/>
+            <column name="country" value="Germania"/>
+            <column name="length" valueNumeric="207.0"/>
+            <column name="width" valueNumeric="102.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203319.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 22 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="22"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="2000"/>
+            <column name="year" valueNumeric="1943"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="201.0"/>
+            <column name="width" valueNumeric="113.0"/>
+            <column name="description" value="a scris cineva cu creionul pe spate"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206921.html"/>
+            <column name="value" valueNumeric="2000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 23 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="23"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="2014"/>
+            <column name="country" value="Serbia"/>
+            <column name="length" valueNumeric="139.0"/>
+            <column name="width" valueNumeric="66.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204328.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 24 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="24"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="2013"/>
+            <column name="country" value="Serbia"/>
+            <column name="length" valueNumeric="143.0"/>
+            <column name="width" valueNumeric="68.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204329.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 25 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="25"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20"/>
+            <column name="year" valueNumeric="1929"/>
+            <column name="country" value="Germania"/>
+            <column name="length" valueNumeric="160.0"/>
+            <column name="width" valueNumeric="80.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204645.html"/>
+            <column name="value" valueNumeric="20.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 26 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="26"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1995"/>
+            <column name="country" value="SUA"/>
+            <column name="length" valueNumeric="156.0"/>
+            <column name="width" valueNumeric="67.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note201812.html"/>
+            <column name="value" valueNumeric="2.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 27 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="27"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="500"/>
+            <column name="year" valueNumeric="2013"/>
+            <column name="country" value="Congo"/>
+            <column name="length" valueNumeric="150.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note212968.html"/>
+            <column name="value" valueNumeric="500.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 28 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="28"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="1986"/>
+            <column name="country" value="Brazilia"/>
+            <column name="length" valueNumeric="154.0"/>
+            <column name="width" valueNumeric="74.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206080.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 29 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="29"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1992"/>
+            <column name="country" value="Estonia"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202949.html"/>
+            <column name="value" valueNumeric="2.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 30 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="30"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="2020"/>
+            <column name="country" value="Nepal"/>
+            <column name="length" valueNumeric="120.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204030.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 31 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="31"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="20"/>
+            <column name="year" valueNumeric="1993"/>
+            <column name="country" value="Franta"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="75.0"/>
+            <column name="description" value="rupta in 2x locuri"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204378.html"/>
+            <column name="value" valueNumeric="20.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 32 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="32"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="500"/>
+            <column name="year" valueNumeric="1983"/>
+            <column name="country" value="Grecia"/>
+            <column name="length" valueNumeric="158.0"/>
+            <column name="width" valueNumeric="72.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205994.html"/>
+            <column name="value" valueNumeric="500.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 33 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="33"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1000"/>
+            <column name="year" valueNumeric="1970"/>
+            <column name="country" value="Turcia"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="72.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206364.html"/>
+            <column name="value" valueNumeric="1000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 34 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="34"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20"/>
+            <column name="year" valueNumeric="2014"/>
+            <column name="country" value="Africa de Sud"/>
+            <column name="length" valueNumeric="134.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203853.html"/>
+            <column name="value" valueNumeric="20.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 35 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="35"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="1982"/>
+            <column name="country" value="Polonia"/>
+            <column name="length" valueNumeric="138.0"/>
+            <column name="width" valueNumeric="63.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203926.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 36 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="36"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="1992"/>
+            <column name="country" value="Franta"/>
+            <column name="length" valueNumeric="123.0"/>
+            <column name="width" valueNumeric="80.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note201000.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 37 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="37"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20"/>
+            <column name="year" valueNumeric="2008"/>
+            <column name="country" value="Suedia"/>
+            <column name="length" valueNumeric="120.0"/>
+            <column name="width" valueNumeric="66.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202670.html"/>
+            <column name="value" valueNumeric="20.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 38 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="38"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1968"/>
+            <column name="country" value="Arabia Saudita"/>
+            <column name="length" valueNumeric="128.0"/>
+            <column name="width" valueNumeric="62.0"/>
+            <column name="description" value="e rau, manca-ti-as :)))"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205706.html"/>
+            <column name="value" valueNumeric="1.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 39 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="39"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="1987"/>
+            <column name="country" value="Canada"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="67.0"/>
+            <column name="description" value="Canadian Tire 5 cent"/>
+            <column name="link" value="https://en.numista.com/catalogue/exonumia274110.html"/>
+            <column name="value" valueNumeric="0.05"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 40 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="40"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="1992"/>
+            <column name="country" value="Canada"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="67.0"/>
+            <column name="description" value="Canadian Tire 5 cent"/>
+            <column name="link" value="https://en.numista.com/catalogue/exonumia217522.html"/>
+            <column name="value" valueNumeric="0.05"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 41 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="41"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="1992"/>
+            <column name="country" value="Canada"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="67.0"/>
+            <column name="description" value="Canadian Tire 10 cent"/>
+            <column name="link" value="https://en.numista.com/catalogue/exonumia233130.html"/>
+            <column name="value" valueNumeric="0.10"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 42 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="42"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="1985"/>
+            <column name="country" value="Canada"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="67.0"/>
+            <column name="description" value="Canadian Tire 10 cent"/>
+            <column name="link" value="https://en.numista.com/catalogue/exonumia329720.html"/>
+            <column name="value" valueNumeric="0.10"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 43 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="43"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="1962"/>
+            <column name="country" value="Canada"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="67.0"/>
+            <column name="description" value="Canadian Tire 10 cent - cu spate verde though"/>
+            <column name="link"
+                    value="https://www.bankofcanadamuseum.ca/collection/artefact/view/1968.0249.00009.000/canada-canadian-tire-corporation-ltd-10-cents-1962"/>
+            <column name="value" valueNumeric="0.10"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 44 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="44"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="4"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="2020"/>
+            <column name="country" value="Botswana"/>
+            <column name="length" valueNumeric="135.0"/>
+            <column name="width" valueNumeric="62.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note280476.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 45 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="45"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="4"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20"/>
+            <column name="year" valueNumeric="2021"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="136.0"/>
+            <column name="width" valueNumeric="77.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note312374.html"/>
+            <column name="value" valueNumeric="20.00"/>
+            <column name="units" valueNumeric="101"/>
+        </insert>
+
+        <!-- 46 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="46"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="4"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2000"/>
+            <column name="year" valueNumeric="1999"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="143.0"/>
+            <column name="width" valueNumeric="63.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note201590.html"/>
+            <column name="value" valueNumeric="2000.00"/>
+            <column name="units" valueNumeric="12"/>
+        </insert>
+
+        <!-- 47 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="47"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="4"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10000"/>
+            <column name="year" valueNumeric="2000"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="150.0"/>
+            <column name="width" valueNumeric="67.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202531.html"/>
+            <column name="value" valueNumeric="10000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 48 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="48"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="4"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50000"/>
+            <column name="year" valueNumeric="2001"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="155.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202779.html"/>
+            <column name="value" valueNumeric="50000.00"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+
+        <!-- 49 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="49"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="4"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100000"/>
+            <column name="year" valueNumeric="2001"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="160.0"/>
+            <column name="width" valueNumeric="73.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202781.html"/>
+            <column name="value" valueNumeric="100000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 50 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="50"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="1989"/>
+            <column name="country" value="Venezuela"/>
+            <column name="length" valueNumeric="156.0"/>
+            <column name="width" valueNumeric="69.0"/>
+            <column name="description" value="destul de veche"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204100.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+
+        <!-- 51 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="51"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="1966"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="124.0"/>
+            <column name="width" valueNumeric="62.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205768.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+
+        <!-- 52 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="52"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="1966"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="131.0"/>
+            <column name="width" valueNumeric="65.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205769.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="3"/>
+        </insert>
+
+        <!-- 53 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="53"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="25"/>
+            <column name="year" valueNumeric="1966"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="description" value="destul de veche"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204598.html"/>
+            <column name="value" valueNumeric="25.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 54 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="54"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="1966"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="145.0"/>
+            <column name="width" valueNumeric="72.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205770.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+
+        <!-- 55 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="55"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="1966"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="153.0"/>
+            <column name="width" valueNumeric="75.0"/>
+            <column name="description" value="toate foarte firave"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205771.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="4"/>
+        </insert>
+
+        <!-- 56 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="56"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100000"/>
+            <column name="year" valueNumeric="1947"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="182.0"/>
+            <column name="width" valueNumeric="88.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205762.html"/>
+            <column name="value" valueNumeric="100000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 57 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="57"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="1000"/>
+            <column name="year" valueNumeric="1998"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="61.0"/>
+            <column name="description" value="unele lipicioase :("/>
+            <column name="link" value="https://en.numista.com/catalogue/note204595.html"/>
+            <column name="value" valueNumeric="1000.00"/>
+            <column name="units" valueNumeric="8"/>
+        </insert>
+
+        <!-- 58 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="58"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5000"/>
+            <column name="year" valueNumeric="1998"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="145.0"/>
+            <column name="width" valueNumeric="64.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204592.html"/>
+            <column name="value" valueNumeric="5000.00"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+
+        <!-- 59 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="59"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10000"/>
+            <column name="year" valueNumeric="1999"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="150.0"/>
+            <column name="width" valueNumeric="67.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202797.html"/>
+            <column name="value" valueNumeric="10000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 60 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="60"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="500"/>
+            <column name="year" valueNumeric="1992"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="160.0"/>
+            <column name="width" valueNumeric="76.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204438.html"/>
+            <column name="value" valueNumeric="500.00"/>
+            <column name="units" valueNumeric="6"/>
+        </insert>
+
+        <!-- 61 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="61"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="500"/>
+            <column name="year" valueNumeric="1991"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="157.0"/>
+            <column name="width" valueNumeric="75.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205411.html"/>
+            <column name="value" valueNumeric="500.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 62 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="62"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1000"/>
+            <column name="year" valueNumeric="1991"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="167.0"/>
+            <column name="width" valueNumeric="75.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206889.html"/>
+            <column name="value" valueNumeric="1000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 63 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="63"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="5000"/>
+            <column name="year" valueNumeric="1993"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="172.0"/>
+            <column name="width" valueNumeric="77.0"/>
+            <column name="description" value="una e rea"/>
+            <column name="link" value="https://en.numista.com/catalogue/note201963.html"/>
+            <column name="value" valueNumeric="5000.00"/>
+            <column name="units" valueNumeric="3"/>
+        </insert>
+
+        <!-- 64 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="64"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10000"/>
+            <column name="year" valueNumeric="1994"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="180.0"/>
+            <column name="width" valueNumeric="77.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206802.html"/>
+            <column name="value" valueNumeric="10000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 65 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="65"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1937"/>
+            <column name="country" value="Germania"/>
+            <column name="length" valueNumeric="125.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="description" value="rupta rau pe margini"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203658.html"/>
+            <column name="value" valueNumeric="2.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 66 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="66"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="1917"/>
+            <column name="country" value="Austria"/>
+            <column name="length" valueNumeric="124.0"/>
+            <column name="width" valueNumeric="84.0"/>
+            <column name="description" value="gaurita cu tigareta in dreptul semnaturii secretarului general"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202742.html"/>
+            <column name="value" valueNumeric="2.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 67 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="67"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5000"/>
+            <column name="year" valueNumeric="1945"/>
+            <column name="country" value="România"/>
+            <column name="length" valueNumeric="166.0"/>
+            <column name="width" valueNumeric="91.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206915.html"/>
+            <column name="value" valueNumeric="5000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 68 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="68"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="1978"/>
+            <column name="country" value="Iugoslavia"/>
+            <column name="length" valueNumeric="131.0"/>
+            <column name="width" valueNumeric="63.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202011.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 69 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="69"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="1978"/>
+            <column name="country" value="Iugoslavia"/>
+            <column name="length" valueNumeric="140.0"/>
+            <column name="width" valueNumeric="66.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203458.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 70 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="70"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="1986"/>
+            <column name="country" value="Iugoslavia"/>
+            <column name="length" valueNumeric="148.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206237.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+
+        <!-- 71 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="71"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="500"/>
+            <column name="year" valueNumeric="1970"/>
+            <column name="country" value="Iugoslavia"/>
+            <column name="length" valueNumeric="155.0"/>
+            <column name="width" valueNumeric="74.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205329.html"/>
+            <column name="value" valueNumeric="500.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 72 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="72"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="1990"/>
+            <column name="country" value="Iugoslavia"/>
+            <column name="length" valueNumeric="139.0"/>
+            <column name="width" valueNumeric="66.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206188.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 73 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="73"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="1990"/>
+            <column name="country" value="Iugoslavia"/>
+            <column name="length" valueNumeric="147.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204353.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 74 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="74"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5000"/>
+            <column name="year" valueNumeric="1985"/>
+            <column name="country" value="Iugoslavia"/>
+            <column name="length" valueNumeric="165.0"/>
+            <column name="width" valueNumeric="75.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204493.html"/>
+            <column name="value" valueNumeric="5000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 75 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="75"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20000"/>
+            <column name="year" valueNumeric="1987"/>
+            <column name="country" value="Iugoslavia"/>
+            <column name="length" valueNumeric="169.0"/>
+            <column name="width" valueNumeric="77.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note205427.html"/>
+            <column name="value" valueNumeric="20000.00"/>
+            <column name="units" valueNumeric="3"/>
+        </insert>
+
+        <!-- 76 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="76"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="2"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1961"/>
+            <column name="country" value="URSS"/>
+            <column name="length" valueNumeric="105.0"/>
+            <column name="width" valueNumeric="53.0"/>
+            <column name="description" value="deteriorata rau"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204573.html"/>
+            <column name="value" valueNumeric="1.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 77 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="77"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="3"/>
+            <column name="year" valueNumeric="1961"/>
+            <column name="country" value="URSS"/>
+            <column name="length" valueNumeric="114.0"/>
+            <column name="width" valueNumeric="57.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204574.html"/>
+            <column name="value" valueNumeric="3.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 78 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="78"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="1961"/>
+            <column name="country" value="URSS"/>
+            <column name="length" valueNumeric="114.0"/>
+            <column name="width" valueNumeric="57.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204497.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+
+        <!-- 79 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="79"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="1961"/>
+            <column name="country" value="URSS"/>
+            <column name="length" valueNumeric="119.0"/>
+            <column name="width" valueNumeric="60.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204577.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 80 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="80"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="25"/>
+            <column name="year" valueNumeric="1961"/>
+            <column name="country" value="URSS"/>
+            <column name="length" valueNumeric="121.0"/>
+            <column name="width" valueNumeric="62.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202408.html"/>
+            <column name="value" valueNumeric="25.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 81 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="81"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2010"/>
+            <column name="country" value="Moldova"/>
+            <column name="length" valueNumeric="114.0"/>
+            <column name="width" valueNumeric="58.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202816.html"/>
+            <column name="value" valueNumeric="1.00"/>
+            <column name="units" valueNumeric="5"/>
+        </insert>
+
+        <!-- 82 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="82"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="2013"/>
+            <column name="country" value="Moldova"/>
+            <column name="length" valueNumeric="114.0"/>
+            <column name="width" valueNumeric="58.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203083.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 83 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="83"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="2015"/>
+            <column name="country" value="Moldova"/>
+            <column name="length" valueNumeric="121.0"/>
+            <column name="width" valueNumeric="61.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202336.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 84 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="84"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20"/>
+            <column name="year" valueNumeric="2015"/>
+            <column name="country" value="Moldova"/>
+            <column name="length" valueNumeric="121.0"/>
+            <column name="width" valueNumeric="61.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note215899.html"/>
+            <column name="value" valueNumeric="20.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 85 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="85"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="2015"/>
+            <column name="country" value="Moldova"/>
+            <column name="length" valueNumeric="121.0"/>
+            <column name="width" valueNumeric="61.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note215902.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 86 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="86"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="2008"/>
+            <column name="country" value="Moldova"/>
+            <column name="length" valueNumeric="121.0"/>
+            <column name="width" valueNumeric="61.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203091.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 87 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="87"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="1993"/>
+            <column name="country" value="Ungaria"/>
+            <column name="length" valueNumeric="166.0"/>
+            <column name="width" valueNumeric="72.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note207270.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+
+        <!-- 88 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="88"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="200"/>
+            <column name="year" valueNumeric="2006"/>
+            <column name="country" value="Ungaria"/>
+            <column name="length" valueNumeric="154.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note201884.html"/>
+            <column name="value" valueNumeric="200.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 89 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="89"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="500"/>
+            <column name="year" valueNumeric="2008"/>
+            <column name="country" value="Ungaria"/>
+            <column name="length" valueNumeric="154.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note208459.html"/>
+            <column name="value" valueNumeric="500.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 90 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="90"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20"/>
+            <column name="year" valueNumeric="2006"/>
+            <column name="country" value="Pakistan"/>
+            <column name="length" valueNumeric="123.0"/>
+            <column name="width" valueNumeric="65.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note211571.html"/>
+            <column name="value" valueNumeric="20.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 91 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="91"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="2012"/>
+            <column name="country" value="India"/>
+            <column name="length" valueNumeric="137.0"/>
+            <column name="width" valueNumeric="63.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203074.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 92 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="92"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="2012"/>
+            <column name="country" value="India"/>
+            <column name="length" valueNumeric="147.0"/>
+            <column name="width" valueNumeric="73.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202323.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 93 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="93"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20"/>
+            <column name="year" valueNumeric="2015"/>
+            <column name="country" value="Sri Lanka"/>
+            <column name="length" valueNumeric="128.0"/>
+            <column name="width" valueNumeric="67.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203329.html"/>
+            <column name="value" valueNumeric="20.00"/>
+            <column name="units" valueNumeric="3"/>
+        </insert>
+
+        <!-- 94 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="94"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="2001"/>
+            <column name="country" value="Cambodia"/>
+            <column name="length" valueNumeric="130.0"/>
+            <column name="width" valueNumeric="60.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202798.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 95 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="95"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="1996"/>
+            <column name="country" value="Myanmar"/>
+            <column name="length" valueNumeric="130.0"/>
+            <column name="width" valueNumeric="60.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note207721.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 96 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="96"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20"/>
+            <column name="year" valueNumeric="2003"/>
+            <column name="country" value="Tailanda"/>
+            <column name="length" valueNumeric="138.0"/>
+            <column name="width" valueNumeric="72.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202122.html"/>
+            <column name="value" valueNumeric="20.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 97 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="97"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20"/>
+            <column name="year" valueNumeric="2013"/>
+            <column name="country" value="Tailanda"/>
+            <column name="length" valueNumeric="138.0"/>
+            <column name="width" valueNumeric="72.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204487.html"/>
+            <column name="value" valueNumeric="20.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 98 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="98"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="2001"/>
+            <column name="country" value="UAE"/>
+            <column name="length" valueNumeric="143.0"/>
+            <column name="width" valueNumeric="60.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note209804.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 99 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="99"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2003"/>
+            <column name="country" value="Qatar"/>
+            <column name="length" valueNumeric="134.0"/>
+            <column name="width" valueNumeric="66.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202976.html"/>
+            <column name="value" valueNumeric="1.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 100 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="100"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1984"/>
+            <column name="country" value="Arabia Saudita"/>
+            <column name="length" valueNumeric="134.0"/>
+            <column name="width" valueNumeric="62.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204099.html"/>
+            <column name="value" valueNumeric="1.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 101 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="101"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="2002"/>
+            <column name="country" value="Afghanistan"/>
+            <column name="length" valueNumeric="136.0"/>
+            <column name="width" valueNumeric="56.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202106.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 102 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="102"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="2008"/>
+            <column name="country" value="Tunisia"/>
+            <column name="length" valueNumeric="137.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note208881.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 103 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="103"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1000"/>
+            <column name="year" valueNumeric="2013"/>
+            <column name="country" value="Liban"/>
+            <column name="length" valueNumeric="115.0"/>
+            <column name="width" valueNumeric="60.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206844.html"/>
+            <column name="value" valueNumeric="1000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 104 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="104"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="2004"/>
+            <column name="country" value="Libia"/>
+            <column name="length" valueNumeric="142.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note201697.html"/>
+            <column name="value" valueNumeric="1.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 105 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="105"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="2001"/>
+            <column name="country" value="Nigeria"/>
+            <column name="length" valueNumeric="150.0"/>
+            <column name="width" valueNumeric="77.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206598.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 106 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="106"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="2003"/>
+            <column name="country" value="Egipt"/>
+            <column name="length" valueNumeric="135.0"/>
+            <column name="width" valueNumeric="70.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note209798.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 107 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="107"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="25"/>
+            <column name="year" valueNumeric="1999"/>
+            <column name="country" value="Egipt"/>
+            <column name="length" valueNumeric="130.0"/>
+            <column name="width" valueNumeric="71.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204738.html"/>
+            <column name="value" valueNumeric="25.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 108 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="108"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2"/>
+            <column name="year" valueNumeric="2013"/>
+            <column name="country" value="Ucraina"/>
+            <column name="length" valueNumeric="118.0"/>
+            <column name="width" valueNumeric="63.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202693.html"/>
+            <column name="value" valueNumeric="2.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 109 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="109"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="2005"/>
+            <column name="country" value="Ucraina"/>
+            <column name="length" valueNumeric="118.0"/>
+            <column name="width" valueNumeric="63.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202690.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 110 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="110"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="2006"/>
+            <column name="country" value="Ucraina"/>
+            <column name="length" valueNumeric="124.0"/>
+            <column name="width" valueNumeric="66.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202679.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 111 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="111"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="50"/>
+            <column name="year" valueNumeric="2004"/>
+            <column name="country" value="Ucraina"/>
+            <column name="length" valueNumeric="136.0"/>
+            <column name="width" valueNumeric="72.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202240.html"/>
+            <column name="value" valueNumeric="50.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 112 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="112"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1"/>
+            <column name="year" valueNumeric="1991"/>
+            <column name="country" value="Ucraina"/>
+            <column name="length" valueNumeric="105.0"/>
+            <column name="width" valueNumeric="53.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203606.html"/>
+            <column name="value" valueNumeric="1.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 113 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="113"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="3"/>
+            <column name="year" valueNumeric="1991"/>
+            <column name="country" value="Ucraina"/>
+            <column name="length" valueNumeric="105.0"/>
+            <column name="width" valueNumeric="53.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203607.html"/>
+            <column name="value" valueNumeric="3.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 114 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="114"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5"/>
+            <column name="year" valueNumeric="1991"/>
+            <column name="country" value="Ucraina"/>
+            <column name="length" valueNumeric="105.0"/>
+            <column name="width" valueNumeric="53.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203608.html"/>
+            <column name="value" valueNumeric="5.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 115 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="115"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10"/>
+            <column name="year" valueNumeric="1991"/>
+            <column name="country" value="Ucraina"/>
+            <column name="length" valueNumeric="105.0"/>
+            <column name="width" valueNumeric="53.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203609.html"/>
+            <column name="value" valueNumeric="10.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 116 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="116"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="25"/>
+            <column name="year" valueNumeric="1991"/>
+            <column name="country" value="Ucraina"/>
+            <column name="length" valueNumeric="105.0"/>
+            <column name="width" valueNumeric="53.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203610.html"/>
+            <column name="value" valueNumeric="25.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 117 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="117"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="2000"/>
+            <column name="year" valueNumeric="1988"/>
+            <column name="country" value="Vietnam"/>
+            <column name="length" valueNumeric="133.0"/>
+            <column name="width" valueNumeric="65.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note202012.html"/>
+            <column name="value" valueNumeric="2000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 118 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="118"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="5000"/>
+            <column name="year" valueNumeric="1991"/>
+            <column name="country" value="Vietnam"/>
+            <column name="length" valueNumeric="134.0"/>
+            <column name="width" valueNumeric="64.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204511.html"/>
+            <column name="value" valueNumeric="5000.00"/>
+            <column name="units" valueNumeric="3"/>
+        </insert>
+
+        <!-- 119 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="119"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="100"/>
+            <column name="year" valueNumeric="1992"/>
+            <column name="country" value="Iugoslavia"/>
+            <column name="length" valueNumeric="151.0"/>
+            <column name="width" valueNumeric="72.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206076.html"/>
+            <column name="value" valueNumeric="100.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 120 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="120"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="1000"/>
+            <column name="year" valueNumeric="1992"/>
+            <column name="country" value="Iugoslavia"/>
+            <column name="length" valueNumeric="163.0"/>
+            <column name="width" valueNumeric="78.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note206071.html"/>
+            <column name="value" valueNumeric="1000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 121 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="121"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="3"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="200"/>
+            <column name="year" valueNumeric="1987"/>
+            <column name="country" value="Vietnam"/>
+            <column name="length" valueNumeric="130.0"/>
+            <column name="width" valueNumeric="65.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203812.html"/>
+            <column name="value" valueNumeric="200.00"/>
+            <column name="units" valueNumeric="2"/>
+        </insert>
+
+        <!-- 122 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="122"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="4"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="20000"/>
+            <column name="year" valueNumeric="2006"/>
+            <column name="country" value="Vietnam"/>
+            <column name="length" valueNumeric="137.5"/>
+            <column name="width" valueNumeric="66.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note204743.html"/>
+            <column name="value" valueNumeric="20000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+        <!-- 123 -->
+        <insert tableName="banknotes">
+            <column name="id" valueNumeric="123"/>
+            <column name="collection_id" valueNumeric="2"/>
+            <column name="material_id" valueNumeric="4"/>
+            <column name="condition_id" valueNumeric="1"/>
+            <column name="denomination_id" valueNumeric="10000"/>
+            <column name="year" valueNumeric="2014"/>
+            <column name="country" value="Vietnam"/>
+            <column name="length" valueNumeric="132.0"/>
+            <column name="width" valueNumeric="60.0"/>
+            <column name="link" value="https://en.numista.com/catalogue/note203627.html"/>
+            <column name="value" valueNumeric="10000.00"/>
+            <column name="units" valueNumeric="1"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

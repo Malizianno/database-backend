@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Core Reference Tables -->
+    <changeSet id="create-core-reference-tables" author="admin">
+        <createTable tableName="conditions">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="text">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="materials">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="text">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="countries">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="continent" type="text"/>
+            <column name="flag" type="text"/>
+        </createTable>
+
+        <createTable tableName="domains">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="text"/>
+        </createTable>
+    </changeSet>
+
+    <!-- Dependent Reference Tables -->
+    <changeSet id="create-dependent-reference-tables-languages-and-denomination" author="admin">
+        <createTable tableName="languages">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_id" type="bigint">
+                <constraints foreignKeyName="fk_languages_country" referencedTableName="countries"
+                             referencedColumnNames="id"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="denomination">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="title" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country_id" type="bigint">
+                <constraints foreignKeyName="fk_denomination_country" referencedTableName="countries"
+                             referencedColumnNames="id"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <!-- Collections & Asset Tables -->
+    <changeSet id="create-collections-books-coins-banknotes-and-images-tables" author="admin">
+        <createTable tableName="collections">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="text"/>
+            <column name="user_id" type="bigint">
+                <constraints foreignKeyName="fk_collections_user" referencedTableName="users"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="type" type="text">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="books">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="collection_id" type="bigint">
+                <constraints foreignKeyName="fk_books_collection" referencedTableName="collections"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="title" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="author" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="isbn" type="text"/>
+            <column name="pages" type="integer"/>
+            <column name="description" type="text"/>
+            <column name="link" type="text"/>
+            <column name="published_year" type="integer"/>
+            <column name="printed_year" type="integer"/>
+            <column name="domain_id" type="bigint">
+                <constraints foreignKeyName="fk_books_domain" referencedTableName="domains" referencedColumnNames="id"/>
+            </column>
+            <column name="language_id" type="bigint">
+                <constraints foreignKeyName="fk_books_language" referencedTableName="languages"
+                             referencedColumnNames="id"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="coins">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="collection_id" type="bigint">
+                <constraints foreignKeyName="fk_coins_collection" referencedTableName="collections"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="material_id" type="bigint">
+                <constraints foreignKeyName="fk_coins_material" referencedTableName="materials"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="condition_id" type="bigint">
+                <constraints foreignKeyName="fk_coins_condition" referencedTableName="conditions"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="denomination_id" type="bigint">
+                <constraints foreignKeyName="fk_coins_denomination" referencedTableName="denomination"
+                             referencedColumnNames="id" nullable="false"/>
+            </column>
+            <column name="year" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="diameter" type="numeric">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="text"/>
+            <column name="link" type="text"/>
+            <column name="value" type="numeric">
+                <constraints nullable="false"/>
+            </column>
+            <column name="extra_year" type="integer"/>
+            <column name="units" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="banknotes">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="collection_id" type="bigint">
+                <constraints foreignKeyName="fk_banknotes_collection" referencedTableName="collections"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="material_id" type="bigint">
+                <constraints foreignKeyName="fk_banknotes_material" referencedTableName="materials"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="condition_id" type="bigint">
+                <constraints foreignKeyName="fk_banknotes_condition" referencedTableName="conditions"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="denomination_id" type="bigint">
+                <constraints foreignKeyName="fk_banknotes_denomination" referencedTableName="denomination"
+                             referencedColumnNames="id" nullable="false"/>
+            </column>
+            <column name="year" type="integer">
+                <constraints nullable="false"/>
+            </column>
+            <column name="country" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="length" type="numeric">
+                <constraints nullable="false"/>
+            </column>
+            <column name="width" type="numeric">
+                <constraints nullable="false"/>
+            </column>
+            <column name="thickness" type="numeric"/>
+            <column name="description" type="text"/>
+            <column name="link" type="text"/>
+            <column name="value" type="numeric">
+                <constraints nullable="false"/>
+            </column>
+            <column name="extra_year" type="integer"/>
+            <column name="units" type="integer">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="images">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="item_type" type="text">
+                <constraints nullable="false"/>
+            </column>
+            <column name="item_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="image_url" type="text">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

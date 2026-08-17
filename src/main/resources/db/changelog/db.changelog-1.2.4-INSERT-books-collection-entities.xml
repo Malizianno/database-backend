@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- Insert Collections and Items Initial Data -->
+    <changeSet id="insert-collections-entities" author="admin">
+        <!-- Collection -->
+        <insert tableName="collections">
+            <column name="id" valueNumeric="1"/>
+            <column name="name" value="Books"/>
+            <column name="description" value="Malizia"/>
+            <column name="user_id" valueNumeric="1"/>
+            <column name="type" value="BOOKS"/>
+        </insert>
+
+        <!-- Books -->
+        <!-- 1 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="1"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Existentialism &amp; Humanism"/>
+            <column name="author" value="Jean-Paul Sartre"/>
+            <column name="isbn" value="978-0-413-77639-6"/>
+            <column name="pages" valueNumeric="95"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="1945"/>
+            <column name="printed_year" valueNumeric="2007"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 2 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="2"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Vindecarea traumelor provocate de părinții imaturi emoțional"/>
+            <column name="author" value="Lindsay C. Gibson"/>
+            <column name="isbn" value="978-973-111-976-2"/>
+            <column name="pages" valueNumeric="271"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="NULL"/>
+            <column name="printed_year" valueNumeric="2023"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 3 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="3"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Dopamina"/>
+            <column name="author" value="Daniel Z. Lieberman, Michael E. Long"/>
+            <column name="isbn" value="978-606-722-350-7"/>
+            <column name="pages" valueNumeric="331"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2018"/>
+            <column name="printed_year" valueNumeric="2019"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 4 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="4"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Atomic Habits"/>
+            <column name="author" value="James Clear"/>
+            <column name="isbn" value="978-606-789-174-4"/>
+            <column name="pages" valueNumeric="271"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="NULL"/>
+            <column name="printed_year" valueNumeric="2019"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 5 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="5"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Sapiens (A Brief History of Humankind)"/>
+            <column name="author" value="Yuval Noah Harari"/>
+            <column name="isbn" value="978-0-099-59008-8"/>
+            <column name="pages" valueNumeric="498"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2011"/>
+            <column name="printed_year" valueNumeric="2015"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 6 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="6"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Habits of a Happy Brain"/>
+            <column name="author" value="Loretta Graziano Breuning PHD"/>
+            <column name="isbn" value="978-1-4405-9050-4"/>
+            <column name="pages" valueNumeric="238"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2016"/>
+            <column name="printed_year" valueNumeric="NULL"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 7 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="7"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Rich Dad Poor Dad"/>
+            <column name="author" value="Robert T. Kiyosaki"/>
+            <column name="isbn" value="978-1-61268-113-9"/>
+            <column name="pages" valueNumeric="351"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="1997"/>
+            <column name="printed_year" valueNumeric="2022"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 8 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="8"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Jurnalul unui burlac: Conversații cu mama"/>
+            <column name="author" value="Mihai Bendeac, Emilia Bendeac"/>
+            <column name="isbn" value="978-606-9700-13-6"/>
+            <column name="pages" valueNumeric="319"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="NULL"/>
+            <column name="printed_year" valueNumeric="2020"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 9 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="9"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Jurnalul unui burlac: Dragă Mihai"/>
+            <column name="author" value="Mihai Bendeac"/>
+            <column name="isbn" value="978-630-305-208-3"/>
+            <column name="pages" valueNumeric="316"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="NULL"/>
+            <column name="printed_year" valueNumeric="2024"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 10 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="10"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Acționează și gândește ca o pisică"/>
+            <column name="author" value="Stéphane Garnier"/>
+            <column name="isbn" value="978-606-38-0503-5"/>
+            <column name="pages" valueNumeric="207"/>
+            <column name="description" value="loaned to mi amor"/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2017"/>
+            <column name="printed_year" valueNumeric="2020"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 11 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="11"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Emotions Revealed"/>
+            <column name="author" value="Paul Ekman"/>
+            <column name="isbn" value="978-0-8050-8339-2"/>
+            <column name="pages" valueNumeric="290"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2003"/>
+            <column name="printed_year" valueNumeric="NULL"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 12 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="12"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Friends, Lovers, and the Big Terrible Thing"/>
+            <column name="author" value="Matthew Perry"/>
+            <column name="isbn" value="978-1-250-86645-5"/>
+            <column name="pages" valueNumeric="250"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2022"/>
+            <column name="printed_year" valueNumeric="2024"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 13 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="13"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Neuroplasticitatea: Secretul longevității creierului"/>
+            <column name="author" value="Leon Dănăilă Acad. Prof. Dr."/>
+            <column name="isbn" value="978-630-305-171-0"/>
+            <column name="pages" valueNumeric="278"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="NULL"/>
+            <column name="printed_year" valueNumeric="2023"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 14 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="14"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="I am Zlatan Ibrahimović"/>
+            <column name="author" value="Zlatan Ibrahimović, David Lagercrantz"/>
+            <column name="isbn" value="978-0-241-96683-9"/>
+            <column name="pages" valueNumeric="332"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2011"/>
+            <column name="printed_year" valueNumeric="2013"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 15 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="15"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Tame your anxiety"/>
+            <column name="author" value="Loretta Graziano Breuning"/>
+            <column name="isbn" value="978-1-5381-1776-7"/>
+            <column name="pages" valueNumeric="146"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="1992"/>
+            <column name="printed_year" valueNumeric="2019"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 16 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="16"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Nu mă poți răni"/>
+            <column name="author" value="David Goggins"/>
+            <column name="isbn" value="978-606-33-9989-3"/>
+            <column name="pages" valueNumeric="333"/>
+            <column name="description" value=""/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2018"/>
+            <column name="printed_year" valueNumeric="2023"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 17 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="17"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Dopamine Nation"/>
+            <column name="author" value="Anna Lembke MD"/>
+            <column name="isbn" value="978-1-5247-4674-2"/>
+            <column name="pages" valueNumeric="304"/>
+            <column name="description" value="loaned to mi amor"/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2021"/>
+            <column name="printed_year" valueNumeric="2023"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 18 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="18"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="The Child in you"/>
+            <column name="author" value="Stefanie Stahl"/>
+            <column name="isbn" value="978-0-241-47337-5"/>
+            <column name="pages" valueNumeric="336"/>
+            <column name="description" value="in curs"/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2015"/>
+            <column name="printed_year" valueNumeric="2021"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 19 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="19"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="The Pragmatic Programmer"/>
+            <column name="author" value="Andrew Hunt, David Thomas"/>
+            <column name="isbn" value="978-0-13-595705-9"/>
+            <column name="pages" valueNumeric="352"/>
+            <column name="description" value="in curs"/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2000"/>
+            <column name="printed_year" valueNumeric="2020"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 20 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="20"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Spring Start Here"/>
+            <column name="author" value="Laurentiu Spilca"/>
+            <column name="isbn" value="978-1617298691"/>
+            <column name="pages" valueNumeric="756"/>
+            <column name="description" value="in curs"/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="NULL"/>
+            <column name="printed_year" valueNumeric="2021"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+        <!-- 21 -->
+        <insert tableName="books">
+            <column name="id" valueNumeric="21"/>
+            <column name="collection_id" valueNumeric="1"/>
+            <column name="title" value="Holy Bible (KJVER Trusted King James Edition)"/>
+            <column name="author" value="God"/>
+            <column name="isbn" value="978-8-88769-154-1"/>
+            <column name="pages" valueNumeric="896"/>
+            <column name="description" value="in curs"/>
+            <column name="link" value=""/>
+            <column name="published_year" valueNumeric="2001"/>
+            <column name="printed_year" valueNumeric="2023"/>
+            <column name="domain_id" valueNumeric="1"/>
+            <column name="language_id" valueNumeric="1"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
