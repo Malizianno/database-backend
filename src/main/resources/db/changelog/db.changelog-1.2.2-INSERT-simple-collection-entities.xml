@@ -14,28 +14,6 @@
         <!-- for materials check-->
         <!-- db.changelog-1.2.3-INSERT-materials-collection-entities.xml-->
 
-        <!-- Conditions -->
-        <insert tableName="conditions">
-            <column name="id" valueNumeric="1"/>
-            <column name="name" value="Mint (M)"/>
-        </insert>
-        <insert tableName="conditions">
-            <column name="id" valueNumeric="2"/>
-            <column name="name" value="Very Fine (VF)"/>
-        </insert>
-        <insert tableName="conditions">
-            <column name="id" valueNumeric="3"/>
-            <column name="name" value="Normal (N)"/>
-        </insert>
-        <insert tableName="conditions">
-            <column name="id" valueNumeric="4"/>
-            <column name="name" value="Poor (P)"/>
-        </insert>
-        <insert tableName="conditions">
-            <column name="id" valueNumeric="5"/>
-            <column name="name" value="Very Poor (VP)"/>
-        </insert>
-
         <!-- Domains -->
         <insert tableName="domains">
             <column name="id" valueNumeric="1"/>

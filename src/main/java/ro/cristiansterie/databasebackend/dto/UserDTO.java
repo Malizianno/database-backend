@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 public record UserDTO(
+		@JsonProperty(access = JsonProperty.Access.READ_ONLY)
 		Long id,
 		String username,
 		@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)

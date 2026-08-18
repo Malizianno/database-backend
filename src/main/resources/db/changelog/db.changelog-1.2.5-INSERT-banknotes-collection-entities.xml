@@ -21,10 +21,9 @@
             <column name="id" valueNumeric="1"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1945"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="90.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="rupta in partea stanga sus (fata)"/>
@@ -36,10 +35,9 @@
             <column name="id" valueNumeric="2"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1945"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="166.0"/>
             <column name="width" valueNumeric="91.0"/>
             <column name="description" value="-"/>
@@ -51,10 +49,9 @@
             <column name="id" valueNumeric="3"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1946"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="194.0"/>
             <column name="width" valueNumeric="107.0"/>
             <column name="description" value="-"/>
@@ -66,10 +63,9 @@
             <column name="id" valueNumeric="4"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1943"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="201.0"/>
             <column name="width" valueNumeric="113.0"/>
             <column name="description" value="-"/>
@@ -81,10 +77,9 @@
             <column name="id" valueNumeric="5"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1991"/>
-            <column name="country" value="Vietnam"/>
             <column name="length" valueNumeric="141.0"/>
             <column name="width" valueNumeric="68.0"/>
             <column name="description" value="-"/>
@@ -96,10 +91,9 @@
             <column name="id" valueNumeric="6"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1984"/>
-            <column name="country" value="Austria"/>
             <column name="length" valueNumeric="137.0"/>
             <column name="width" valueNumeric="69.0"/>
             <column name="description" value="rupta stanga jos (fata)"/>
@@ -111,10 +105,9 @@
             <column name="id" valueNumeric="7"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2009"/>
-            <column name="country" value="Turcia"/>
             <column name="length" valueNumeric="130.0"/>
             <column name="width" valueNumeric="64.0"/>
             <column name="description" value="-"/>
@@ -126,10 +119,9 @@
             <column name="id" valueNumeric="8"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2013"/>
-            <column name="country" value="Serbia"/>
             <column name="length" valueNumeric="131.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="-"/>
@@ -141,10 +133,9 @@
             <column name="id" valueNumeric="9"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1972"/>
-            <column name="country" value="Norvegia"/>
             <column name="length" valueNumeric="125.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="muscata drepta sus (fata) si murdara"/>
@@ -156,10 +147,9 @@
             <column name="id" valueNumeric="10"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2009"/>
-            <column name="country" value="Scotia"/>
             <column name="length" valueNumeric="142.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="cerneala sntaga jos (fata)"/>
@@ -171,10 +161,9 @@
             <column name="id" valueNumeric="11"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1985"/>
-            <column name="country" value="Italia"/>
             <column name="length" valueNumeric="126.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="pasta de pix pe fata si pe spate"/>
@@ -186,10 +175,9 @@
             <column name="id" valueNumeric="12"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1994"/>
-            <column name="country" value="Polonia"/>
             <column name="length" valueNumeric="120.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
@@ -201,10 +189,9 @@
             <column name="id" valueNumeric="13"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1997"/>
-            <column name="country" value="Cehia"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="69.0"/>
             <column name="description" value="-"/>
@@ -216,10 +203,9 @@
             <column name="id" valueNumeric="14"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2005"/>
-            <column name="country" value="Bulgaria"/>
             <column name="length" valueNumeric="116.0"/>
             <column name="width" valueNumeric="64.0"/>
             <column name="description" value="-"/>
@@ -231,10 +217,9 @@
             <column name="id" valueNumeric="15"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2003"/>
-            <column name="country" value="Mauritius"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="68.0"/>
             <column name="description" value="elementul de siguranta rupt in partea de jos"/>
@@ -246,10 +231,9 @@
             <column name="id" valueNumeric="16"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2003"/>
-            <column name="country" value="Guatemala"/>
             <column name="length" valueNumeric="156.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="invechita"/>
@@ -261,10 +245,9 @@
             <column name="id" valueNumeric="17"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1989"/>
-            <column name="country" value="Chile"/>
             <column name="length" valueNumeric="145.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -276,10 +259,9 @@
             <column name="id" valueNumeric="18"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1995"/>
-            <column name="country" value="Venezuela"/>
             <column name="length" valueNumeric="156.0"/>
             <column name="width" valueNumeric="69.0"/>
             <column name="description" value="-"/>
@@ -291,10 +273,9 @@
             <column name="id" valueNumeric="19"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2003"/>
-            <column name="country" value="Argentina"/>
             <column name="length" valueNumeric="155.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="-"/>
@@ -306,10 +287,9 @@
             <column name="id" valueNumeric="20"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1988"/>
-            <column name="country" value="SUA"/>
             <column name="length" valueNumeric="156.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="-"/>
@@ -321,10 +301,9 @@
             <column name="id" valueNumeric="21"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1910"/>
-            <column name="country" value="Germania"/>
             <column name="length" valueNumeric="207.0"/>
             <column name="width" valueNumeric="102.0"/>
             <column name="description" value="-"/>
@@ -336,10 +315,9 @@
             <column name="id" valueNumeric="22"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1943"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="201.0"/>
             <column name="width" valueNumeric="113.0"/>
             <column name="description" value="a scris cineva cu creionul pe spate"/>
@@ -351,10 +329,9 @@
             <column name="id" valueNumeric="23"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2014"/>
-            <column name="country" value="Serbia"/>
             <column name="length" valueNumeric="139.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
@@ -366,10 +343,9 @@
             <column name="id" valueNumeric="24"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2013"/>
-            <column name="country" value="Serbia"/>
             <column name="length" valueNumeric="143.0"/>
             <column name="width" valueNumeric="68.0"/>
             <column name="description" value="-"/>
@@ -381,10 +357,9 @@
             <column name="id" valueNumeric="25"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1929"/>
-            <column name="country" value="Germania"/>
             <column name="length" valueNumeric="160.0"/>
             <column name="width" valueNumeric="80.0"/>
             <column name="description" value="-"/>
@@ -396,10 +371,9 @@
             <column name="id" valueNumeric="26"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1995"/>
-            <column name="country" value="SUA"/>
             <column name="length" valueNumeric="156.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="-"/>
@@ -411,10 +385,9 @@
             <column name="id" valueNumeric="27"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2013"/>
-            <column name="country" value="Congo"/>
             <column name="length" valueNumeric="150.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -426,10 +399,9 @@
             <column name="id" valueNumeric="28"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1986"/>
-            <column name="country" value="Brazilia"/>
             <column name="length" valueNumeric="154.0"/>
             <column name="width" valueNumeric="74.0"/>
             <column name="description" value="-"/>
@@ -441,10 +413,9 @@
             <column name="id" valueNumeric="29"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1992"/>
-            <column name="country" value="Estonia"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -456,10 +427,9 @@
             <column name="id" valueNumeric="30"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2020"/>
-            <column name="country" value="Nepal"/>
             <column name="length" valueNumeric="120.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -471,10 +441,9 @@
             <column name="id" valueNumeric="31"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1993"/>
-            <column name="country" value="Franta"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="rupta in 2x locuri"/>
@@ -486,10 +455,9 @@
             <column name="id" valueNumeric="32"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1983"/>
-            <column name="country" value="Grecia"/>
             <column name="length" valueNumeric="158.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
@@ -501,10 +469,9 @@
             <column name="id" valueNumeric="33"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1970"/>
-            <column name="country" value="Turcia"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
@@ -516,10 +483,9 @@
             <column name="id" valueNumeric="34"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2014"/>
-            <column name="country" value="Africa de Sud"/>
             <column name="length" valueNumeric="134.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -531,10 +497,9 @@
             <column name="id" valueNumeric="35"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1982"/>
-            <column name="country" value="Polonia"/>
             <column name="length" valueNumeric="138.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
@@ -546,10 +511,9 @@
             <column name="id" valueNumeric="36"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1992"/>
-            <column name="country" value="Franta"/>
             <column name="length" valueNumeric="123.0"/>
             <column name="width" valueNumeric="80.0"/>
             <column name="description" value="-"/>
@@ -561,10 +525,9 @@
             <column name="id" valueNumeric="37"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2008"/>
-            <column name="country" value="Suedia"/>
             <column name="length" valueNumeric="120.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
@@ -576,10 +539,9 @@
             <column name="id" valueNumeric="38"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1968"/>
-            <column name="country" value="Arabia Saudita"/>
             <column name="length" valueNumeric="128.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="e rau, manca-ti-as :)))"/>
@@ -591,10 +553,9 @@
             <column name="id" valueNumeric="39"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1987"/>
-            <column name="country" value="Canada"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="Canadian Tire 5 cent"/>
@@ -606,10 +567,9 @@
             <column name="id" valueNumeric="40"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1992"/>
-            <column name="country" value="Canada"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="Canadian Tire 5 cent"/>
@@ -621,10 +581,9 @@
             <column name="id" valueNumeric="41"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1992"/>
-            <column name="country" value="Canada"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="Canadian Tire 10 cent"/>
@@ -636,10 +595,9 @@
             <column name="id" valueNumeric="42"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1985"/>
-            <column name="country" value="Canada"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="Canadian Tire 10 cent"/>
@@ -651,10 +609,9 @@
             <column name="id" valueNumeric="43"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1962"/>
-            <column name="country" value="Canada"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="Canadian Tire 10 cent - cu spate verde though"/>
@@ -667,10 +624,9 @@
             <column name="id" valueNumeric="44"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2020"/>
-            <column name="country" value="Botswana"/>
             <column name="length" valueNumeric="135.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="-"/>
@@ -682,10 +638,9 @@
             <column name="id" valueNumeric="45"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2021"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="136.0"/>
             <column name="width" valueNumeric="77.0"/>
             <column name="description" value="-"/>
@@ -697,10 +652,9 @@
             <column name="id" valueNumeric="46"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1999"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="143.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
@@ -712,10 +666,9 @@
             <column name="id" valueNumeric="47"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2000"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="150.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="-"/>
@@ -727,10 +680,9 @@
             <column name="id" valueNumeric="48"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2001"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="155.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -742,10 +694,9 @@
             <column name="id" valueNumeric="49"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2001"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="160.0"/>
             <column name="width" valueNumeric="73.0"/>
             <column name="description" value="-"/>
@@ -757,10 +708,9 @@
             <column name="id" valueNumeric="50"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1989"/>
-            <column name="country" value="Venezuela"/>
             <column name="length" valueNumeric="156.0"/>
             <column name="width" valueNumeric="69.0"/>
             <column name="description" value="destul de veche"/>
@@ -772,10 +722,9 @@
             <column name="id" valueNumeric="51"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1966"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="124.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="-"/>
@@ -787,10 +736,9 @@
             <column name="id" valueNumeric="52"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1966"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="131.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="-"/>
@@ -802,10 +750,9 @@
             <column name="id" valueNumeric="53"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1966"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="destul de veche"/>
@@ -817,10 +764,9 @@
             <column name="id" valueNumeric="54"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1966"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="145.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
@@ -832,10 +778,9 @@
             <column name="id" valueNumeric="55"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1966"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="153.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="toate foarte firave"/>
@@ -847,10 +792,9 @@
             <column name="id" valueNumeric="56"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1947"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="182.0"/>
             <column name="width" valueNumeric="88.0"/>
             <column name="description" value="-"/>
@@ -862,10 +806,9 @@
             <column name="id" valueNumeric="57"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1998"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="61.0"/>
             <column name="description" value="unele lipicioase :("/>
@@ -877,10 +820,9 @@
             <column name="id" valueNumeric="58"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1998"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="145.0"/>
             <column name="width" valueNumeric="64.0"/>
             <column name="description" value="-"/>
@@ -892,10 +834,9 @@
             <column name="id" valueNumeric="59"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1999"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="150.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="-"/>
@@ -907,10 +848,9 @@
             <column name="id" valueNumeric="60"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1992"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="160.0"/>
             <column name="width" valueNumeric="76.0"/>
             <column name="description" value="-"/>
@@ -922,10 +862,9 @@
             <column name="id" valueNumeric="61"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1991"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="157.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="-"/>
@@ -937,10 +876,9 @@
             <column name="id" valueNumeric="62"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1991"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="167.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="-"/>
@@ -952,10 +890,9 @@
             <column name="id" valueNumeric="63"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1993"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="172.0"/>
             <column name="width" valueNumeric="77.0"/>
             <column name="description" value="una e rea"/>
@@ -967,10 +904,9 @@
             <column name="id" valueNumeric="64"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1994"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="180.0"/>
             <column name="width" valueNumeric="77.0"/>
             <column name="description" value="-"/>
@@ -982,10 +918,9 @@
             <column name="id" valueNumeric="65"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1937"/>
-            <column name="country" value="Germania"/>
             <column name="length" valueNumeric="125.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="rupta rau pe margini"/>
@@ -997,10 +932,9 @@
             <column name="id" valueNumeric="66"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1917"/>
-            <column name="country" value="Austria"/>
             <column name="length" valueNumeric="124.0"/>
             <column name="width" valueNumeric="84.0"/>
             <column name="description" value="gaurita cu tigareta in dreptul semnaturii secretarului general"/>
@@ -1012,10 +946,9 @@
             <column name="id" valueNumeric="67"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1945"/>
-            <column name="country" value="Romania"/>
             <column name="length" valueNumeric="166.0"/>
             <column name="width" valueNumeric="91.0"/>
             <column name="description" value="-"/>
@@ -1027,10 +960,9 @@
             <column name="id" valueNumeric="68"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1978"/>
-            <column name="country" value="Iugoslavia"/>
             <column name="length" valueNumeric="131.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
@@ -1042,10 +974,9 @@
             <column name="id" valueNumeric="69"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1978"/>
-            <column name="country" value="Iugoslavia"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
@@ -1057,10 +988,9 @@
             <column name="id" valueNumeric="70"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1986"/>
-            <column name="country" value="Iugoslavia"/>
             <column name="length" valueNumeric="148.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -1072,10 +1002,9 @@
             <column name="id" valueNumeric="71"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1970"/>
-            <column name="country" value="Iugoslavia"/>
             <column name="length" valueNumeric="155.0"/>
             <column name="width" valueNumeric="74.0"/>
             <column name="description" value="-"/>
@@ -1087,10 +1016,9 @@
             <column name="id" valueNumeric="72"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1990"/>
-            <column name="country" value="Iugoslavia"/>
             <column name="length" valueNumeric="139.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
@@ -1102,10 +1030,9 @@
             <column name="id" valueNumeric="73"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1990"/>
-            <column name="country" value="Iugoslavia"/>
             <column name="length" valueNumeric="147.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -1117,10 +1044,9 @@
             <column name="id" valueNumeric="74"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1985"/>
-            <column name="country" value="Iugoslavia"/>
             <column name="length" valueNumeric="165.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="-"/>
@@ -1132,10 +1058,9 @@
             <column name="id" valueNumeric="75"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1987"/>
-            <column name="country" value="Iugoslavia"/>
             <column name="length" valueNumeric="169.0"/>
             <column name="width" valueNumeric="77.0"/>
             <column name="description" value="-"/>
@@ -1147,10 +1072,9 @@
             <column name="id" valueNumeric="76"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1961"/>
-            <column name="country" value="URSS"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="deteriorata rau"/>
@@ -1162,10 +1086,9 @@
             <column name="id" valueNumeric="77"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1961"/>
-            <column name="country" value="URSS"/>
             <column name="length" valueNumeric="114.0"/>
             <column name="width" valueNumeric="57.0"/>
             <column name="description" value="-"/>
@@ -1177,10 +1100,9 @@
             <column name="id" valueNumeric="78"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1961"/>
-            <column name="country" value="URSS"/>
             <column name="length" valueNumeric="114.0"/>
             <column name="width" valueNumeric="57.0"/>
             <column name="description" value="-"/>
@@ -1192,10 +1114,9 @@
             <column name="id" valueNumeric="79"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1961"/>
-            <column name="country" value="URSS"/>
             <column name="length" valueNumeric="119.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
@@ -1207,10 +1128,9 @@
             <column name="id" valueNumeric="80"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1961"/>
-            <column name="country" value="URSS"/>
             <column name="length" valueNumeric="121.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="-"/>
@@ -1222,10 +1142,9 @@
             <column name="id" valueNumeric="81"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2010"/>
-            <column name="country" value="Moldova"/>
             <column name="length" valueNumeric="114.0"/>
             <column name="width" valueNumeric="58.0"/>
             <column name="description" value="-"/>
@@ -1237,10 +1156,9 @@
             <column name="id" valueNumeric="82"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2013"/>
-            <column name="country" value="Moldova"/>
             <column name="length" valueNumeric="114.0"/>
             <column name="width" valueNumeric="58.0"/>
             <column name="description" value="-"/>
@@ -1252,10 +1170,9 @@
             <column name="id" valueNumeric="83"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2015"/>
-            <column name="country" value="Moldova"/>
             <column name="length" valueNumeric="121.0"/>
             <column name="width" valueNumeric="61.0"/>
             <column name="description" value="-"/>
@@ -1267,10 +1184,9 @@
             <column name="id" valueNumeric="84"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2015"/>
-            <column name="country" value="Moldova"/>
             <column name="length" valueNumeric="121.0"/>
             <column name="width" valueNumeric="61.0"/>
             <column name="description" value="-"/>
@@ -1282,10 +1198,9 @@
             <column name="id" valueNumeric="85"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2015"/>
-            <column name="country" value="Moldova"/>
             <column name="length" valueNumeric="121.0"/>
             <column name="width" valueNumeric="61.0"/>
             <column name="description" value="-"/>
@@ -1297,10 +1212,9 @@
             <column name="id" valueNumeric="86"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2008"/>
-            <column name="country" value="Moldova"/>
             <column name="length" valueNumeric="121.0"/>
             <column name="width" valueNumeric="61.0"/>
             <column name="description" value="-"/>
@@ -1312,10 +1226,9 @@
             <column name="id" valueNumeric="87"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1993"/>
-            <column name="country" value="Ungaria"/>
             <column name="length" valueNumeric="166.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
@@ -1327,10 +1240,9 @@
             <column name="id" valueNumeric="88"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2006"/>
-            <column name="country" value="Ungaria"/>
             <column name="length" valueNumeric="154.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -1342,10 +1254,9 @@
             <column name="id" valueNumeric="89"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2008"/>
-            <column name="country" value="Ungaria"/>
             <column name="length" valueNumeric="154.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -1357,10 +1268,9 @@
             <column name="id" valueNumeric="90"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2006"/>
-            <column name="country" value="Pakistan"/>
             <column name="length" valueNumeric="123.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="-"/>
@@ -1372,10 +1282,9 @@
             <column name="id" valueNumeric="91"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2012"/>
-            <column name="country" value="India"/>
             <column name="length" valueNumeric="137.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
@@ -1387,10 +1296,9 @@
             <column name="id" valueNumeric="92"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2012"/>
-            <column name="country" value="India"/>
             <column name="length" valueNumeric="147.0"/>
             <column name="width" valueNumeric="73.0"/>
             <column name="description" value="-"/>
@@ -1402,10 +1310,9 @@
             <column name="id" valueNumeric="93"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2015"/>
-            <column name="country" value="Sri Lanka"/>
             <column name="length" valueNumeric="128.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="-"/>
@@ -1417,10 +1324,9 @@
             <column name="id" valueNumeric="94"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2001"/>
-            <column name="country" value="Cambodia"/>
             <column name="length" valueNumeric="130.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
@@ -1432,10 +1338,9 @@
             <column name="id" valueNumeric="95"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1996"/>
-            <column name="country" value="Myanmar"/>
             <column name="length" valueNumeric="130.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
@@ -1447,10 +1352,9 @@
             <column name="id" valueNumeric="96"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2003"/>
-            <column name="country" value="Tailanda"/>
             <column name="length" valueNumeric="138.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
@@ -1462,10 +1366,9 @@
             <column name="id" valueNumeric="97"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2013"/>
-            <column name="country" value="Tailanda"/>
             <column name="length" valueNumeric="138.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
@@ -1477,10 +1380,9 @@
             <column name="id" valueNumeric="98"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2001"/>
-            <column name="country" value="UAE"/>
             <column name="length" valueNumeric="143.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
@@ -1492,10 +1394,9 @@
             <column name="id" valueNumeric="99"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2003"/>
-            <column name="country" value="Qatar"/>
             <column name="length" valueNumeric="134.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
@@ -1507,10 +1408,9 @@
             <column name="id" valueNumeric="100"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1984"/>
-            <column name="country" value="Arabia Saudita"/>
             <column name="length" valueNumeric="134.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="-"/>
@@ -1522,10 +1422,9 @@
             <column name="id" valueNumeric="101"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2002"/>
-            <column name="country" value="Afghanistan"/>
             <column name="length" valueNumeric="136.0"/>
             <column name="width" valueNumeric="56.0"/>
             <column name="description" value="-"/>
@@ -1537,10 +1436,9 @@
             <column name="id" valueNumeric="102"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2008"/>
-            <column name="country" value="Tunisia"/>
             <column name="length" valueNumeric="137.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -1552,10 +1450,9 @@
             <column name="id" valueNumeric="103"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2013"/>
-            <column name="country" value="Liban"/>
             <column name="length" valueNumeric="115.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
@@ -1567,10 +1464,9 @@
             <column name="id" valueNumeric="104"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2004"/>
-            <column name="country" value="Libia"/>
             <column name="length" valueNumeric="142.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -1582,10 +1478,9 @@
             <column name="id" valueNumeric="105"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2001"/>
-            <column name="country" value="Nigeria"/>
             <column name="length" valueNumeric="150.0"/>
             <column name="width" valueNumeric="77.0"/>
             <column name="description" value="-"/>
@@ -1597,10 +1492,9 @@
             <column name="id" valueNumeric="106"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2003"/>
-            <column name="country" value="Egipt"/>
             <column name="length" valueNumeric="135.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
@@ -1612,10 +1506,9 @@
             <column name="id" valueNumeric="107"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1999"/>
-            <column name="country" value="Egipt"/>
             <column name="length" valueNumeric="130.0"/>
             <column name="width" valueNumeric="71.0"/>
             <column name="description" value="-"/>
@@ -1627,10 +1520,9 @@
             <column name="id" valueNumeric="108"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2013"/>
-            <column name="country" value="Ucraina"/>
             <column name="length" valueNumeric="118.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
@@ -1642,10 +1534,9 @@
             <column name="id" valueNumeric="109"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2005"/>
-            <column name="country" value="Ucraina"/>
             <column name="length" valueNumeric="118.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
@@ -1657,10 +1548,9 @@
             <column name="id" valueNumeric="110"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2006"/>
-            <column name="country" value="Ucraina"/>
             <column name="length" valueNumeric="124.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
@@ -1672,10 +1562,9 @@
             <column name="id" valueNumeric="111"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2004"/>
-            <column name="country" value="Ucraina"/>
             <column name="length" valueNumeric="136.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
@@ -1687,10 +1576,9 @@
             <column name="id" valueNumeric="112"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1991"/>
-            <column name="country" value="Ucraina"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="-"/>
@@ -1702,10 +1590,9 @@
             <column name="id" valueNumeric="113"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1991"/>
-            <column name="country" value="Ucraina"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="-"/>
@@ -1717,10 +1604,9 @@
             <column name="id" valueNumeric="114"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1991"/>
-            <column name="country" value="Ucraina"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="-"/>
@@ -1732,10 +1618,9 @@
             <column name="id" valueNumeric="115"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1991"/>
-            <column name="country" value="Ucraina"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="-"/>
@@ -1747,10 +1632,9 @@
             <column name="id" valueNumeric="116"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1991"/>
-            <column name="country" value="Ucraina"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="-"/>
@@ -1762,10 +1646,9 @@
             <column name="id" valueNumeric="117"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1988"/>
-            <column name="country" value="Vietnam"/>
             <column name="length" valueNumeric="133.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="-"/>
@@ -1777,10 +1660,9 @@
             <column name="id" valueNumeric="118"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1991"/>
-            <column name="country" value="Vietnam"/>
             <column name="length" valueNumeric="134.0"/>
             <column name="width" valueNumeric="64.0"/>
             <column name="description" value="-"/>
@@ -1792,10 +1674,9 @@
             <column name="id" valueNumeric="119"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1992"/>
-            <column name="country" value="Iugoslavia"/>
             <column name="length" valueNumeric="151.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
@@ -1807,10 +1688,9 @@
             <column name="id" valueNumeric="120"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1992"/>
-            <column name="country" value="Iugoslavia"/>
             <column name="length" valueNumeric="163.0"/>
             <column name="width" valueNumeric="78.0"/>
             <column name="description" value="-"/>
@@ -1822,10 +1702,9 @@
             <column name="id" valueNumeric="121"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="1987"/>
-            <column name="country" value="Vietnam"/>
             <column name="length" valueNumeric="130.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="-"/>
@@ -1837,10 +1716,9 @@
             <column name="id" valueNumeric="122"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2006"/>
-            <column name="country" value="Vietnam"/>
             <column name="length" valueNumeric="137.5"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
@@ -1852,10 +1730,9 @@
             <column name="id" valueNumeric="123"/>
             <column name="collection_id" valueNumeric="2"/>
             <column name="material_id" valueNumeric="36"/>
-            <column name="condition_id" valueNumeric="2"/>
+            <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
             <column name="year" valueNumeric="2014"/>
-            <column name="country" value="Vietnam"/>
             <column name="length" valueNumeric="132.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>

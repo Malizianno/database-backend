@@ -7,15 +7,6 @@
 
     <!-- Core Reference Tables -->
     <changeSet id="create-core-reference-tables" author="admin">
-        <createTable tableName="conditions">
-            <column name="id" type="bigint" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="name" type="text">
-                <constraints nullable="false"/>
-            </column>
-        </createTable>
-
         <createTable tableName="materials">
             <column name="id" type="bigint" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
@@ -136,18 +127,13 @@
                 <constraints foreignKeyName="fk_coins_material" referencedTableName="materials"
                              referencedColumnNames="id"/>
             </column>
-            <column name="condition_id" type="bigint">
-                <constraints foreignKeyName="fk_coins_condition" referencedTableName="conditions"
-                             referencedColumnNames="id"/>
+            <column name="condition" type="text">
             </column>
             <column name="denomination_id" type="bigint">
                 <constraints foreignKeyName="fk_coins_denomination" referencedTableName="denomination"
                              referencedColumnNames="id" nullable="false"/>
             </column>
             <column name="year" type="integer">
-                <constraints nullable="false"/>
-            </column>
-            <column name="country" type="text">
                 <constraints nullable="false"/>
             </column>
             <column name="diameter" type="numeric">
@@ -173,21 +159,16 @@
                              referencedColumnNames="id"/>
             </column>
             <column name="material_id" type="bigint">
-                <constraints foreignKeyName="fk_banknotes_material" referencedTableName="materials"
+                <constraints foreignKeyName="fk_coins_material" referencedTableName="materials"
                              referencedColumnNames="id"/>
             </column>
-            <column name="condition_id" type="bigint">
-                <constraints foreignKeyName="fk_banknotes_condition" referencedTableName="conditions"
-                             referencedColumnNames="id"/>
+            <column name="condition" type="text">
             </column>
             <column name="denomination_id" type="bigint">
                 <constraints foreignKeyName="fk_banknotes_denomination" referencedTableName="denomination"
                              referencedColumnNames="id" nullable="false"/>
             </column>
             <column name="year" type="integer">
-                <constraints nullable="false"/>
-            </column>
-            <column name="country" type="text">
                 <constraints nullable="false"/>
             </column>
             <column name="length" type="numeric">

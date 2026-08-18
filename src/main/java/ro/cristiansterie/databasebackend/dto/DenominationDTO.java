@@ -2,9 +2,9 @@ package ro.cristiansterie.databasebackend.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public record RoleDTO(
+public record DenominationDTO(
 		@JsonProperty(access = JsonProperty.Access.READ_ONLY)
 		Long id,
-		String name,
-		String description) {
+		String title,
+		Long countryId) {
 }
