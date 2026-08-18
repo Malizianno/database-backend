@@ -8,9 +8,9 @@
     <!-- Insert Base Reference Data -->
     <changeSet id="insert-initial-data" author="admin">
         <!-- for countries check -->
-        <!-- db.changelog-1.2.1-INSERT-countries-collection-entities.xml-->
+        <!-- db.changelog-1.2.0-INSERT-countries-collection-entities.xml-->
         <!-- for denominations check -->
-        <!-- db.changelog-1.2.2-INSERT-denominations-collection-entities.xml-->
+        <!-- db.changelog-1.2.1-INSERT-denominations-collection-entities.xml-->
         <!-- for materials check-->
         <!-- db.changelog-1.2.3-INSERT-materials-collection-entities.xml-->
 
@@ -29,7 +29,7 @@
         </insert>
         <insert tableName="conditions">
             <column name="id" valueNumeric="4"/>
-            <column name="name" value="Poop (P)"/>
+            <column name="name" value="Poor (P)"/>
         </insert>
         <insert tableName="conditions">
             <column name="id" valueNumeric="5"/>

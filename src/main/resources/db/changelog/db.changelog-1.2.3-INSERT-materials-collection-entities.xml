@@ -147,6 +147,18 @@
             <column name="id" valueNumeric="35"/>
             <column name="name" value="Argint 0.4"/>
         </insert>
+        <insert tableName="materials">
+            <column name="id" valueNumeric="36"/>
+            <column name="name" value="Hârtie"/>
+        </insert>
+        <insert tableName="materials">
+            <column name="id" valueNumeric="37"/>
+            <column name="name" value="Substrat hibrid (75% bumbac, 25% in)"/>
+        </insert>
+        <insert tableName="materials">
+            <column name="id" valueNumeric="38"/>
+            <column name="name" value="Polimer"/>
+        </insert>
     </changeSet>
 
 </databaseChangeLog>

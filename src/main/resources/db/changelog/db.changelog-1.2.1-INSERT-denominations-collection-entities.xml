@@ -1003,6 +1003,220 @@
             <column name="title" value="Vatu"/>
             <column name="country_id" valueNumeric="197"/>
         </insert>
+
+        <!-- United Kingdom -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="198"/>
+            <column name="title" value="Penny"/>
+            <column name="country_id" valueNumeric="45"/>
+        </insert>
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="199"/>
+            <column name="title" value="Shilling"/>
+            <column name="country_id" valueNumeric="45"/>
+        </insert>
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="200"/>
+            <column name="title" value="Pence"/>
+            <column name="country_id" valueNumeric="45"/>
+        </insert>
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="201"/>
+            <column name="title" value="Pound"/>
+            <column name="country_id" valueNumeric="45"/>
+        </insert>
+
+        <!-- Germany -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="202"/>
+            <column name="title" value="Pfennig"/>
+            <column name="country_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="203"/>
+            <column name="title" value="Reichspfennig"/>
+            <column name="country_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="204"/>
+            <column name="title" value="Deutsche Mark"/>
+            <column name="country_id" valueNumeric="15"/>
+        </insert>
+
+        <!-- Czech Republic / Czechoslovakia -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="205"/>
+            <column name="title" value="Koruna"/>
+            <column name="country_id" valueNumeric="10"/>
+        </insert>
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="206"/>
+            <column name="title" value="Halier"/>
+            <column name="country_id" valueNumeric="10"/>
+        </insert>
+
+        <!-- Denmark -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="207"/>
+            <column name="title" value="Krone"/>
+            <column name="country_id" valueNumeric="11"/>
+        </insert>
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="208"/>
+            <column name="title" value="Øre"/>
+            <column name="country_id" valueNumeric="11"/>
+        </insert>
+
+        <!-- France -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="209"/>
+            <column name="title" value="Centime"/>
+            <column name="country_id" valueNumeric="14"/>
+        </insert>
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="210"/>
+            <column name="title" value="Franc"/>
+            <column name="country_id" valueNumeric="14"/>
+        </insert>
+
+        <!-- Hungary -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="211"/>
+            <column name="title" value="Filler"/>
+            <column name="country_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="212"/>
+            <column name="title" value="Pengo"/>
+            <column name="country_id" valueNumeric="17"/>
+        </insert>
+
+        <!-- Croatia -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="213"/>
+            <column name="title" value="Lipa"/>
+            <column name="country_id" valueNumeric="8"/>
+        </insert>
+
+        <!-- Bulgaria -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="214"/>
+            <column name="title" value="Stotinka"/>
+            <column name="country_id" valueNumeric="7"/>
+        </insert>
+
+        <!-- Russia -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="215"/>
+            <column name="title" value="Kopek"/>
+            <column name="country_id" valueNumeric="36"/>
+        </insert>
+
+        <!-- Ukraine -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="216"/>
+            <column name="title" value="Kopiyka"/>
+            <column name="country_id" valueNumeric="44"/>
+        </insert>
+
+        <!-- Greece -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="217"/>
+            <column name="title" value="Drachma"/>
+            <column name="country_id" valueNumeric="16"/>
+        </insert>
+
+        <!-- Switzerland -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="218"/>
+            <column name="title" value="Rappen"/>
+            <column name="country_id" valueNumeric="43"/>
+        </insert>
+
+        <!-- Italy -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="219"/>
+            <column name="title" value="Lira"/>
+            <column name="country_id" valueNumeric="20"/>
+        </insert>
+
+        <!-- Spain -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="220"/>
+            <column name="title" value="Peseta"/>
+            <column name="country_id" valueNumeric="41"/>
+        </insert>
+
+        <!-- Poland -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="221"/>
+            <column name="title" value="Grosz"/>
+            <column name="country_id" valueNumeric="33"/>
+        </insert>
+
+        <!-- Serbia -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="222"/>
+            <column name="title" value="Fening"/>
+            <column name="country_id" valueNumeric="38"/>
+        </insert>
+
+        <!-- Bosnia & Herzegovina -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="223"/>
+            <column name="title" value="Feninga"/>
+            <column name="country_id" valueNumeric="6"/>
+        </insert>
+
+        <!-- Cyprus -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="224"/>
+            <column name="title" value="Cent"/>
+            <column name="country_id" valueNumeric="9"/>
+        </insert>
+
+        <!-- Slovakia -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="225"/>
+            <column name="title" value="Korun"/>
+            <column name="country_id" valueNumeric="39"/>
+        </insert>
+
+        <!-- Norway -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="226"/>
+            <column name="title" value="Krone (Norway)"/>
+            <column name="country_id" valueNumeric="32"/>
+        </insert>
+
+        <!-- Iceland -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="227"/>
+            <column name="title" value="Krona (Iceland)"/>
+            <column name="country_id" valueNumeric="18"/>
+        </insert>
+
+        <!-- Ireland -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="228"/>
+            <column name="title" value="Punt"/>
+            <column name="country_id" valueNumeric="19"/>
+        </insert>
+
+        <!-- Turkey -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="229"/>
+            <column name="title" value="Kurus"/>
+            <column name="country_id" valueNumeric="124"/>
+        </insert>
+
+        <!-- Bulgaria (extra) -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="230"/>
+            <column name="title" value="Lev subdivizii"/>
+            <column name="country_id" valueNumeric="7"/>
+        </insert>
+
     </changeSet>
 
 </databaseChangeLog>
