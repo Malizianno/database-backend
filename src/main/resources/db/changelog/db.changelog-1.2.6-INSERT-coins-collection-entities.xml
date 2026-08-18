@@ -3788,14 +3788,14 @@
             <column name="collection_id" valueNumeric="3"/>
             <column name="material_id" valueNumeric="1"/>
             <column name="condition_id" valueNumeric="1"/>
-            <column name="denomination_id" valueNumeric="231"/>
-            <column name="year" value="1989-1995"/>
+            <column name="denomination_id" valueNumeric="232"/>
+            <column name="year" value="1989"/>
             <column name="country" value="Iugoslavia"/>
             <column name="diameter" valueNumeric="23"/>
             <column name="link" value="https://en.numista.com/catalogue/exonumia12618.html"/>
-            <column name="value" value="Token"/>
+            <column name="value" value="0"/>
             <column name="units" valueNumeric="1"/>
-            <column name="description" value="folosita ca token de telefonie in Iugolsavia intre 20 iunie 1989 si mid 1990's"/>
+            <column name="description" value="folosita ca token de telefonie in Iugolsavia intre 20 iunie 1989 si mid 1990's (1989-1995)"/>
         </insert>
 
         <insert tableName="coins">
@@ -5412,7 +5412,7 @@
             <column name="year" valueNumeric="2017"/>
             <column name="country" value="Rusia"/>
             <column name="diameter" valueNumeric="22"/>
-            <column name="link" value="https://ro.ucoin.net/coin/russia-10-rubles-2017/?cid=68372&no_redirect=true"/>
+            <column name="link" value="https://ro.ucoin.net/coin/russia-10-rubles-2017/?cid=68372"/>
             <column name="value" valueNumeric="10"/>
             <column name="units" valueNumeric="1"/>
             <column name="description" value="murdara"/>
@@ -5453,12 +5453,12 @@
             <column name="collection_id" valueNumeric="3"/>
             <column name="material_id" valueNumeric="1"/>
             <column name="condition_id" valueNumeric="1"/>
-            <column name="denomination_id" valueNumeric="64"/>
+            <column name="denomination_id" valueNumeric="231"/>
             <column name="year" valueNumeric="0"/>
             <column name="country" value="Germania"/>
             <column name="diameter" valueNumeric="26"/>
             <column name="link" value="https://colnect.com/ro/tokens/token/4556-Kein_Wert_Spielmarke-Jetoane_pt_distribuitoare-Germania_Republica_Federal%C4%83"/>
-            <column name="value" value="Token"/>
+            <column name="value" value="0"/>
             <column name="units" valueNumeric="1"/>
             <column name="description" value="usor murdara, valoare nominala Token, folosit in Republica Federala Germania ca token masina de jocuri"/>
         </insert>

@@ -1217,6 +1217,20 @@
             <column name="country_id" valueNumeric="7"/>
         </insert>
 
+        <!-- Germany (extra) -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="231"/>
+            <column name="title" value="Token"/>
+            <column name="country_id" valueNumeric="15"/>
+        </insert>
+
+        <!-- Germany (extra) -->
+        <insert tableName="denomination">
+            <column name="id" valueNumeric="232"/>
+            <column name="title" value="Token"/>
+            <column name="country_id" valueNumeric="198"/>
+        </insert>
+
     </changeSet>
 
 </databaseChangeLog>

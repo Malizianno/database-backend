@@ -1200,6 +1200,12 @@
             <column name="continent" value="Oceania"/>
             <column name="flag" value="🇻🇺"/>
         </insert>
+        <insert tableName="countries">
+            <column name="id" valueNumeric="198"/>
+            <column name="name" value="Iugoslavia"/>
+            <column name="continent" value="Europe"/>
+            <column name="flag" value=""/>
+        </insert>
     </changeSet>
 
 </databaseChangeLog>
