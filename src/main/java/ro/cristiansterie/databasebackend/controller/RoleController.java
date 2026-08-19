@@ -20,7 +20,7 @@ public class RoleController {
 	}
 
 	@GetMapping("/")
-	@PreAuthorize("hasAuthority('ADMIN') && fullyAuthenticated()")
+	@PreAuthorize("isAuthenticated()")
 	public ResponseEntity<List<RoleDTO>> findAllRoles() {
 		return ResponseEntity.ok(service.findAllRoles());
 	}
