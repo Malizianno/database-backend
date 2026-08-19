@@ -18,7 +18,7 @@ public record BanknoteDTO(
 		Double width,
 		String description,
 		String link,
-		Integer value,
+		Integer numericValue,
 		Integer extraYear,
 		Integer units) {
 }

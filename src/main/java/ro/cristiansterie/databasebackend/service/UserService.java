@@ -5,7 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ro.cristiansterie.databasebackend.dto.RoleDTO;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
+import ro.cristiansterie.databasebackend.model.RoleEntity;
 import ro.cristiansterie.databasebackend.model.UserEntity;
 import ro.cristiansterie.databasebackend.repository.UserRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.RoleModelConverter;
@@ -13,7 +15,9 @@ import ro.cristiansterie.databasebackend.util.converter.models.UserModelConverte
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 @Slf4j
@@ -23,12 +27,14 @@ public class UserService {
 	private final UserModelConverter converter;
 	private final RoleModelConverter roleConverter;
 	private final PasswordEncoder passwordEncoder;
+	private final RoleService roleService;
 
-	public UserService(UserRepository repo, UserModelConverter converter, RoleModelConverter roleConverter, PasswordEncoder passwordEncoder) {
+	public UserService(UserRepository repo, UserModelConverter converter, RoleModelConverter roleConverter, PasswordEncoder passwordEncoder, RoleService roleService) {
 		this.repo = repo;
 		this.converter = converter;
 		this.roleConverter = roleConverter;
 		this.passwordEncoder = passwordEncoder;
+		this.roleService = roleService;
 	}
 
 	@Transactional(readOnly = true)
@@ -50,7 +56,14 @@ public class UserService {
 
 	@Transactional
 	public UserDTO save(UserDTO userDTO) {
-		return converter.toDto(repo.save(converter.toEntity(userDTO)));
+		var user = converter.toEntity(userDTO);
+
+		if (userDTO.roles() != null && !userDTO.roles()
+		                                       .isEmpty()) {
+			user.setRoles(setAssignedRoles(userDTO));
+		}
+
+		return converter.toDto(repo.save(user));
 	}
 
 	@Transactional
@@ -71,19 +84,12 @@ public class UserService {
 			user.setPassword(passwordEncoder.encode(userDTO.password()));
 		}
 
-		// Handle relationships safely (Collections should be cleared & added, not overwritten)
 		if (userDTO.roles() != null && !userDTO.roles()
 		                                       .isEmpty()) {
-			user.getRoles()
-			    .clear();
-			user.getRoles()
-			    .addAll(new HashSet<>(roleConverter.toEntityList(userDTO.roles())));
+			user.setRoles(setAssignedRoles(userDTO));
 		}
 
-		// NO NEED TO CALL userRepository.save() HERE!
-		// When the @Transactional method finishes cleanly, Hibernate automatically flushes
-		// the dirty changes and commits a highly optimized SQL UPDATE statement.
-		return converter.toDto(user);
+		return converter.toDto(repo.save(user));
 	}
 
 	@Transactional
@@ -94,5 +100,16 @@ public class UserService {
 
 		repo.deleteById(id);
 		return true;
+	}
+
+	public Set<RoleEntity> setAssignedRoles(UserDTO userDTO) {
+		var rolesGot = userDTO.roles()
+		                      .stream()
+		                      .map(RoleDTO::name)
+		                      .toList();
+		return roleConverter.toEntityList(roleService.findAllRoles())
+		                    .stream()
+		                    .filter(role -> rolesGot.contains(role.getName()))
+		                    .collect(Collectors.toSet());
 	}
 }

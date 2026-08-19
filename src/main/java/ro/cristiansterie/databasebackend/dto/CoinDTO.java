@@ -16,7 +16,7 @@ public record CoinDTO(
 		Double diameter,
 		String description,
 		String link,
-		Integer value,
+		Integer numericValue,
 		Integer extraYear,
 		Integer units) {
 }
