@@ -9,10 +9,10 @@
         <loadData tableName="countries"
                   file="db/changelog/data/countries.csv"
                   relativeToChangelogFile="false">
-            <column name="id" type="UUID"/>
-            <column name="name" type="STRING"/>
-            <column name="continent" type="STRING"/>
-            <column name="flag" type="STRING"/>
+            <column name="id" type="uuid"/>
+            <column name="name" type="text"/>
+            <column name="continent" type="text"/>
+            <column name="flag" type="text"/>
         </loadData>
     </changeSet>
 
@@ -20,9 +20,9 @@
         <loadData tableName="denominations"
                   file="db/changelog/data/denominations.csv"
                   relativeToChangelogFile="false">
-            <column name="id" type="UUID"/>
-            <column name="title" type="STRING"/>
-            <column name="country_id" type="UUID"/>
+            <column name="id" type="uuid"/>
+            <column name="title" type="text"/>
+            <column name="country_id" type="uuid"/>
         </loadData>
     </changeSet>
 

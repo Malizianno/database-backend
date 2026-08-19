@@ -145,7 +145,7 @@
             <column name="numeric_value" type="numeric">
                 <constraints nullable="false"/>
             </column>
-            <column name="extra_year" type="string"/>
+            <column name="extra_year" type="text"/>
             <column name="units" type="integer">
                 <constraints nullable="false"/>
             </column>
@@ -185,7 +185,7 @@
             <column name="numeric_value" type="numeric">
                 <constraints nullable="false"/>
             </column>
-            <column name="extra_year" type="string"/>
+            <column name="extra_year" type="text"/>
             <column name="units" type="integer">
                 <constraints nullable="false"/>
             </column>

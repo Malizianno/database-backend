@@ -51,7 +51,7 @@
             <column name="description" type="text"/>
             <column name="link" type="text"/>
             <column name="numeric_value" type="numeric"/>
-            <column name="extra_year" type="string"/>
+            <column name="extra_year" type="text"/>
             <column name="units" type="integer"/>
             <column name="weight" type="numeric"/>
             <column name="thickness" type="numeric"/>
@@ -73,7 +73,7 @@
             <column name="description" type="text"/>
             <column name="link" type="text"/>
             <column name="numeric_value" type="numeric"/>
-            <column name="extra_year" type="string"/>
+            <column name="extra_year" type="text"/>
             <column name="units" type="integer"/>
         </loadData>
     </changeSet>
