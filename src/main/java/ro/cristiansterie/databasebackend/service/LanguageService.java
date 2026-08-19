@@ -2,6 +2,7 @@ package ro.cristiansterie.databasebackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.LanguageDTO;
 import ro.cristiansterie.databasebackend.repository.LanguageRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.LanguageModelConverter;
@@ -18,19 +19,23 @@ public class LanguageService {
 		this.converter = converter;
 	}
 
+	@Transactional(readOnly = true)
 	public LanguageDTO findById(Long id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
 
+	@Transactional(readOnly = true)
 	public Set<LanguageDTO> findAll() {
 		return converter.toDtoSet(repo.findAll());
 	}
 
+	@Transactional
 	public LanguageDTO save(LanguageDTO dto) {
 		return converter.toDto(repo.save(converter.toEntity(dto)));
 	}
 
+	@Transactional
 	public LanguageDTO update(Long id, LanguageDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
@@ -42,6 +47,7 @@ public class LanguageService {
 		return converter.toDto(repo.save(converter.toEntity(dto)));
 	}
 
+	@Transactional
 	public void delete(Long id) {
 		repo.deleteById(id);
 	}

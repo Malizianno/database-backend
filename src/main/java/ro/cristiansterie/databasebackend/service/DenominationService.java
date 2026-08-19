@@ -2,6 +2,7 @@ package ro.cristiansterie.databasebackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.DenominationDTO;
 import ro.cristiansterie.databasebackend.repository.DenominationRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.DenominationModelConverter;
@@ -18,19 +19,23 @@ public class DenominationService {
 		this.converter = converter;
 	}
 
+	@Transactional(readOnly = true)
 	public DenominationDTO findById(Long id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
 
+	@Transactional(readOnly = true)
 	public Set<DenominationDTO> findAll() {
 		return converter.toDtoSet(repo.findAll());
 	}
 
+	@Transactional
 	public DenominationDTO save(DenominationDTO dto) {
 		return converter.toDto(repo.save(converter.toEntity(dto)));
 	}
 
+	@Transactional
 	public DenominationDTO update(Long id, DenominationDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
@@ -42,6 +47,7 @@ public class DenominationService {
 		return converter.toDto(repo.save(converter.toEntity(dto)));
 	}
 
+	@Transactional
 	public void delete(Long id) {
 		repo.deleteById(id);
 	}

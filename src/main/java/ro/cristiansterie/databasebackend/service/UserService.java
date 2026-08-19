@@ -30,15 +30,18 @@ public class UserService {
 		this.passwordEncoder = passwordEncoder;
 	}
 
+	@Transactional(readOnly = true)
 	public List<UserDTO> findAll() {
 		return converter.toDtoList(repo.findAll());
 	}
 
+	@Transactional(readOnly = true)
 	public UserDTO findById(Long id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
 
+	@Transactional(readOnly = true)
 	public UserDTO findByUsername(String username) {
 		return converter.toDto(repo.findByUsername(username)
 		                           .orElse(null));

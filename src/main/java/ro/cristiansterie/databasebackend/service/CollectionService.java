@@ -2,6 +2,7 @@ package ro.cristiansterie.databasebackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.CollectionDTO;
 import ro.cristiansterie.databasebackend.repository.CollectionRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.CollectionModelConverter;
@@ -18,19 +19,23 @@ public class CollectionService {
 		this.converter = converter;
 	}
 
+	@Transactional(readOnly = true)
 	public CollectionDTO findById(Long id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
 
+	@Transactional(readOnly = true)
 	public Set<CollectionDTO> findAll() {
 		return converter.toDtoSet(repo.findAll());
 	}
 
+	@Transactional
 	public CollectionDTO save(CollectionDTO dto) {
 		return converter.toDto(repo.save(converter.toEntity(dto)));
 	}
 
+	@Transactional
 	public CollectionDTO update(Long id, CollectionDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
@@ -42,6 +47,7 @@ public class CollectionService {
 		return converter.toDto(repo.save(converter.toEntity(dto)));
 	}
 
+	@Transactional
 	public void delete(Long id) {
 		repo.deleteById(id);
 	}

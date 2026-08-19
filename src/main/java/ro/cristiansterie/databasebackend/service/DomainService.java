@@ -2,6 +2,7 @@ package ro.cristiansterie.databasebackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.DomainDTO;
 import ro.cristiansterie.databasebackend.repository.DomainRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.DomainModelConverter;
@@ -18,19 +19,23 @@ public class DomainService {
 		this.converter = converter;
 	}
 
+	@Transactional(readOnly = true)
 	public DomainDTO findById(Long id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
 
+	@Transactional(readOnly = true)
 	public Set<DomainDTO> findAll() {
 		return converter.toDtoSet(repo.findAll());
 	}
 
+	@Transactional
 	public DomainDTO save(DomainDTO dto) {
 		return converter.toDto(repo.save(converter.toEntity(dto)));
 	}
 
+	@Transactional
 	public DomainDTO update(Long id, DomainDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
@@ -42,6 +47,7 @@ public class DomainService {
 		return converter.toDto(repo.save(converter.toEntity(dto)));
 	}
 
+	@Transactional
 	public void delete(Long id) {
 		repo.deleteById(id);
 	}

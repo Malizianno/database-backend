@@ -2,6 +2,7 @@ package ro.cristiansterie.databasebackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.CoinDTO;
 import ro.cristiansterie.databasebackend.repository.CoinRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.CoinModelConverter;
@@ -18,19 +19,23 @@ public class CoinService {
 		this.converter = converter;
 	}
 
+	@Transactional(readOnly = true)
 	public CoinDTO findById(Long id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
 
+	@Transactional(readOnly = true)
 	public Set<CoinDTO> findAll() {
 		return converter.toDtoSet(repo.findAll());
 	}
 
+	@Transactional
 	public CoinDTO save(CoinDTO dto) {
 		return converter.toDto(repo.save(converter.toEntity(dto)));
 	}
 
+	@Transactional
 	public CoinDTO update(Long id, CoinDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
@@ -42,6 +47,7 @@ public class CoinService {
 		return converter.toDto(repo.save(converter.toEntity(dto)));
 	}
 
+	@Transactional
 	public void delete(Long id) {
 		repo.deleteById(id);
 	}
