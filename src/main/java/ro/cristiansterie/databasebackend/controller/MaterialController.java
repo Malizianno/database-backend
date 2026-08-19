@@ -6,6 +6,7 @@ import ro.cristiansterie.databasebackend.dto.MaterialDTO;
 import ro.cristiansterie.databasebackend.service.MaterialService;
 
 import java.util.Set;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/materials")
@@ -17,7 +18,7 @@ public class MaterialController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<MaterialDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<MaterialDTO> findById(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -32,12 +33,12 @@ public class MaterialController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<MaterialDTO> update(@PathVariable Long id, @RequestBody MaterialDTO dto) {
+	public ResponseEntity<MaterialDTO> update(@PathVariable UUID id, @RequestBody MaterialDTO dto) {
 		return ResponseEntity.ok(service.update(id, dto));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
+	public ResponseEntity<Void> delete(@PathVariable UUID id) {
 		service.delete(id);
 		return ResponseEntity.noContent()
 		                     .build();

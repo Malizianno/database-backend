@@ -8,6 +8,7 @@ import ro.cristiansterie.databasebackend.repository.MaterialRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.MaterialModelConverter;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class MaterialService {
@@ -20,7 +21,7 @@ public class MaterialService {
 	}
 
 	@Transactional(readOnly = true)
-	public MaterialDTO findById(Long id) {
+	public MaterialDTO findById(UUID id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
@@ -36,7 +37,7 @@ public class MaterialService {
 	}
 
 	@Transactional
-	public MaterialDTO update(Long id, MaterialDTO dto) {
+	public MaterialDTO update(UUID id, MaterialDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
@@ -48,7 +49,7 @@ public class MaterialService {
 	}
 
 	@Transactional
-	public void delete(Long id) {
+	public void delete(UUID id) {
 		repo.deleteById(id);
 	}
 }

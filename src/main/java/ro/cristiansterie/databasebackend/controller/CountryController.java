@@ -6,6 +6,7 @@ import ro.cristiansterie.databasebackend.dto.CountryDTO;
 import ro.cristiansterie.databasebackend.service.CountryService;
 
 import java.util.Set;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/countries")
@@ -17,7 +18,7 @@ public class CountryController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<CountryDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<CountryDTO> findById(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -32,12 +33,12 @@ public class CountryController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<CountryDTO> update(@PathVariable Long id, @RequestBody CountryDTO dto) {
+	public ResponseEntity<CountryDTO> update(@PathVariable UUID id, @RequestBody CountryDTO dto) {
 		return ResponseEntity.ok(service.update(id, dto));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
+	public ResponseEntity<Void> delete(@PathVariable UUID id) {
 		service.delete(id);
 		return ResponseEntity.noContent()
 		                     .build();

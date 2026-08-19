@@ -4,7 +4,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.UuidGenerator;
 import ro.cristiansterie.databasebackend.util.enums.CollectionItemConditionType;
+
+import java.util.UUID;
 
 @Entity
 @Table(name = "coins")
@@ -14,10 +17,11 @@ import ro.cristiansterie.databasebackend.util.enums.CollectionItemConditionType;
 public class CoinEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private Long collectionId;
-	private Long materialId;
-	private Long denominationId;
+	@UuidGenerator
+	private UUID id;
+	private UUID collectionId;
+	private UUID materialId;
+	private UUID denominationId;
 	private CollectionItemConditionType condition;
 	@Column(name = "year_created")
 	private Integer year;

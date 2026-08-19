@@ -8,6 +8,7 @@ import ro.cristiansterie.databasebackend.repository.CoinRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.CoinModelConverter;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class CoinService {
@@ -20,7 +21,7 @@ public class CoinService {
 	}
 
 	@Transactional(readOnly = true)
-	public CoinDTO findById(Long id) {
+	public CoinDTO findById(UUID id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
@@ -36,7 +37,7 @@ public class CoinService {
 	}
 
 	@Transactional
-	public CoinDTO update(Long id, CoinDTO dto) {
+	public CoinDTO update(UUID id, CoinDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
@@ -48,7 +49,7 @@ public class CoinService {
 	}
 
 	@Transactional
-	public void delete(Long id) {
+	public void delete(UUID id) {
 		repo.deleteById(id);
 	}
 }

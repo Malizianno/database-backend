@@ -7,6 +7,7 @@ import ro.cristiansterie.databasebackend.service.DomainService;
 import ro.cristiansterie.databasebackend.service.ImageService;
 
 import java.util.Set;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/domains")
@@ -18,7 +19,7 @@ public class DomainController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<DomainDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<DomainDTO> findById(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -33,12 +34,12 @@ public class DomainController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<DomainDTO> update(@PathVariable Long id, @RequestBody DomainDTO dto) {
+	public ResponseEntity<DomainDTO> update(@PathVariable UUID id, @RequestBody DomainDTO dto) {
 		return ResponseEntity.ok(service.update(id, dto));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
+	public ResponseEntity<Void> delete(@PathVariable UUID id) {
 		service.delete(id);
 		return ResponseEntity.noContent()
 		                     .build();

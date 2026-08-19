@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.UuidGenerator;
+
+import java.util.UUID;
 
 @Entity
 @Table(name = "books")
@@ -13,8 +16,12 @@ import lombok.Setter;
 public class BookEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private Long collectionId;
+	@UuidGenerator
+	private UUID id;
+	private UUID collectionId;
+	private UUID domainId;
+	private UUID languageId;
+
 	private String title;
 	private String author;
 	private String description;
@@ -23,6 +30,4 @@ public class BookEntity {
 	private String link;
 	private Integer publishedYear;
 	private Integer printedYear;
-	private Long domainId;
-	private Long languageId;
 }

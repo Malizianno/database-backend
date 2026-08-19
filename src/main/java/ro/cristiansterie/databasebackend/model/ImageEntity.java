@@ -4,7 +4,10 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.UuidGenerator;
 import ro.cristiansterie.databasebackend.util.enums.CollectionType;
+
+import java.util.UUID;
 
 @Entity
 @Table(name = "images")
@@ -14,8 +17,9 @@ import ro.cristiansterie.databasebackend.util.enums.CollectionType;
 public class ImageEntity {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@UuidGenerator
+    private UUID id;
 	private CollectionType itemType;
-	private Long itemId;
+	private UUID itemId;
 	private String imageUrl;
 }

@@ -8,6 +8,7 @@ import ro.cristiansterie.databasebackend.repository.DenominationRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.DenominationModelConverter;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class DenominationService {
@@ -20,7 +21,7 @@ public class DenominationService {
 	}
 
 	@Transactional(readOnly = true)
-	public DenominationDTO findById(Long id) {
+	public DenominationDTO findById(UUID id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
@@ -36,7 +37,7 @@ public class DenominationService {
 	}
 
 	@Transactional
-	public DenominationDTO update(Long id, DenominationDTO dto) {
+	public DenominationDTO update(UUID id, DenominationDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
@@ -48,7 +49,7 @@ public class DenominationService {
 	}
 
 	@Transactional
-	public void delete(Long id) {
+	public void delete(UUID id) {
 		repo.deleteById(id);
 	}
 }

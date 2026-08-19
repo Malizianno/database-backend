@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.UuidGenerator;
+
+import java.util.UUID;
 
 @Entity
 @Table(name = "denominations")
@@ -13,8 +16,9 @@ import lombok.Setter;
 public class DenominationEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@UuidGenerator
 	@Column(name = "id")
-	private Long id;
+	private UUID id;
 	private String title;
-	private Long countryId;
+	private UUID countryId;
 }

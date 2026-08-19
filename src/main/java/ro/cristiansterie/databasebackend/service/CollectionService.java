@@ -8,6 +8,7 @@ import ro.cristiansterie.databasebackend.repository.CollectionRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.CollectionModelConverter;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class CollectionService {
@@ -20,7 +21,7 @@ public class CollectionService {
 	}
 
 	@Transactional(readOnly = true)
-	public CollectionDTO findById(Long id) {
+	public CollectionDTO findById(UUID id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
@@ -36,7 +37,7 @@ public class CollectionService {
 	}
 
 	@Transactional
-	public CollectionDTO update(Long id, CollectionDTO dto) {
+	public CollectionDTO update(UUID id, CollectionDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
@@ -48,7 +49,7 @@ public class CollectionService {
 	}
 
 	@Transactional
-	public void delete(Long id) {
+	public void delete(UUID id) {
 		repo.deleteById(id);
 	}
 }

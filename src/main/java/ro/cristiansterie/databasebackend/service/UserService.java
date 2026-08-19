@@ -13,6 +13,7 @@ import ro.cristiansterie.databasebackend.util.converter.models.UserModelConverte
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Slf4j
@@ -36,7 +37,7 @@ public class UserService {
 	}
 
 	@Transactional(readOnly = true)
-	public UserDTO findById(Long id) {
+	public UserDTO findById(UUID id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
@@ -53,7 +54,7 @@ public class UserService {
 	}
 
 	@Transactional
-	public UserDTO update(Long id, UserDTO userDTO) {
+	public UserDTO update(UUID id, UserDTO userDTO) {
 		if (userDTO == null || id == null) {
 			throw new EntityNotFoundException("No user to update");
 		}
@@ -86,7 +87,7 @@ public class UserService {
 	}
 
 	@Transactional
-	public Boolean delete(Long id) {
+	public Boolean delete(UUID id) {
 		if (!repo.existsById(id)) {
 			throw new EntityNotFoundException("User not found with id: " + id);
 		}

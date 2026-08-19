@@ -4,14 +4,11 @@ import jakarta.persistence.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.BanknoteDTO;
-import ro.cristiansterie.databasebackend.dto.BookDTO;
 import ro.cristiansterie.databasebackend.repository.BanknoteRepository;
-import ro.cristiansterie.databasebackend.repository.BookRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.BanknoteModelConverter;
-import ro.cristiansterie.databasebackend.util.converter.models.BookModelConverter;
 
-import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class BanknoteService {
@@ -24,7 +21,7 @@ public class BanknoteService {
 	}
 
 	@Transactional(readOnly = true)
-	public BanknoteDTO findById(Long id) {
+	public BanknoteDTO findById(UUID id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
@@ -40,7 +37,7 @@ public class BanknoteService {
 	}
 
 	@Transactional
-	public BanknoteDTO update(Long id, BanknoteDTO dto) {
+	public BanknoteDTO update(UUID id, BanknoteDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
@@ -52,7 +49,7 @@ public class BanknoteService {
 	}
 
 	@Transactional
-	public void delete(Long id) {
+	public void delete(UUID id) {
 		repo.deleteById(id);
 	}
 }

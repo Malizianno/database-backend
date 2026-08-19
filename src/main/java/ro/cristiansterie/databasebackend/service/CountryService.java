@@ -8,6 +8,7 @@ import ro.cristiansterie.databasebackend.repository.CountryRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.CountryModelConverter;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class CountryService {
@@ -20,7 +21,7 @@ public class CountryService {
 	}
 
 	@Transactional(readOnly = true)
-	public CountryDTO findById(Long id) {
+	public CountryDTO findById(UUID id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
@@ -36,7 +37,7 @@ public class CountryService {
 	}
 
 	@Transactional
-	public CountryDTO update(Long id, CountryDTO dto) {
+	public CountryDTO update(UUID id, CountryDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
@@ -48,7 +49,7 @@ public class CountryService {
 	}
 
 	@Transactional
-	public void delete(Long id) {
+	public void delete(UUID id) {
 		repo.deleteById(id);
 	}
 }

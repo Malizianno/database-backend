@@ -7,6 +7,7 @@ import ro.cristiansterie.databasebackend.dto.UserDTO;
 import ro.cristiansterie.databasebackend.service.UserService;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/users")
@@ -26,7 +27,7 @@ public class UserController {
 
 	@GetMapping("/{id}")
 	@PreAuthorize("hasAuthority('ADMIN')")
-	public ResponseEntity<UserDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<UserDTO> findById(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -36,7 +37,7 @@ public class UserController {
 		return ResponseEntity.ok(service.findByUsername(username));
 	}
 
-	@PostMapping("/{id}")
+	@PostMapping("/")
 	@PreAuthorize("hasAuthority('ADMIN')")
 	public ResponseEntity<UserDTO> save(@RequestBody UserDTO user) {
 		return ResponseEntity.ok(service.save(user));
@@ -44,13 +45,13 @@ public class UserController {
 
 	@PutMapping("/{id}")
 	@PreAuthorize("#id == authentication.principal.user.id or hasAuthority('ADMIN')")
-	public ResponseEntity<UserDTO> update(@PathVariable Long id, @RequestBody UserDTO user) {
+	public ResponseEntity<UserDTO> update(@PathVariable UUID id, @RequestBody UserDTO user) {
 		return ResponseEntity.ok(service.update(id, user));
 	}
 
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasAuthority('ADMIN')")
-	public ResponseEntity<?> delete(@PathVariable Long id) {
+	public ResponseEntity<?> delete(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.delete(id));
 	}
 }

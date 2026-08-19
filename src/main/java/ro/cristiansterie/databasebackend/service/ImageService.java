@@ -8,6 +8,7 @@ import ro.cristiansterie.databasebackend.repository.ImageRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.ImageModelConverter;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class ImageService {
@@ -20,7 +21,7 @@ public class ImageService {
 	}
 
 	@Transactional(readOnly = true)
-	public ImageDTO findById(Long id) {
+	public ImageDTO findById(UUID id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
@@ -36,7 +37,7 @@ public class ImageService {
 	}
 
 	@Transactional
-	public ImageDTO update(Long id, ImageDTO dto) {
+	public ImageDTO update(UUID id, ImageDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
@@ -48,7 +49,7 @@ public class ImageService {
 	}
 
 	@Transactional
-	public void delete(Long id) {
+	public void delete(UUID id) {
 		repo.deleteById(id);
 	}
 }

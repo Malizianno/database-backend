@@ -6,6 +6,7 @@ import ro.cristiansterie.databasebackend.dto.CollectionDTO;
 import ro.cristiansterie.databasebackend.service.CollectionService;
 
 import java.util.Set;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/collections")
@@ -17,7 +18,7 @@ public class CollectionController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<CollectionDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<CollectionDTO> findById(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -32,12 +33,12 @@ public class CollectionController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<CollectionDTO> update(@PathVariable Long id, @RequestBody CollectionDTO dto) {
+	public ResponseEntity<CollectionDTO> update(@PathVariable UUID id, @RequestBody CollectionDTO dto) {
 		return ResponseEntity.ok(service.update(id, dto));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
+	public ResponseEntity<Void> delete(@PathVariable UUID id) {
 		service.delete(id);
 		return ResponseEntity.noContent()
 		                     .build();

@@ -6,6 +6,7 @@ import ro.cristiansterie.databasebackend.dto.DenominationDTO;
 import ro.cristiansterie.databasebackend.service.DenominationService;
 
 import java.util.Set;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/denominations")
@@ -17,7 +18,7 @@ public class DenominationController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<DenominationDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<DenominationDTO> findById(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -32,12 +33,12 @@ public class DenominationController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<DenominationDTO> update(@PathVariable Long id, @RequestBody DenominationDTO dto) {
+	public ResponseEntity<DenominationDTO> update(@PathVariable UUID id, @RequestBody DenominationDTO dto) {
 		return ResponseEntity.ok(service.update(id, dto));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
+	public ResponseEntity<Void> delete(@PathVariable UUID id) {
 		service.delete(id);
 		return ResponseEntity.noContent()
 		                     .build();

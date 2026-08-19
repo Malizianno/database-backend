@@ -17,8 +17,17 @@ public class RequestLogger extends OncePerRequestFilter {
 
 	@Override
 	protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {
-		log.info("{} {}", request.getMethod(), request.getRequestURI());
+		var method = request.getMethod();
+		var uri = request.getRequestURI();
+
+		if (isBusinessPath(uri)) {
+			log.info("{} {}", method, uri);
+		}
 
 		filterChain.doFilter(request, response);
+	}
+
+	private boolean isBusinessPath(String uri) {
+		return !uri.contains("/actuator");
 	}
 }

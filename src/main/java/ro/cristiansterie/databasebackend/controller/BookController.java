@@ -6,6 +6,7 @@ import ro.cristiansterie.databasebackend.dto.BookDTO;
 import ro.cristiansterie.databasebackend.service.BookService;
 
 import java.util.Set;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/books")
@@ -17,7 +18,7 @@ public class BookController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<BookDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<BookDTO> findById(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -32,12 +33,12 @@ public class BookController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<BookDTO> update(@PathVariable Long id, @RequestBody BookDTO dto) {
+	public ResponseEntity<BookDTO> update(@PathVariable UUID id, @RequestBody BookDTO dto) {
 		return ResponseEntity.ok(service.update(id, dto));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
+	public ResponseEntity<Void> delete(@PathVariable UUID id) {
 		service.delete(id);
 		return ResponseEntity.noContent()
 		                     .build();

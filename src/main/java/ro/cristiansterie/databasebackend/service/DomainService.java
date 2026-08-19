@@ -8,6 +8,7 @@ import ro.cristiansterie.databasebackend.repository.DomainRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.DomainModelConverter;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class DomainService {
@@ -20,7 +21,7 @@ public class DomainService {
 	}
 
 	@Transactional(readOnly = true)
-	public DomainDTO findById(Long id) {
+	public DomainDTO findById(UUID id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
@@ -36,7 +37,7 @@ public class DomainService {
 	}
 
 	@Transactional
-	public DomainDTO update(Long id, DomainDTO dto) {
+	public DomainDTO update(UUID id, DomainDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
@@ -48,7 +49,7 @@ public class DomainService {
 	}
 
 	@Transactional
-	public void delete(Long id) {
+	public void delete(UUID id) {
 		repo.deleteById(id);
 	}
 }

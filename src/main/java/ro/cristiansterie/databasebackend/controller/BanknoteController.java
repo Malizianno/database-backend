@@ -6,6 +6,7 @@ import ro.cristiansterie.databasebackend.dto.BanknoteDTO;
 import ro.cristiansterie.databasebackend.service.BanknoteService;
 
 import java.util.Set;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/banknotes")
@@ -17,7 +18,7 @@ public class BanknoteController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<BanknoteDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<BanknoteDTO> findById(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -32,12 +33,12 @@ public class BanknoteController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<BanknoteDTO> update(@PathVariable Long id, @RequestBody BanknoteDTO dto) {
+	public ResponseEntity<BanknoteDTO> update(@PathVariable UUID id, @RequestBody BanknoteDTO dto) {
 		return ResponseEntity.ok(service.update(id, dto));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
+	public ResponseEntity<Void> delete(@PathVariable UUID id) {
 		service.delete(id);
 		return ResponseEntity.noContent()
 		                     .build();

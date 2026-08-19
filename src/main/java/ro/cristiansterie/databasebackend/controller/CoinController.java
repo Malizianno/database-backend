@@ -6,6 +6,7 @@ import ro.cristiansterie.databasebackend.dto.CoinDTO;
 import ro.cristiansterie.databasebackend.service.CoinService;
 
 import java.util.Set;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/coins")
@@ -17,7 +18,7 @@ public class CoinController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<CoinDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<CoinDTO> findById(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -32,12 +33,12 @@ public class CoinController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<CoinDTO> update(@PathVariable Long id, @RequestBody CoinDTO dto) {
+	public ResponseEntity<CoinDTO> update(@PathVariable UUID id, @RequestBody CoinDTO dto) {
 		return ResponseEntity.ok(service.update(id, dto));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
+	public ResponseEntity<Void> delete(@PathVariable UUID id) {
 		service.delete(id);
 		return ResponseEntity.noContent()
 		                     .build();

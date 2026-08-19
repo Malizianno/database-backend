@@ -2,10 +2,14 @@ package ro.cristiansterie.databasebackend.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.UUID;
+
 public record BookDTO(
 		@JsonProperty(access = JsonProperty.Access.READ_ONLY)
-		Long id,
-		Long collectionId,
+		UUID id,
+		UUID collectionId,
+		UUID domainId,
+		UUID languageId,
 		String title,
 		String author,
 		String description,
@@ -13,7 +17,5 @@ public record BookDTO(
 		Integer pages,
 		String link,
 		Integer publishedYear,
-		Integer printedYear,
-		Long domainId,
-		Long languageId) {
+		Integer printedYear) {
 }

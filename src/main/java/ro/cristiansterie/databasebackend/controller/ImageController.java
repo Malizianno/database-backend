@@ -7,6 +7,7 @@ import ro.cristiansterie.databasebackend.service.ImageService;
 import ro.cristiansterie.databasebackend.service.LanguageService;
 
 import java.util.Set;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/images")
@@ -18,7 +19,7 @@ public class ImageController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<ImageDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<ImageDTO> findById(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -33,12 +34,12 @@ public class ImageController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<ImageDTO> update(@PathVariable Long id, @RequestBody ImageDTO dto) {
+	public ResponseEntity<ImageDTO> update(@PathVariable UUID id, @RequestBody ImageDTO dto) {
 		return ResponseEntity.ok(service.update(id, dto));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
+	public ResponseEntity<Void> delete(@PathVariable UUID id) {
 		service.delete(id);
 		return ResponseEntity.noContent()
 		                     .build();

@@ -8,6 +8,7 @@ import ro.cristiansterie.databasebackend.repository.LanguageRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.LanguageModelConverter;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class LanguageService {
@@ -20,7 +21,7 @@ public class LanguageService {
 	}
 
 	@Transactional(readOnly = true)
-	public LanguageDTO findById(Long id) {
+	public LanguageDTO findById(UUID id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
@@ -36,7 +37,7 @@ public class LanguageService {
 	}
 
 	@Transactional
-	public LanguageDTO update(Long id, LanguageDTO dto) {
+	public LanguageDTO update(UUID id, LanguageDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
@@ -48,7 +49,7 @@ public class LanguageService {
 	}
 
 	@Transactional
-	public void delete(Long id) {
+	public void delete(UUID id) {
 		repo.deleteById(id);
 	}
 }

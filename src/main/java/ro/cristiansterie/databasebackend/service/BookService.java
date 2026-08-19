@@ -8,6 +8,7 @@ import ro.cristiansterie.databasebackend.repository.BookRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.BookModelConverter;
 
 import java.util.Set;
+import java.util.UUID;
 
 @Service
 public class BookService {
@@ -20,7 +21,7 @@ public class BookService {
 	}
 
 	@Transactional(readOnly = true)
-	public BookDTO findById(Long id) {
+	public BookDTO findById(UUID id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
@@ -36,7 +37,7 @@ public class BookService {
 	}
 
 	@Transactional
-	public BookDTO update(Long id, BookDTO dto) {
+	public BookDTO update(UUID id, BookDTO dto) {
 		if (id == null || dto.id() == null || id.equals(dto.id())) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
@@ -48,7 +49,7 @@ public class BookService {
 	}
 
 	@Transactional
-	public void delete(Long id) {
+	public void delete(UUID id) {
 		repo.deleteById(id);
 	}
 }

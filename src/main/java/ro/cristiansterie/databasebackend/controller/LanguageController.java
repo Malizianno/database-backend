@@ -6,6 +6,7 @@ import ro.cristiansterie.databasebackend.dto.LanguageDTO;
 import ro.cristiansterie.databasebackend.service.LanguageService;
 
 import java.util.Set;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/languages")
@@ -17,7 +18,7 @@ public class LanguageController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<LanguageDTO> findById(@PathVariable Long id) {
+	public ResponseEntity<LanguageDTO> findById(@PathVariable UUID id) {
 		return ResponseEntity.ok(service.findById(id));
 	}
 
@@ -32,12 +33,12 @@ public class LanguageController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<LanguageDTO> update(@PathVariable Long id, @RequestBody LanguageDTO dto) {
+	public ResponseEntity<LanguageDTO> update(@PathVariable UUID id, @RequestBody LanguageDTO dto) {
 		return ResponseEntity.ok(service.update(id, dto));
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
+	public ResponseEntity<Void> delete(@PathVariable UUID id) {
 		service.delete(id);
 		return ResponseEntity.noContent()
 		                     .build();
