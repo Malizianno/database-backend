@@ -8,155 +8,155 @@
     <!-- Insert Unique Material Types (deduplicated and cleaned for typos) -->
     <changeSet id="insert-unique-materials" author="admin">
         <insert tableName="materials">
-            <column name="id" valueNumeric="1"/>
+            <column name="id" value="c1109634-1155-497f-930b-b22ba5856cc7"/>
             <column name="name" value="Oțel placat cu Cupru"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="2"/>
+            <column name="id" value="1c378483-96de-4276-b2cd-6dcefee47897"/>
             <column name="name" value="Cupru-Nichel"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="3"/>
+            <column name="id" value="e78b342c-29c1-4407-be38-860adbc885bd"/>
             <column name="name" value="Aluminiu-Bronz"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="4"/>
+            <column name="id" value="8734e197-5655-422b-968e-f02b792c9d32"/>
             <column name="name" value="Aluminiu"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="5"/>
+            <column name="id" value="aa38d7db-f4ab-427e-9062-56f0db822ebf"/>
             <column name="name" value="Cupru-Zinc-Nichel"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="6"/>
+            <column name="id" value="6c05ac8a-e4dc-4292-8a12-bc54d475a7c9"/>
             <column name="name" value="Aur nordic"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="7"/>
+            <column name="id" value="59fff65e-0fb6-43d2-be0f-fb40238a608f"/>
             <column name="name" value="Nichel-Alamă"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="8"/>
+            <column name="id" value="2ec1702b-2625-41ae-b214-0845913dbd47"/>
             <column name="name" value="Bronz"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="9"/>
+            <column name="id" value="43ab5e32-b241-4c39-82a6-780c6d4e36fb"/>
             <column name="name" value="Cupru"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="10"/>
+            <column name="id" value="5d550262-c6b0-4d76-b105-b3e93675e279"/>
             <column name="name" value="Alamă placată cu Cupru-Nichel"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="11"/>
+            <column name="id" value="5291959a-0111-4533-9517-7a45949f812d"/>
             <column name="name" value="Oțel inoxidabil"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="12"/>
+            <column name="id" value="bff9efaa-d39d-45af-84a2-e9344df3a003"/>
             <column name="name" value="Alamă"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="13"/>
+            <column name="id" value="26881eb4-2715-416e-b68d-d6559f5f5efe"/>
             <column name="name" value="Bimetalic: centru din Nichel placat cu Cupru-Nichel, cerc din Nichel-Alamă"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="14"/>
+            <column name="id" value="d81ecd25-8c5c-4f5c-a5b6-919b30ed7a8f"/>
             <column name="name" value="Bimetalic: centru din Bronz, cerc din Acmonital"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="15"/>
+            <column name="id" value="577f19a6-0e57-4ffb-a9f7-611b66bb15eb"/>
             <column name="name" value="Oțel placat cu Nichel"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="16"/>
+            <column name="id" value="7e530cb3-d7d1-40b8-8aab-173481cf1feb"/>
             <column name="name" value="Mangan-Alamă"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="17"/>
+            <column name="id" value="e969bd11-8079-4df9-8f13-8546ca042923"/>
             <column name="name" value="Oțel placat cu Alamă"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="18"/>
+            <column name="id" value="5df044af-8e9a-48d7-88f2-0798a78ccaed"/>
             <column name="name" value="Bimetalic: centru din Cupru-Nichel, cerc din Nichel-Alamă"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="19"/>
+            <column name="id" value="730bb3a4-0097-404a-9fb2-fa2ba7881d02"/>
             <column name="name" value="Nichel"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="20"/>
+            <column name="id" value="729c704f-cd71-42c2-b828-c11ca6993352"/>
             <column name="name" value="Bimetal Nichel-Alama (inel) si Cupru-Nichel (centru)"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="21"/>
+            <column name="id" value="3a508af0-5cdc-4e5d-aefe-8491cc1e7538"/>
             <column name="name" value="Bimetalic: centru din Cupru-Nichel, cerc din Alamă"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="22"/>
+            <column name="id" value="d1d5b5ad-1892-4191-ae81-c8298d4eb6ba"/>
             <column name="name" value="Bimetalic: centru din Nichel placat cu Nichel-Alamă, cerc din Cupru-Nichel"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="23"/>
+            <column name="id" value="7cf0f493-5eb9-40f8-8d42-afe8f8894167"/>
             <column name="name" value="Bimetalic: centru din Alamă, cerc din Cupru-Nichel-Zinc"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="24"/>
+            <column name="id" value="6148675b-1020-49b3-8ef9-dafa19ea8f69"/>
             <column name="name" value="Bimetalic: centru din Cupru-Nichel-Zinc, cerc din Alamă"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="25"/>
+            <column name="id" value="cc30a110-8a00-41ea-9c2c-e60711e0057d"/>
             <column name="name" value="Bimetalic: centru din Alamă, cerc din Cupru-Nichel"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="26"/>
+            <column name="id" value="6d2d9bd9-03ca-40e1-92f1-5d5dfefc14e2"/>
             <column name="name" value="Bimetalic: centru din Cupru-Nichel, cerc din Alamă"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="27"/>
+            <column name="id" value="adaf5e01-c806-40c0-85f4-e31169f8bcb4"/>
             <column name="name" value="Bimetalic: centru din Aluminiu-Bronz, cerc din Cupru-Nichel"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="28"/>
+            <column name="id" value="f0bd29aa-1c21-4b5d-a8d8-a9e498df9541"/>
             <column name="name" value="Bimetalic: centru din Nichel, cerc din Aluminiu-Bronz"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="29"/>
+            <column name="id" value="a4251578-9088-4964-be6b-232c12fa48b6"/>
             <column name="name" value="Bimetalic: centru din Cupru-Nichel, cerc din Aluminiu-Bronz"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="30"/>
+            <column name="id" value="0b1e3f2f-d26c-4274-b901-2424a2cb7c47"/>
             <column name="name" value="Bimetalic: centru din Oțel placat cu Alamă, cerc din Oțel inoxidabil"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="31"/>
+            <column name="id" value="85ddbf78-451d-45fa-ae6c-d1200308bca8"/>
             <column name="name" value="Nichel-Bronz"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="32"/>
+            <column name="id" value="c6153260-2c16-4767-a5d8-d48ace1f3bbd"/>
             <column name="name" value="Argint 0.835"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="33"/>
+            <column name="id" value="83f3a005-f104-49fe-bdc8-3718da0420c8"/>
             <column name="name" value="Nichel placat cu Cupru-Nichel"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="34"/>
+            <column name="id" value="8fa498a9-20d7-4ca2-afe0-0c975dd85cce"/>
             <column name="name" value="Cupru-Zinc"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="35"/>
+            <column name="id" value="9eb36ca2-3e3a-4278-836b-758120ec0ec4"/>
             <column name="name" value="Argint 0.4"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="36"/>
+            <column name="id" value="5dcaf339-a641-43d0-9eca-86051a601f5c"/>
             <column name="name" value="Hârtie"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="37"/>
+            <column name="id" value="cdf11bc5-4be6-444c-82a2-f287917c9d6d"/>
             <column name="name" value="Substrat hibrid (75% bumbac, 25% in)"/>
         </insert>
         <insert tableName="materials">
-            <column name="id" valueNumeric="38"/>
+            <column name="id" value="35da2f5a-1a21-4987-a4d9-ea748641b675"/>
             <column name="name" value="Polimer"/>
         </insert>
     </changeSet>

@@ -18,6 +18,5 @@ public class MaterialEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@UuidGenerator
 	private UUID id;
-
 	private String name;
 }

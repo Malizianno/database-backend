@@ -8,7 +8,7 @@ import java.util.UUID;
 public record ImageDTO(
 		@JsonProperty(access = JsonProperty.Access.READ_ONLY)
 		UUID id,
+		UUID itemId,
 		CollectionType itemType,
-		Long itemId,
 		String imageUrl) {
 }

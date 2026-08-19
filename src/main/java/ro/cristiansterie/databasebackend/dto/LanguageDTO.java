@@ -7,6 +7,6 @@ import java.util.UUID;
 public record LanguageDTO(
 		@JsonProperty(access = JsonProperty.Access.READ_ONLY)
 		UUID id,
-		String name,
-		Long countryId) {
+		UUID countryId,
+		String name) {
 }

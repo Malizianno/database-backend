@@ -7,6 +7,6 @@ import java.util.UUID;
 public record DenominationDTO(
 		@JsonProperty(access = JsonProperty.Access.READ_ONLY)
 		UUID id,
-		String title,
-		Long countryId) {
+		UUID countryId,
+		String title) {
 }

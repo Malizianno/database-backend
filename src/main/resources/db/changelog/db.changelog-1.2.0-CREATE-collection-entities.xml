@@ -8,7 +8,7 @@
     <!-- Core Reference Tables -->
     <changeSet id="create-core-reference-tables" author="admin">
         <createTable tableName="materials">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="text">
@@ -17,7 +17,7 @@
         </createTable>
 
         <createTable tableName="countries">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="text">
@@ -28,7 +28,7 @@
         </createTable>
 
         <createTable tableName="domains">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="text">
@@ -41,26 +41,26 @@
     <!-- Dependent Reference Tables -->
     <changeSet id="create-dependent-reference-tables-languages-and-denomination" author="admin">
         <createTable tableName="languages">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="id" type="UUID">`
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="text">
                 <constraints nullable="false"/>
             </column>
-            <column name="country_id" type="bigint">
+            <column name="country_id" type="UUID">
                 <constraints foreignKeyName="fk_languages_country" referencedTableName="countries"
                              referencedColumnNames="id"/>
             </column>
         </createTable>
 
-        <createTable tableName="denomination">
-            <column name="id" type="bigint" autoIncrement="true">
+        <createTable tableName="denominations">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="title" type="text">
                 <constraints nullable="false"/>
             </column>
-            <column name="country_id" type="bigint">
+            <column name="country_id" type="UUID">
                 <constraints foreignKeyName="fk_denomination_country" referencedTableName="countries"
                              referencedColumnNames="id"/>
             </column>
@@ -70,28 +70,35 @@
     <!-- Collections & Asset Tables -->
     <changeSet id="create-collections-books-coins-banknotes-and-images-tables" author="admin">
         <createTable tableName="collections">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="user_id" type="UUID">
+                <constraints foreignKeyName="fk_collections_user" referencedTableName="users"
+                             referencedColumnNames="id"/>
             </column>
             <column name="name" type="text">
                 <constraints nullable="false"/>
             </column>
             <column name="description" type="text"/>
-            <column name="user_id" type="bigint">
-                <constraints foreignKeyName="fk_collections_user" referencedTableName="users"
-                             referencedColumnNames="id"/>
-            </column>
             <column name="type" type="text">
                 <constraints nullable="false"/>
             </column>
         </createTable>
 
         <createTable tableName="books">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="collection_id" type="bigint">
+            <column name="collection_id" type="UUID">
                 <constraints foreignKeyName="fk_books_collection" referencedTableName="collections"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="domain_id" type="UUID">
+                <constraints foreignKeyName="fk_books_domain" referencedTableName="domains" referencedColumnNames="id"/>
+            </column>
+            <column name="language_id" type="UUID">
+                <constraints foreignKeyName="fk_books_language" referencedTableName="languages"
                              referencedColumnNames="id"/>
             </column>
             <column name="title" type="text">
@@ -106,32 +113,25 @@
             <column name="link" type="text"/>
             <column name="published_year" type="integer"/>
             <column name="printed_year" type="integer"/>
-            <column name="domain_id" type="bigint">
-                <constraints foreignKeyName="fk_books_domain" referencedTableName="domains" referencedColumnNames="id"/>
-            </column>
-            <column name="language_id" type="bigint">
-                <constraints foreignKeyName="fk_books_language" referencedTableName="languages"
-                             referencedColumnNames="id"/>
-            </column>
         </createTable>
 
         <createTable tableName="coins">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="collection_id" type="bigint">
+            <column name="collection_id" type="UUID">
                 <constraints foreignKeyName="fk_coins_collection" referencedTableName="collections"
                              referencedColumnNames="id"/>
             </column>
-            <column name="material_id" type="bigint">
+            <column name="material_id" type="UUID">
                 <constraints foreignKeyName="fk_coins_material" referencedTableName="materials"
                              referencedColumnNames="id"/>
             </column>
-            <column name="condition" type="text">
-            </column>
-            <column name="denomination_id" type="bigint">
-                <constraints foreignKeyName="fk_coins_denomination" referencedTableName="denomination"
+            <column name="denomination_id" type="UUID">
+                <constraints foreignKeyName="fk_coins_denomination" referencedTableName="denominations"
                              referencedColumnNames="id" nullable="false"/>
+            </column>
+            <column name="condition" type="text">
             </column>
             <column name="year_created" type="integer">
                 <constraints nullable="false"/>
@@ -151,22 +151,22 @@
         </createTable>
 
         <createTable tableName="banknotes">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="collection_id" type="bigint">
+            <column name="collection_id" type="UUID">
                 <constraints foreignKeyName="fk_banknotes_collection" referencedTableName="collections"
                              referencedColumnNames="id"/>
             </column>
-            <column name="material_id" type="bigint">
+            <column name="material_id" type="UUID">
                 <constraints foreignKeyName="fk_banknotes_material" referencedTableName="materials"
                              referencedColumnNames="id"/>
             </column>
-            <column name="condition" type="text">
-            </column>
-            <column name="denomination_id" type="bigint">
-                <constraints foreignKeyName="fk_banknotes_denomination" referencedTableName="denomination"
+            <column name="denomination_id" type="UUID">
+                <constraints foreignKeyName="fk_banknotes_denomination" referencedTableName="denominations"
                              referencedColumnNames="id" nullable="false"/>
+            </column>
+            <column name="condition" type="text">
             </column>
             <column name="year_created" type="integer">
                 <constraints nullable="false"/>
@@ -190,13 +190,13 @@
         </createTable>
 
         <createTable tableName="images">
-            <column name="id" type="bigint" autoIncrement="true">
+            <column name="id" type="UUID">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="item_type" type="text">
+            <column name="item_id" type="UUID">
                 <constraints nullable="false"/>
             </column>
-            <column name="item_id" type="bigint">
+            <column name="item_type" type="text">
                 <constraints nullable="false"/>
             </column>
             <column name="image_url" type="text">

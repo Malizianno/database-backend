@@ -21,7 +21,6 @@ public class BookEntity {
 	private UUID collectionId;
 	private UUID domainId;
 	private UUID languageId;
-
 	private String title;
 	private String author;
 	private String description;

@@ -19,6 +19,6 @@ public class DenominationEntity {
 	@UuidGenerator
 	@Column(name = "id")
 	private UUID id;
-	private String title;
 	private UUID countryId;
+	private String title;
 }

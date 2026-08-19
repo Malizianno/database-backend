@@ -19,7 +19,7 @@ public class ImageEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@UuidGenerator
     private UUID id;
-	private CollectionType itemType;
 	private UUID itemId;
+	private CollectionType itemType;
 	private String imageUrl;
 }

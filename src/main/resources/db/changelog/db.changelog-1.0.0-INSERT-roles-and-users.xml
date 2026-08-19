@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="adding-default-roles" author="admin">
+        <insert tableName="user_roles">
+            <column name="id" value="2d627d89-9ca1-4d69-8492-2b6d83fbe275"/>
+            <column name="name" value="ADMIN"/>
+            <column name="description" value="can do everything"/>
+        </insert>
+        <insert tableName="user_roles">
+            <column name="id" value="469539d1-8d2c-427a-be1d-178cf4b35904"/>
+            <column name="name" value="MEMBER"/>
+            <column name="description" value="has limited privileges"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="adding-default-users" author="admin">
+        <insert tableName="users">
+            <column name="id" value="e9fbde59-052f-4419-a514-cc3f19451607"/>
+            <column name="username" value="admin"/>
+            <column name="password"
+                    value="$2a$12$ITZPVKc7LJnxlgaZ2p63TOsCiP.MEyknSlvrTZ6HekZoDqnHXRyGe"/>
+            <column name="email" value="admin@databaseproject.ro"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" value="cc5f992f-e5ed-4a28-8f6f-d2ae50a4b544"/>
+            <column name="username" value="cristian"/>
+            <column name="password"
+                    value="$2a$12$ITZPVKc7LJnxlgaZ2p63TOsCiP.MEyknSlvrTZ6HekZoDqnHXRyGe"/>
+            <column name="email" value="cristian@databaseproject.ro"/>
+        </insert>
+        <insert tableName="users">
+            <column name="id" value="b45c04ec-a62f-4781-86ec-9628e9ab62a8"/>
+            <column name="username" value="andreea"/>
+            <column name="password"
+                    value="$2a$12$ITZPVKc7LJnxlgaZ2p63TOsCiP.MEyknSlvrTZ6HekZoDqnHXRyGe"/>
+            <column name="email" value="andreea@databaseproject.ro"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="mapping-roles-to-default-users" author="admin">
+        <insert tableName="users_roles_mapping">
+            <column name="user_id" value="e9fbde59-052f-4419-a514-cc3f19451607"/> <!-- ADMIN -->
+            <column name="role_id" value="2d627d89-9ca1-4d69-8492-2b6d83fbe275"/>
+        </insert>
+        <insert tableName="users_roles_mapping">
+            <column name="user_id" value="e9fbde59-052f-4419-a514-cc3f19451607"/> <!-- ADMIN -->
+            <column name="role_id" value="469539d1-8d2c-427a-be1d-178cf4b35904"/>
+        </insert>
+        <insert tableName="users_roles_mapping">
+            <column name="user_id" value="cc5f992f-e5ed-4a28-8f6f-d2ae50a4b544"/> <!-- CRISTIAN -->
+            <column name="role_id" value="469539d1-8d2c-427a-be1d-178cf4b35904"/>
+        </insert>
+        <insert tableName="users_roles_mapping">
+            <column name="user_id" value="b45c04ec-a62f-4781-86ec-9628e9ab62a8"/> <!-- ANDREEA -->
+            <column name="role_id" value="469539d1-8d2c-427a-be1d-178cf4b35904"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

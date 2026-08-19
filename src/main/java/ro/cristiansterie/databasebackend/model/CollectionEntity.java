@@ -19,8 +19,8 @@ public class CollectionEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@UuidGenerator
 	private UUID id;
+	private UUID userId;
 	private String name;
 	private String description;
-	private Long userId;
 	private CollectionType type;
 }

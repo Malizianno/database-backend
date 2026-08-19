@@ -5,60 +5,39 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
 
-    <!-- Insert Base Reference Data -->
-    <changeSet id="insert-initial-data" author="admin">
-        <!-- for countries check -->
-        <!-- db.changelog-1.2.0-INSERT-countries-collection-entities.xml-->
-        <!-- for denominations check -->
-        <!-- db.changelog-1.2.1-INSERT-denominations-collection-entities.xml-->
-        <!-- for materials check-->
-        <!-- db.changelog-1.2.3-INSERT-materials-collection-entities.xml-->
-
-        <!-- Domains -->
+    <changeSet id="insert-book-domains-data" author="admin">
         <insert tableName="domains">
-            <column name="id" valueNumeric="1"/>
+            <column name="id" value="64fa2c8b-f2c9-4e9c-b158-9f28f9d552f3"/>
             <column name="name" value="Philosophy"/>
             <column name="description"
                     value="The systematic, critical study of fundamental questions about existence, knowledge, values, mind, and reason"/>
         </insert>
         <insert tableName="domains">
-            <column name="id" valueNumeric="2"/>
+            <column name="id" value="0a206c4f-563c-4694-bd95-62a8dc95fad7"/>
             <column name="name" value="Psychology"/>
             <column name="description" value="The scientific study of the mind and behavior"/>
         </insert>
         <insert tableName="domains">
-            <column name="id" valueNumeric="3"/>
+            <column name="id" value="23bdab46-286a-4c26-bee0-4e2aaf614fc6"/>
             <column name="name" value="Self Development"/>
             <column name="description"
                     value="The lifelong process of improving your skills, knowledge, character, and self-awareness to enhance your quality of life"/>
         </insert>
         <insert tableName="domains">
-            <column name="id" valueNumeric="4"/>
+            <column name="id" value="2bf3a22d-702d-4629-842b-3d5c844fcf9a"/>
             <column name="name" value="Biography"/>
             <column name="description" value="A true, detailed written account of a real person's life"/>
         </insert>
         <insert tableName="domains">
-            <column name="id" valueNumeric="5"/>
+            <column name="id" value="584eea8e-d793-4505-838d-8fda881ace36"/>
             <column name="name" value="Software Development"/>
             <column name="description"
                     value="A set of computer science activities that are dedicated to the process of creating, designing, deploying and supporting software"/>
         </insert>
         <insert tableName="domains">
-            <column name="id" valueNumeric="6"/>
+            <column name="id" value="14e93e92-c1fa-4e60-bc91-0c8aa51a0943"/>
             <column name="name" value="Religion"/>
             <column name="description" value="A cultural system of shared beliefs, values, and practices"/>
-        </insert>
-
-        <!-- Languages -->
-        <insert tableName="languages">
-            <column name="id" valueNumeric="1"/>
-            <column name="name" value="Limba Română"/>
-            <column name="country_id" valueNumeric="35"/>
-        </insert>
-        <insert tableName="languages">
-            <column name="id" valueNumeric="2"/>
-            <column name="name" value="English"/>
-            <column name="country_id" valueNumeric="45"/>
         </insert>
     </changeSet>
 

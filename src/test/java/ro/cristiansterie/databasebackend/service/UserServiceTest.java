@@ -18,10 +18,7 @@ import ro.cristiansterie.databasebackend.repository.UserRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.RoleModelConverter;
 import ro.cristiansterie.databasebackend.util.converter.models.UserModelConverter;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.any;
@@ -48,19 +45,20 @@ public class UserServiceTest {
 	@Transactional
 	void testFindById() {
 		// insert
+		var userUUID = UUID.randomUUID();
 		Set<RoleEntity> roles = new HashSet<>();
-		roles.add(new RoleEntity(1L, "ADMIN", "can do everything"));
+		roles.add(new RoleEntity(UUID.randomUUID(), "ADMIN", "can do everything"));
 		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject.ro", roles);
 
 		Set<RoleDTO> rolesDTO = new HashSet<>();
-		rolesDTO.add(new RoleDTO(1L, "ADMIN", "can do everything"));
-		UserDTO userDTO = new UserDTO(1L, user.getUsername(), user.getPassword(), user.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
+		UserDTO userDTO = new UserDTO(userUUID, user.getUsername(), user.getPassword(), user.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
 
-		when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+		when(userRepository.findById(userUUID)).thenReturn(Optional.of(user));
 		when(converter.toDto(any())).thenReturn(userDTO);
 
 		// read
-		UserDTO found = service.findById(1L);
+		UserDTO found = service.findById(userUUID);
 
 		// assert
 		assertThat(found.username()).isEqualTo(user.getUsername());
@@ -71,14 +69,14 @@ public class UserServiceTest {
 	void testFindAll() {
 		// insert
 		Set<RoleEntity> roles = new HashSet<>();
-		roles.add(new RoleEntity(1L, "ADMIN", "can do everything"));
+		roles.add(new RoleEntity(UUID.randomUUID(), "ADMIN", "can do everything"));
 		UserEntity user1 = new UserEntity("admin", "12345", "admin@databaseproject", roles);
 		UserEntity user2 = new UserEntity("admin2", "12345", "admin2@databaseproject", roles);
 
 		Set<RoleDTO> rolesDTO = new HashSet<>();
-		rolesDTO.add(new RoleDTO(1L, "ADMIN", "can do everything"));
-		UserDTO user1DTO = new UserDTO(1L, user1.getUsername(), user1.getPassword(), user1.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
-		UserDTO user2DTO = new UserDTO(2L, user2.getUsername(), user2.getPassword(), user2.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
+		UserDTO user1DTO = new UserDTO(UUID.randomUUID(), user1.getUsername(), user1.getPassword(), user1.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		UserDTO user2DTO = new UserDTO(UUID.randomUUID(), user2.getUsername(), user2.getPassword(), user2.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
 
 		when(userRepository.findAll()).thenReturn(List.of(user1, user2));
 		when(converter.toDtoList(any())).thenReturn(List.of(user1DTO, user2DTO));
@@ -97,12 +95,12 @@ public class UserServiceTest {
 	void testSave() {
 		// insert/check
 		Set<RoleEntity> roles = new HashSet<>();
-		roles.add(new RoleEntity(1L, "ADMIN", "can do everything"));
+		roles.add(new RoleEntity(UUID.randomUUID(), "ADMIN", "can do everything"));
 		Set<RoleDTO> rolesDTO = new HashSet<>();
-		rolesDTO.add(new RoleDTO(1L, "ADMIN", "can do everything"));
+		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
 
 		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject", roles);
-		UserDTO userDTO = new UserDTO(1L, user.getUsername(), user.getPassword(), user.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		UserDTO userDTO = new UserDTO(UUID.randomUUID(), user.getUsername(), user.getPassword(), user.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
 		when(userRepository.save(any())).thenReturn(user);
 		when(converter.toEntity(any())).thenReturn(user);
 		when(converter.toDto(any())).thenReturn(userDTO);
@@ -123,18 +121,19 @@ public class UserServiceTest {
 		roles.add(role);
 
 		Set<RoleDTO> rolesDTO = new HashSet<>();
-		RoleDTO roleDTO = new RoleDTO(1L, "ADMIN", "can do everything");
+		RoleDTO roleDTO = new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything");
 		rolesDTO.add(roleDTO);
 
+		var userUUID = UUID.randomUUID();
 		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject", roles);
-		UserDTO userDTO = new UserDTO(1L, user.getUsername(), user.getPassword(), user.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
-		when(userRepository.findById(1L)).thenReturn(Optional.of(user));
+		UserDTO userDTO = new UserDTO(userUUID, user.getUsername(), user.getPassword(), user.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		when(userRepository.findById(userUUID)).thenReturn(Optional.of(user));
 		when(passwordEncoder.encode(any())).thenReturn("12345");
 		when(roleConverter.toEntityList(any())).thenReturn(List.of(role));
 		when(converter.toDto(any())).thenReturn(userDTO);
 
 		// read
-		UserDTO updated = service.update(1L, userDTO);
+		UserDTO updated = service.update(userUUID, userDTO);
 
 		// assert
 		assertThat(updated.username()).isEqualTo(user.getUsername());
@@ -144,10 +143,12 @@ public class UserServiceTest {
 	@Transactional
 	void testDelete() {
 		// insert
-		when(userRepository.existsById(1L)).thenReturn(true);
+		var userUUID = UUID.randomUUID();
+		when(userRepository.existsById(userUUID)).thenReturn(true);
 		// read
-		service.delete(1L);
+		service.delete(userUUID);
 		// assert
-		assertThat(userRepository.findAll().size()).isEqualTo(0);
+		assertThat(userRepository.findAll()
+		                         .size()).isEqualTo(0);
 	}
 }
