@@ -5,10 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ro.cristiansterie.databasebackend.dto.RoleDTO;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
 import ro.cristiansterie.databasebackend.model.UserEntity;
-import ro.cristiansterie.databasebackend.repository.RoleRepository;
 import ro.cristiansterie.databasebackend.repository.UserRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.RoleModelConverter;
 import ro.cristiansterie.databasebackend.util.converter.models.UserModelConverter;
@@ -21,50 +19,44 @@ import java.util.List;
 public class UserService {
 
 	private final UserRepository repo;
-	private final RoleRepository roleRepo;
 	private final UserModelConverter converter;
 	private final RoleModelConverter roleConverter;
 	private final PasswordEncoder passwordEncoder;
 
-	public UserService(UserRepository repo, RoleRepository roleRepo, UserModelConverter converter, RoleModelConverter roleConverter, PasswordEncoder passwordEncoder) {
+	public UserService(UserRepository repo, UserModelConverter converter, RoleModelConverter roleConverter, PasswordEncoder passwordEncoder) {
 		this.repo = repo;
-		this.roleRepo = roleRepo;
 		this.converter = converter;
 		this.roleConverter = roleConverter;
 		this.passwordEncoder = passwordEncoder;
 	}
 
-	public List<UserDTO> getAll() {
+	public List<UserDTO> findAll() {
 		return converter.toDtoList(repo.findAll());
 	}
 
-	public List<RoleDTO> getAllRoles() {
-		return roleConverter.toDtoList(roleRepo.findAll());
-	}
-
-	public UserDTO getById(Long id) {
+	public UserDTO findById(Long id) {
 		return converter.toDto(repo.findById(id)
 		                           .orElse(null));
 	}
 
-	public UserDTO getByUsername(String username) {
+	public UserDTO findByUsername(String username) {
 		return converter.toDto(repo.findByUsername(username)
 		                           .orElse(null));
 	}
 
 	@Transactional
-	public UserDTO addUser(UserDTO userDTO) {
+	public UserDTO save(UserDTO userDTO) {
 		return converter.toDto(repo.save(converter.toEntity(userDTO)));
 	}
 
 	@Transactional
-	public UserDTO updateUser(UserDTO userDTO) {
-		if (userDTO == null || userDTO.id() == null) {
+	public UserDTO update(Long id, UserDTO userDTO) {
+		if (userDTO == null || id == null) {
 			throw new EntityNotFoundException("No user to update");
 		}
 
-		UserEntity user = repo.findById(userDTO.id())
-		                      .orElseThrow(() -> new EntityNotFoundException("User not found"));
+		UserEntity user = repo.findById(id)
+		                      .orElseThrow(() -> new EntityNotFoundException("User not found to update"));
 
 		// Update the fields. Hibernate tracks these changes automatically ("Dirty Checking")
 		user.setUsername(userDTO.username());
@@ -91,7 +83,7 @@ public class UserService {
 	}
 
 	@Transactional
-	public Boolean deleteById(Long id) {
+	public Boolean delete(Long id) {
 		if (!repo.existsById(id)) {
 			throw new EntityNotFoundException("User not found with id: " + id);
 		}

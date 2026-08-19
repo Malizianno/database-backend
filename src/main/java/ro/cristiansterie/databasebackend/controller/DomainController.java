@@ -28,7 +28,7 @@ public class DomainController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<DomainDTO> create(@RequestBody DomainDTO dto) {
+	public ResponseEntity<DomainDTO> save(@RequestBody DomainDTO dto) {
 		return ResponseEntity.ok(service.save(dto));
 	}
 

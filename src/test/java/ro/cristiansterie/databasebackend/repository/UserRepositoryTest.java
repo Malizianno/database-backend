@@ -3,6 +3,7 @@ package ro.cristiansterie.databasebackend.repository;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
@@ -78,23 +79,7 @@ public class UserRepositoryTest {
 
 	@Test
 	@Transactional
-	void testDeleteById() {
-		// insert
-		Set<RoleEntity> roles = new HashSet<>();
-		roles.add(new RoleEntity(1L, "ADMIN", "can do everything"));
-		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject", roles);
-		UserEntity saved = userRepository.save(user);
-		assertThat(userRepository.findAll().size()).isEqualTo(1);
-
-		// read
-		userRepository.deleteById(saved.getId());
-		// assert
-		assertThat(userRepository.findAll().size()).isEqualTo(0);
-	}
-
-	@Test
-	@Transactional
-	void testAddUser() {
+	void testSave() {
 		// insert/check
 		Set<RoleEntity> roles = new HashSet<>();
 		roles.add(new RoleEntity(1L, "ADMIN", "can do everything"));
@@ -111,7 +96,7 @@ public class UserRepositoryTest {
 
 	@Test
 	@Transactional
-	void testUpdateUser() {
+	void testUpdate() {
 		// insert
 		Set<RoleEntity> roles = new HashSet<>();
 		RoleEntity role = new RoleEntity(null, "ADMIN", "can do everything");
@@ -133,5 +118,21 @@ public class UserRepositoryTest {
 		assertThat(userRepository.findAll().size()).isEqualTo(1);
 		assertThat(userRepository.findAll().get(0).getUsername()).isNotEqualTo(testUser.getUsername());
 		assertThat(userRepository.findAll().get(0).getUsername()).isEqualTo(saved.getUsername());
+	}
+
+	@Test
+	@Transactional
+	void testDelete() {
+		// insert
+		Set<RoleEntity> roles = new HashSet<>();
+		roles.add(new RoleEntity(1L, "ADMIN", "can do everything"));
+		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject", roles);
+		UserEntity saved = userRepository.save(user);
+		assertThat(userRepository.findAll().size()).isEqualTo(1);
+
+		// read
+		userRepository.deleteById(saved.getId());
+		// assert
+		assertThat(userRepository.findAll().size()).isEqualTo(0);
 	}
 }

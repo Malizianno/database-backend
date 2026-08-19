@@ -27,7 +27,7 @@ public class CountryController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<CountryDTO> create(@RequestBody CountryDTO dto) {
+	public ResponseEntity<CountryDTO> save(@RequestBody CountryDTO dto) {
 		return ResponseEntity.ok(service.save(dto));
 	}
 

@@ -27,7 +27,7 @@ public class MaterialController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<MaterialDTO> create(@RequestBody MaterialDTO dto) {
+	public ResponseEntity<MaterialDTO> save(@RequestBody MaterialDTO dto) {
 		return ResponseEntity.ok(service.save(dto));
 	}
 

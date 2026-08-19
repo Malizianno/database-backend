@@ -27,7 +27,7 @@ public class DenominationController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<DenominationDTO> create(@RequestBody DenominationDTO dto) {
+	public ResponseEntity<DenominationDTO> save(@RequestBody DenominationDTO dto) {
 		return ResponseEntity.ok(service.save(dto));
 	}
 

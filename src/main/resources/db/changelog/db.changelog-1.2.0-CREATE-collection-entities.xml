@@ -159,7 +159,7 @@
                              referencedColumnNames="id"/>
             </column>
             <column name="material_id" type="bigint">
-                <constraints foreignKeyName="fk_coins_material" referencedTableName="materials"
+                <constraints foreignKeyName="fk_banknotes_material" referencedTableName="materials"
                              referencedColumnNames="id"/>
             </column>
             <column name="condition" type="text">

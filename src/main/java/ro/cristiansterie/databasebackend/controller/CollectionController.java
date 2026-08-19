@@ -27,7 +27,7 @@ public class CollectionController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<CollectionDTO> create(@RequestBody CollectionDTO dto) {
+	public ResponseEntity<CollectionDTO> save(@RequestBody CollectionDTO dto) {
 		return ResponseEntity.ok(service.save(dto));
 	}
 

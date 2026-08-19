@@ -25,6 +25,7 @@ public class BanknoteEntity {
 	private Double width;
 	private String description;
 	private String link;
+	@Column(name = "`value`")
 	private Integer value;
 	private Integer extraYear;
 	private Integer units;

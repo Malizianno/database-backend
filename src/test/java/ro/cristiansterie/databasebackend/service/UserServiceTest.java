@@ -46,7 +46,7 @@ public class UserServiceTest {
 
 	@Test
 	@Transactional
-	void testGetById() {
+	void testFindById() {
 		// insert
 		Set<RoleEntity> roles = new HashSet<>();
 		roles.add(new RoleEntity(1L, "ADMIN", "can do everything"));
@@ -60,7 +60,7 @@ public class UserServiceTest {
 		when(converter.toDto(any())).thenReturn(userDTO);
 
 		// read
-		UserDTO found = service.getById(1L);
+		UserDTO found = service.findById(1L);
 
 		// assert
 		assertThat(found.username()).isEqualTo(user.getUsername());
@@ -68,7 +68,7 @@ public class UserServiceTest {
 
 	@Test
 	@Transactional
-	void testGetAll() {
+	void testFindAll() {
 		// insert
 		Set<RoleEntity> roles = new HashSet<>();
 		roles.add(new RoleEntity(1L, "ADMIN", "can do everything"));
@@ -84,7 +84,7 @@ public class UserServiceTest {
 		when(converter.toDtoList(any())).thenReturn(List.of(user1DTO, user2DTO));
 
 		// read
-		List<UserDTO> found = service.getAll();
+		List<UserDTO> found = service.findAll();
 
 		// assert
 		assertThat(found.size()).isEqualTo(2);
@@ -94,18 +94,7 @@ public class UserServiceTest {
 
 	@Test
 	@Transactional
-	void testDeleteById() {
-		// insert
-		when(userRepository.existsById(1L)).thenReturn(true);
-		// read
-		service.deleteById(1L);
-		// assert
-		assertThat(userRepository.findAll().size()).isEqualTo(0);
-	}
-
-	@Test
-	@Transactional
-	void testAddUser() {
+	void testSave() {
 		// insert/check
 		Set<RoleEntity> roles = new HashSet<>();
 		roles.add(new RoleEntity(1L, "ADMIN", "can do everything"));
@@ -119,7 +108,7 @@ public class UserServiceTest {
 		when(converter.toDto(any())).thenReturn(userDTO);
 
 		// read/insert
-		UserDTO saved = service.addUser(userDTO);
+		UserDTO saved = service.save(userDTO);
 
 		// assert
 		assertThat(saved.username()).isEqualTo(user.getUsername());
@@ -127,7 +116,7 @@ public class UserServiceTest {
 
 	@Test
 	@Transactional
-	void testUpdateUser() {
+	void testUpdate() {
 		// insert
 		Set<RoleEntity> roles = new HashSet<>();
 		RoleEntity role = new RoleEntity(null, "ADMIN", "can do everything");
@@ -145,9 +134,20 @@ public class UserServiceTest {
 		when(converter.toDto(any())).thenReturn(userDTO);
 
 		// read
-		UserDTO updated = service.updateUser(userDTO);
+		UserDTO updated = service.update(1L, userDTO);
 
 		// assert
 		assertThat(updated.username()).isEqualTo(user.getUsername());
+	}
+
+	@Test
+	@Transactional
+	void testDelete() {
+		// insert
+		when(userRepository.existsById(1L)).thenReturn(true);
+		// read
+		service.delete(1L);
+		// assert
+		assertThat(userRepository.findAll().size()).isEqualTo(0);
 	}
 }

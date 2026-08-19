@@ -27,7 +27,7 @@ public class BanknoteController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<BanknoteDTO> create(@RequestBody BanknoteDTO dto) {
+	public ResponseEntity<BanknoteDTO> save(@RequestBody BanknoteDTO dto) {
 		return ResponseEntity.ok(service.save(dto));
 	}
 

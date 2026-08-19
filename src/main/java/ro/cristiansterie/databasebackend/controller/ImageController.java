@@ -28,7 +28,7 @@ public class ImageController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<ImageDTO> create(@RequestBody ImageDTO dto) {
+	public ResponseEntity<ImageDTO> save(@RequestBody ImageDTO dto) {
 		return ResponseEntity.ok(service.save(dto));
 	}
 

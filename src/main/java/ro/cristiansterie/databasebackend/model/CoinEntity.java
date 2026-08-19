@@ -23,6 +23,7 @@ public class CoinEntity {
 	private Double diameter;
 	private String description;
 	private String link;
+	@Column(name = "`value`")
 	private Integer value;
 	private Integer extraYear;
 	private Integer units;

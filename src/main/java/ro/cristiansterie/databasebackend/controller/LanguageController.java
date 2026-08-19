@@ -27,7 +27,7 @@ public class LanguageController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<LanguageDTO> create(@RequestBody LanguageDTO dto) {
+	public ResponseEntity<LanguageDTO> save(@RequestBody LanguageDTO dto) {
 		return ResponseEntity.ok(service.save(dto));
 	}
 

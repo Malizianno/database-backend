@@ -27,7 +27,7 @@ public class CoinController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<CoinDTO> create(@RequestBody CoinDTO dto) {
+	public ResponseEntity<CoinDTO> save(@RequestBody CoinDTO dto) {
 		return ResponseEntity.ok(service.save(dto));
 	}
 

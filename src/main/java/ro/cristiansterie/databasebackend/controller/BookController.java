@@ -27,7 +27,7 @@ public class BookController {
 	}
 
 	@PostMapping("/")
-	public ResponseEntity<BookDTO> create(@RequestBody BookDTO dto) {
+	public ResponseEntity<BookDTO> save(@RequestBody BookDTO dto) {
 		return ResponseEntity.ok(service.save(dto));
 	}
 
