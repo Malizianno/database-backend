@@ -18,6 +18,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import ro.cristiansterie.databasebackend.security.jwt.JwtAuthenticationFilter;
+import ro.cristiansterie.databasebackend.security.log.RequestLogger;
 import ro.cristiansterie.databasebackend.security.userpass.DatabaseUserPassAuthenticationProvider;
 import ro.cristiansterie.databasebackend.security.userpass.DatabaseUserPassUserDetailsService;
 
@@ -30,10 +31,12 @@ public class SecurityConfig {
 
 	private final DatabaseUserPassUserDetailsService userDetailsService;
 	private final JwtAuthenticationFilter jwtAuthenticationFilter;
+	private final RequestLogger requestLogger;
 
-	public SecurityConfig(DatabaseUserPassUserDetailsService userDetailsService, JwtAuthenticationFilter jwtAuthenticationFilter) {
+	public SecurityConfig(DatabaseUserPassUserDetailsService userDetailsService, JwtAuthenticationFilter jwtAuthenticationFilter, RequestLogger requestLogger) {
 		this.userDetailsService = userDetailsService;
 		this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+		this.requestLogger = requestLogger;
 	}
 
 	@Bean
@@ -87,6 +90,7 @@ public class SecurityConfig {
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 				.authenticationManager(authenticationManager())
 				.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
+				.addFilterBefore(requestLogger, UsernamePasswordAuthenticationFilter.class)
 				.httpBasic(Customizer.withDefaults()) // XXX: to remove after login implementation;
 				.build();
 	}

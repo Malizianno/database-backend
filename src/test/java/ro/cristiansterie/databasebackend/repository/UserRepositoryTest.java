@@ -132,6 +132,7 @@ public class UserRepositoryTest {
 
 		// read
 		userRepository.deleteById(saved.getId());
+
 		// assert
 		assertThat(userRepository.findAll().size()).isEqualTo(0);
 	}
