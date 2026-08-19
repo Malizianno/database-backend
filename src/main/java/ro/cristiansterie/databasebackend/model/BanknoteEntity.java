@@ -19,14 +19,14 @@ public class BanknoteEntity {
 	private Long materialId;
 	private Long denominationId;
 	private CollectionItemConditionType condition;
+	@Column(name = "year_created")
 	private Integer year;
 	private Double length;
 	private Double thickness;
 	private Double width;
 	private String description;
 	private String link;
-	@Column(name = "`value`")
-	private Integer value;
+	private Integer numericValue;
 	private Integer extraYear;
 	private Integer units;
 }

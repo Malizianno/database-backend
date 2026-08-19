@@ -23,12 +23,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1945"/>
+            <column name="year_created" valueNumeric="1945"/>
             <column name="length" valueNumeric="90.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="rupta in partea stanga sus (fata)"/>
             <column name="link" value="https://en.numista.com/catalogue/note201757.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -37,12 +37,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1945"/>
+            <column name="year_created" valueNumeric="1945"/>
             <column name="length" valueNumeric="166.0"/>
             <column name="width" valueNumeric="91.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206915.html"/>
-            <column name="value" valueNumeric="5000.00"/>
+            <column name="numericValue" valueNumeric="5000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -51,12 +51,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1946"/>
+            <column name="year_created" valueNumeric="1946"/>
             <column name="length" valueNumeric="194.0"/>
             <column name="width" valueNumeric="107.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note205757.html"/>
-            <column name="value" valueNumeric="10000.00"/>
+            <column name="numericValue" valueNumeric="10000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -65,12 +65,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1943"/>
+            <column name="year_created" valueNumeric="1943"/>
             <column name="length" valueNumeric="201.0"/>
             <column name="width" valueNumeric="113.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note205764.html"/>
-            <column name="value" valueNumeric="2000.00"/>
+            <column name="numericValue" valueNumeric="2000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -79,12 +79,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1991"/>
+            <column name="year_created" valueNumeric="1991"/>
             <column name="length" valueNumeric="141.0"/>
             <column name="width" valueNumeric="68.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note213751.html"/>
-            <column name="value" valueNumeric="20000.00"/>
+            <column name="numericValue" valueNumeric="20000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -93,12 +93,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1984"/>
+            <column name="year_created" valueNumeric="1984"/>
             <column name="length" valueNumeric="137.0"/>
             <column name="width" valueNumeric="69.0"/>
             <column name="description" value="rupta stanga jos (fata)"/>
             <column name="link" value="https://en.numista.com/catalogue/note203235.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -107,12 +107,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2009"/>
+            <column name="year_created" valueNumeric="2009"/>
             <column name="length" valueNumeric="130.0"/>
             <column name="width" valueNumeric="64.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206382.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -121,12 +121,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2013"/>
+            <column name="year_created" valueNumeric="2013"/>
             <column name="length" valueNumeric="131.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204324.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -135,12 +135,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1972"/>
+            <column name="year_created" valueNumeric="1972"/>
             <column name="length" valueNumeric="125.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="muscata drepta sus (fata) si murdara"/>
             <column name="link" value="https://en.numista.com/catalogue/note212486.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -149,12 +149,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2009"/>
+            <column name="year_created" valueNumeric="2009"/>
             <column name="length" valueNumeric="142.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="cerneala sntaga jos (fata)"/>
             <column name="link" value="https://en.numista.com/catalogue/note202753.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -163,12 +163,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1985"/>
+            <column name="year_created" valueNumeric="1985"/>
             <column name="length" valueNumeric="126.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="pasta de pix pe fata si pe spate"/>
             <column name="link" value="https://en.numista.com/catalogue/note202451.html"/>
-            <column name="value" valueNumeric="5000.00"/>
+            <column name="numericValue" valueNumeric="5000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -177,12 +177,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1994"/>
+            <column name="year_created" valueNumeric="1994"/>
             <column name="length" valueNumeric="120.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202134.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -191,12 +191,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1997"/>
+            <column name="year_created" valueNumeric="1997"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="69.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202675.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -205,12 +205,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2005"/>
+            <column name="year_created" valueNumeric="2005"/>
             <column name="length" valueNumeric="116.0"/>
             <column name="width" valueNumeric="64.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note201676.html"/>
-            <column name="value" valueNumeric="2.00"/>
+            <column name="numericValue" valueNumeric="2.00"/>
             <column name="units" valueNumeric="2"/>
         </insert>
         <insert tableName="banknotes">
@@ -219,12 +219,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2003"/>
+            <column name="year_created" valueNumeric="2003"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="68.0"/>
             <column name="description" value="elementul de siguranta rupt in partea de jos"/>
             <column name="link" value="https://en.numista.com/catalogue/note208226.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -233,12 +233,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2003"/>
+            <column name="year_created" valueNumeric="2003"/>
             <column name="length" valueNumeric="156.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="invechita"/>
             <column name="link" value="https://en.numista.com/catalogue/note204582.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -247,12 +247,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1989"/>
+            <column name="year_created" valueNumeric="1989"/>
             <column name="length" valueNumeric="145.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note214912.html"/>
-            <column name="value" valueNumeric="10000.00"/>
+            <column name="numericValue" valueNumeric="10000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -261,12 +261,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1995"/>
+            <column name="year_created" valueNumeric="1995"/>
             <column name="length" valueNumeric="156.0"/>
             <column name="width" valueNumeric="69.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204523.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -275,12 +275,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2003"/>
+            <column name="year_created" valueNumeric="2003"/>
             <column name="length" valueNumeric="155.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203840.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -289,12 +289,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1988"/>
+            <column name="year_created" valueNumeric="1988"/>
             <column name="length" valueNumeric="156.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note201805.html"/>
-            <column name="value" valueNumeric="1.00"/>
+            <column name="numericValue" valueNumeric="1.00"/>
             <column name="units" valueNumeric="2"/>
         </insert>
         <insert tableName="banknotes">
@@ -303,12 +303,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1910"/>
+            <column name="year_created" valueNumeric="1910"/>
             <column name="length" valueNumeric="207.0"/>
             <column name="width" valueNumeric="102.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203319.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -317,12 +317,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1943"/>
+            <column name="year_created" valueNumeric="1943"/>
             <column name="length" valueNumeric="201.0"/>
             <column name="width" valueNumeric="113.0"/>
             <column name="description" value="a scris cineva cu creionul pe spate"/>
             <column name="link" value="https://en.numista.com/catalogue/note206921.html"/>
-            <column name="value" valueNumeric="2000.00"/>
+            <column name="numericValue" valueNumeric="2000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -331,12 +331,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2014"/>
+            <column name="year_created" valueNumeric="2014"/>
             <column name="length" valueNumeric="139.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204328.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -345,12 +345,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2013"/>
+            <column name="year_created" valueNumeric="2013"/>
             <column name="length" valueNumeric="143.0"/>
             <column name="width" valueNumeric="68.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204329.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -359,12 +359,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1929"/>
+            <column name="year_created" valueNumeric="1929"/>
             <column name="length" valueNumeric="160.0"/>
             <column name="width" valueNumeric="80.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204645.html"/>
-            <column name="value" valueNumeric="20.00"/>
+            <column name="numericValue" valueNumeric="20.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -373,12 +373,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1995"/>
+            <column name="year_created" valueNumeric="1995"/>
             <column name="length" valueNumeric="156.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note201812.html"/>
-            <column name="value" valueNumeric="2.00"/>
+            <column name="numericValue" valueNumeric="2.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -387,12 +387,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2013"/>
+            <column name="year_created" valueNumeric="2013"/>
             <column name="length" valueNumeric="150.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note212968.html"/>
-            <column name="value" valueNumeric="500.00"/>
+            <column name="numericValue" valueNumeric="500.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -401,12 +401,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1986"/>
+            <column name="year_created" valueNumeric="1986"/>
             <column name="length" valueNumeric="154.0"/>
             <column name="width" valueNumeric="74.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206080.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -415,12 +415,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1992"/>
+            <column name="year_created" valueNumeric="1992"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202949.html"/>
-            <column name="value" valueNumeric="2.00"/>
+            <column name="numericValue" valueNumeric="2.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -429,12 +429,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2020"/>
+            <column name="year_created" valueNumeric="2020"/>
             <column name="length" valueNumeric="120.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204030.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -443,12 +443,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1993"/>
+            <column name="year_created" valueNumeric="1993"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="rupta in 2x locuri"/>
             <column name="link" value="https://en.numista.com/catalogue/note204378.html"/>
-            <column name="value" valueNumeric="20.00"/>
+            <column name="numericValue" valueNumeric="20.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -457,12 +457,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1983"/>
+            <column name="year_created" valueNumeric="1983"/>
             <column name="length" valueNumeric="158.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note205994.html"/>
-            <column name="value" valueNumeric="500.00"/>
+            <column name="numericValue" valueNumeric="500.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -471,12 +471,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1970"/>
+            <column name="year_created" valueNumeric="1970"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206364.html"/>
-            <column name="value" valueNumeric="1000.00"/>
+            <column name="numericValue" valueNumeric="1000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -485,12 +485,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2014"/>
+            <column name="year_created" valueNumeric="2014"/>
             <column name="length" valueNumeric="134.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203853.html"/>
-            <column name="value" valueNumeric="20.00"/>
+            <column name="numericValue" valueNumeric="20.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -499,12 +499,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1982"/>
+            <column name="year_created" valueNumeric="1982"/>
             <column name="length" valueNumeric="138.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203926.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -513,12 +513,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1992"/>
+            <column name="year_created" valueNumeric="1992"/>
             <column name="length" valueNumeric="123.0"/>
             <column name="width" valueNumeric="80.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note201000.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -527,12 +527,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2008"/>
+            <column name="year_created" valueNumeric="2008"/>
             <column name="length" valueNumeric="120.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202670.html"/>
-            <column name="value" valueNumeric="20.00"/>
+            <column name="numericValue" valueNumeric="20.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -541,12 +541,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1968"/>
+            <column name="year_created" valueNumeric="1968"/>
             <column name="length" valueNumeric="128.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="e rau, manca-ti-as :)))"/>
             <column name="link" value="https://en.numista.com/catalogue/note205706.html"/>
-            <column name="value" valueNumeric="1.00"/>
+            <column name="numericValue" valueNumeric="1.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -555,12 +555,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1987"/>
+            <column name="year_created" valueNumeric="1987"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="Canadian Tire 5 cent"/>
             <column name="link" value="https://en.numista.com/catalogue/exonumia274110.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -569,12 +569,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1992"/>
+            <column name="year_created" valueNumeric="1992"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="Canadian Tire 5 cent"/>
             <column name="link" value="https://en.numista.com/catalogue/exonumia217522.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -583,12 +583,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1992"/>
+            <column name="year_created" valueNumeric="1992"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="Canadian Tire 10 cent"/>
             <column name="link" value="https://en.numista.com/catalogue/exonumia233130.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -597,12 +597,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1985"/>
+            <column name="year_created" valueNumeric="1985"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="Canadian Tire 10 cent"/>
             <column name="link" value="https://en.numista.com/catalogue/exonumia329720.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -611,13 +611,13 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1962"/>
+            <column name="year_created" valueNumeric="1962"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="Canadian Tire 10 cent - cu spate verde though"/>
             <column name="link"
                     value="https://www.bankofcanadamuseum.ca/collection/artefact/view/1968.0249.00009.000/canada-canadian-tire-corporation-ltd-10-cents-1962"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -626,12 +626,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2020"/>
+            <column name="year_created" valueNumeric="2020"/>
             <column name="length" valueNumeric="135.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note280476.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -640,12 +640,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2021"/>
+            <column name="year_created" valueNumeric="2021"/>
             <column name="length" valueNumeric="136.0"/>
             <column name="width" valueNumeric="77.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note312374.html"/>
-            <column name="value" valueNumeric="20.00"/>
+            <column name="numericValue" valueNumeric="20.00"/>
             <column name="units" valueNumeric="101"/>
         </insert>
         <insert tableName="banknotes">
@@ -654,12 +654,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1999"/>
+            <column name="year_created" valueNumeric="1999"/>
             <column name="length" valueNumeric="143.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note201590.html"/>
-            <column name="value" valueNumeric="2000.00"/>
+            <column name="numericValue" valueNumeric="2000.00"/>
             <column name="units" valueNumeric="12"/>
         </insert>
         <insert tableName="banknotes">
@@ -668,12 +668,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2000"/>
+            <column name="year_created" valueNumeric="2000"/>
             <column name="length" valueNumeric="150.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202531.html"/>
-            <column name="value" valueNumeric="10000.00"/>
+            <column name="numericValue" valueNumeric="10000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -682,12 +682,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2001"/>
+            <column name="year_created" valueNumeric="2001"/>
             <column name="length" valueNumeric="155.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202779.html"/>
-            <column name="value" valueNumeric="50000.00"/>
+            <column name="numericValue" valueNumeric="50000.00"/>
             <column name="units" valueNumeric="2"/>
         </insert>
         <insert tableName="banknotes">
@@ -696,12 +696,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2001"/>
+            <column name="year_created" valueNumeric="2001"/>
             <column name="length" valueNumeric="160.0"/>
             <column name="width" valueNumeric="73.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202781.html"/>
-            <column name="value" valueNumeric="100000.00"/>
+            <column name="numericValue" valueNumeric="100000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -710,12 +710,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1989"/>
+            <column name="year_created" valueNumeric="1989"/>
             <column name="length" valueNumeric="156.0"/>
             <column name="width" valueNumeric="69.0"/>
             <column name="description" value="destul de veche"/>
             <column name="link" value="https://en.numista.com/catalogue/note204100.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="2"/>
         </insert>
         <insert tableName="banknotes">
@@ -724,12 +724,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1966"/>
+            <column name="year_created" valueNumeric="1966"/>
             <column name="length" valueNumeric="124.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note205768.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="2"/>
         </insert>
         <insert tableName="banknotes">
@@ -738,12 +738,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1966"/>
+            <column name="year_created" valueNumeric="1966"/>
             <column name="length" valueNumeric="131.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note205769.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="3"/>
         </insert>
         <insert tableName="banknotes">
@@ -752,12 +752,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1966"/>
+            <column name="year_created" valueNumeric="1966"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="destul de veche"/>
             <column name="link" value="https://en.numista.com/catalogue/note204598.html"/>
-            <column name="value" valueNumeric="25.00"/>
+            <column name="numericValue" valueNumeric="25.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -766,12 +766,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1966"/>
+            <column name="year_created" valueNumeric="1966"/>
             <column name="length" valueNumeric="145.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note205770.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="2"/>
         </insert>
         <insert tableName="banknotes">
@@ -780,12 +780,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1966"/>
+            <column name="year_created" valueNumeric="1966"/>
             <column name="length" valueNumeric="153.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="toate foarte firave"/>
             <column name="link" value="https://en.numista.com/catalogue/note205771.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="4"/>
         </insert>
         <insert tableName="banknotes">
@@ -794,12 +794,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1947"/>
+            <column name="year_created" valueNumeric="1947"/>
             <column name="length" valueNumeric="182.0"/>
             <column name="width" valueNumeric="88.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note205762.html"/>
-            <column name="value" valueNumeric="100000.00"/>
+            <column name="numericValue" valueNumeric="100000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -808,12 +808,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1998"/>
+            <column name="year_created" valueNumeric="1998"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="61.0"/>
             <column name="description" value="unele lipicioase :("/>
             <column name="link" value="https://en.numista.com/catalogue/note204595.html"/>
-            <column name="value" valueNumeric="1000.00"/>
+            <column name="numericValue" valueNumeric="1000.00"/>
             <column name="units" valueNumeric="8"/>
         </insert>
         <insert tableName="banknotes">
@@ -822,12 +822,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1998"/>
+            <column name="year_created" valueNumeric="1998"/>
             <column name="length" valueNumeric="145.0"/>
             <column name="width" valueNumeric="64.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204592.html"/>
-            <column name="value" valueNumeric="5000.00"/>
+            <column name="numericValue" valueNumeric="5000.00"/>
             <column name="units" valueNumeric="2"/>
         </insert>
         <insert tableName="banknotes">
@@ -836,12 +836,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1999"/>
+            <column name="year_created" valueNumeric="1999"/>
             <column name="length" valueNumeric="150.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202797.html"/>
-            <column name="value" valueNumeric="10000.00"/>
+            <column name="numericValue" valueNumeric="10000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -850,12 +850,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1992"/>
+            <column name="year_created" valueNumeric="1992"/>
             <column name="length" valueNumeric="160.0"/>
             <column name="width" valueNumeric="76.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204438.html"/>
-            <column name="value" valueNumeric="500.00"/>
+            <column name="numericValue" valueNumeric="500.00"/>
             <column name="units" valueNumeric="6"/>
         </insert>
         <insert tableName="banknotes">
@@ -864,12 +864,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1991"/>
+            <column name="year_created" valueNumeric="1991"/>
             <column name="length" valueNumeric="157.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note205411.html"/>
-            <column name="value" valueNumeric="500.00"/>
+            <column name="numericValue" valueNumeric="500.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -878,12 +878,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1991"/>
+            <column name="year_created" valueNumeric="1991"/>
             <column name="length" valueNumeric="167.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206889.html"/>
-            <column name="value" valueNumeric="1000.00"/>
+            <column name="numericValue" valueNumeric="1000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -892,12 +892,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1993"/>
+            <column name="year_created" valueNumeric="1993"/>
             <column name="length" valueNumeric="172.0"/>
             <column name="width" valueNumeric="77.0"/>
             <column name="description" value="una e rea"/>
             <column name="link" value="https://en.numista.com/catalogue/note201963.html"/>
-            <column name="value" valueNumeric="5000.00"/>
+            <column name="numericValue" valueNumeric="5000.00"/>
             <column name="units" valueNumeric="3"/>
         </insert>
         <insert tableName="banknotes">
@@ -906,12 +906,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1994"/>
+            <column name="year_created" valueNumeric="1994"/>
             <column name="length" valueNumeric="180.0"/>
             <column name="width" valueNumeric="77.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206802.html"/>
-            <column name="value" valueNumeric="10000.00"/>
+            <column name="numericValue" valueNumeric="10000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -920,12 +920,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1937"/>
+            <column name="year_created" valueNumeric="1937"/>
             <column name="length" valueNumeric="125.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="rupta rau pe margini"/>
             <column name="link" value="https://en.numista.com/catalogue/note203658.html"/>
-            <column name="value" valueNumeric="2.00"/>
+            <column name="numericValue" valueNumeric="2.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -934,12 +934,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1917"/>
+            <column name="year_created" valueNumeric="1917"/>
             <column name="length" valueNumeric="124.0"/>
             <column name="width" valueNumeric="84.0"/>
             <column name="description" value="gaurita cu tigareta in dreptul semnaturii secretarului general"/>
             <column name="link" value="https://en.numista.com/catalogue/note202742.html"/>
-            <column name="value" valueNumeric="2.00"/>
+            <column name="numericValue" valueNumeric="2.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -948,12 +948,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1945"/>
+            <column name="year_created" valueNumeric="1945"/>
             <column name="length" valueNumeric="166.0"/>
             <column name="width" valueNumeric="91.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206915.html"/>
-            <column name="value" valueNumeric="5000.00"/>
+            <column name="numericValue" valueNumeric="5000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -962,12 +962,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1978"/>
+            <column name="year_created" valueNumeric="1978"/>
             <column name="length" valueNumeric="131.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202011.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -976,12 +976,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1978"/>
+            <column name="year_created" valueNumeric="1978"/>
             <column name="length" valueNumeric="140.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203458.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -990,12 +990,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1986"/>
+            <column name="year_created" valueNumeric="1986"/>
             <column name="length" valueNumeric="148.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206237.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="2"/>
         </insert>
         <insert tableName="banknotes">
@@ -1004,12 +1004,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1970"/>
+            <column name="year_created" valueNumeric="1970"/>
             <column name="length" valueNumeric="155.0"/>
             <column name="width" valueNumeric="74.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note205329.html"/>
-            <column name="value" valueNumeric="500.00"/>
+            <column name="numericValue" valueNumeric="500.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1018,12 +1018,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1990"/>
+            <column name="year_created" valueNumeric="1990"/>
             <column name="length" valueNumeric="139.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206188.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1032,12 +1032,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1990"/>
+            <column name="year_created" valueNumeric="1990"/>
             <column name="length" valueNumeric="147.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204353.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1046,12 +1046,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1985"/>
+            <column name="year_created" valueNumeric="1985"/>
             <column name="length" valueNumeric="165.0"/>
             <column name="width" valueNumeric="75.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204493.html"/>
-            <column name="value" valueNumeric="5000.00"/>
+            <column name="numericValue" valueNumeric="5000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1060,12 +1060,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1987"/>
+            <column name="year_created" valueNumeric="1987"/>
             <column name="length" valueNumeric="169.0"/>
             <column name="width" valueNumeric="77.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note205427.html"/>
-            <column name="value" valueNumeric="20000.00"/>
+            <column name="numericValue" valueNumeric="20000.00"/>
             <column name="units" valueNumeric="3"/>
         </insert>
         <insert tableName="banknotes">
@@ -1074,12 +1074,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1961"/>
+            <column name="year_created" valueNumeric="1961"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="deteriorata rau"/>
             <column name="link" value="https://en.numista.com/catalogue/note204573.html"/>
-            <column name="value" valueNumeric="1.00"/>
+            <column name="numericValue" valueNumeric="1.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1088,12 +1088,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1961"/>
+            <column name="year_created" valueNumeric="1961"/>
             <column name="length" valueNumeric="114.0"/>
             <column name="width" valueNumeric="57.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204574.html"/>
-            <column name="value" valueNumeric="3.00"/>
+            <column name="numericValue" valueNumeric="3.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1102,12 +1102,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1961"/>
+            <column name="year_created" valueNumeric="1961"/>
             <column name="length" valueNumeric="114.0"/>
             <column name="width" valueNumeric="57.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204497.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="2"/>
         </insert>
         <insert tableName="banknotes">
@@ -1116,12 +1116,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1961"/>
+            <column name="year_created" valueNumeric="1961"/>
             <column name="length" valueNumeric="119.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204577.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1130,12 +1130,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1961"/>
+            <column name="year_created" valueNumeric="1961"/>
             <column name="length" valueNumeric="121.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202408.html"/>
-            <column name="value" valueNumeric="25.00"/>
+            <column name="numericValue" valueNumeric="25.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1144,12 +1144,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2010"/>
+            <column name="year_created" valueNumeric="2010"/>
             <column name="length" valueNumeric="114.0"/>
             <column name="width" valueNumeric="58.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202816.html"/>
-            <column name="value" valueNumeric="1.00"/>
+            <column name="numericValue" valueNumeric="1.00"/>
             <column name="units" valueNumeric="5"/>
         </insert>
         <insert tableName="banknotes">
@@ -1158,12 +1158,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2013"/>
+            <column name="year_created" valueNumeric="2013"/>
             <column name="length" valueNumeric="114.0"/>
             <column name="width" valueNumeric="58.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203083.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1172,12 +1172,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2015"/>
+            <column name="year_created" valueNumeric="2015"/>
             <column name="length" valueNumeric="121.0"/>
             <column name="width" valueNumeric="61.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202336.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1186,12 +1186,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2015"/>
+            <column name="year_created" valueNumeric="2015"/>
             <column name="length" valueNumeric="121.0"/>
             <column name="width" valueNumeric="61.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note215899.html"/>
-            <column name="value" valueNumeric="20.00"/>
+            <column name="numericValue" valueNumeric="20.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1200,12 +1200,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2015"/>
+            <column name="year_created" valueNumeric="2015"/>
             <column name="length" valueNumeric="121.0"/>
             <column name="width" valueNumeric="61.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note215902.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1214,12 +1214,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2008"/>
+            <column name="year_created" valueNumeric="2008"/>
             <column name="length" valueNumeric="121.0"/>
             <column name="width" valueNumeric="61.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203091.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1228,12 +1228,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1993"/>
+            <column name="year_created" valueNumeric="1993"/>
             <column name="length" valueNumeric="166.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note207270.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="2"/>
         </insert>
         <insert tableName="banknotes">
@@ -1242,12 +1242,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2006"/>
+            <column name="year_created" valueNumeric="2006"/>
             <column name="length" valueNumeric="154.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note201884.html"/>
-            <column name="value" valueNumeric="200.00"/>
+            <column name="numericValue" valueNumeric="200.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1256,12 +1256,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2008"/>
+            <column name="year_created" valueNumeric="2008"/>
             <column name="length" valueNumeric="154.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note208459.html"/>
-            <column name="value" valueNumeric="500.00"/>
+            <column name="numericValue" valueNumeric="500.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1270,12 +1270,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2006"/>
+            <column name="year_created" valueNumeric="2006"/>
             <column name="length" valueNumeric="123.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note211571.html"/>
-            <column name="value" valueNumeric="20.00"/>
+            <column name="numericValue" valueNumeric="20.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1284,12 +1284,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2012"/>
+            <column name="year_created" valueNumeric="2012"/>
             <column name="length" valueNumeric="137.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203074.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1298,12 +1298,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2012"/>
+            <column name="year_created" valueNumeric="2012"/>
             <column name="length" valueNumeric="147.0"/>
             <column name="width" valueNumeric="73.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202323.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1312,12 +1312,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2015"/>
+            <column name="year_created" valueNumeric="2015"/>
             <column name="length" valueNumeric="128.0"/>
             <column name="width" valueNumeric="67.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203329.html"/>
-            <column name="value" valueNumeric="20.00"/>
+            <column name="numericValue" valueNumeric="20.00"/>
             <column name="units" valueNumeric="3"/>
         </insert>
         <insert tableName="banknotes">
@@ -1326,12 +1326,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2001"/>
+            <column name="year_created" valueNumeric="2001"/>
             <column name="length" valueNumeric="130.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202798.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1340,12 +1340,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1996"/>
+            <column name="year_created" valueNumeric="1996"/>
             <column name="length" valueNumeric="130.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note207721.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1354,12 +1354,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2003"/>
+            <column name="year_created" valueNumeric="2003"/>
             <column name="length" valueNumeric="138.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202122.html"/>
-            <column name="value" valueNumeric="20.00"/>
+            <column name="numericValue" valueNumeric="20.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1368,12 +1368,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2013"/>
+            <column name="year_created" valueNumeric="2013"/>
             <column name="length" valueNumeric="138.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204487.html"/>
-            <column name="value" valueNumeric="20.00"/>
+            <column name="numericValue" valueNumeric="20.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1382,12 +1382,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2001"/>
+            <column name="year_created" valueNumeric="2001"/>
             <column name="length" valueNumeric="143.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note209804.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1396,12 +1396,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2003"/>
+            <column name="year_created" valueNumeric="2003"/>
             <column name="length" valueNumeric="134.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202976.html"/>
-            <column name="value" valueNumeric="1.00"/>
+            <column name="numericValue" valueNumeric="1.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1410,12 +1410,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1984"/>
+            <column name="year_created" valueNumeric="1984"/>
             <column name="length" valueNumeric="134.0"/>
             <column name="width" valueNumeric="62.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204099.html"/>
-            <column name="value" valueNumeric="1.00"/>
+            <column name="numericValue" valueNumeric="1.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1424,12 +1424,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2002"/>
+            <column name="year_created" valueNumeric="2002"/>
             <column name="length" valueNumeric="136.0"/>
             <column name="width" valueNumeric="56.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202106.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1438,12 +1438,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2008"/>
+            <column name="year_created" valueNumeric="2008"/>
             <column name="length" valueNumeric="137.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note208881.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1452,12 +1452,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2013"/>
+            <column name="year_created" valueNumeric="2013"/>
             <column name="length" valueNumeric="115.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206844.html"/>
-            <column name="value" valueNumeric="1000.00"/>
+            <column name="numericValue" valueNumeric="1000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1466,12 +1466,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2004"/>
+            <column name="year_created" valueNumeric="2004"/>
             <column name="length" valueNumeric="142.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note201697.html"/>
-            <column name="value" valueNumeric="1.00"/>
+            <column name="numericValue" valueNumeric="1.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1480,12 +1480,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2001"/>
+            <column name="year_created" valueNumeric="2001"/>
             <column name="length" valueNumeric="150.0"/>
             <column name="width" valueNumeric="77.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206598.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1494,12 +1494,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2003"/>
+            <column name="year_created" valueNumeric="2003"/>
             <column name="length" valueNumeric="135.0"/>
             <column name="width" valueNumeric="70.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note209798.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1508,12 +1508,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1999"/>
+            <column name="year_created" valueNumeric="1999"/>
             <column name="length" valueNumeric="130.0"/>
             <column name="width" valueNumeric="71.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204738.html"/>
-            <column name="value" valueNumeric="25.00"/>
+            <column name="numericValue" valueNumeric="25.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1522,12 +1522,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2013"/>
+            <column name="year_created" valueNumeric="2013"/>
             <column name="length" valueNumeric="118.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202693.html"/>
-            <column name="value" valueNumeric="2.00"/>
+            <column name="numericValue" valueNumeric="2.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1536,12 +1536,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2005"/>
+            <column name="year_created" valueNumeric="2005"/>
             <column name="length" valueNumeric="118.0"/>
             <column name="width" valueNumeric="63.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202690.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1550,12 +1550,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2006"/>
+            <column name="year_created" valueNumeric="2006"/>
             <column name="length" valueNumeric="124.0"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202679.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1564,12 +1564,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2004"/>
+            <column name="year_created" valueNumeric="2004"/>
             <column name="length" valueNumeric="136.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202240.html"/>
-            <column name="value" valueNumeric="50.00"/>
+            <column name="numericValue" valueNumeric="50.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1578,12 +1578,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1991"/>
+            <column name="year_created" valueNumeric="1991"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203606.html"/>
-            <column name="value" valueNumeric="1.00"/>
+            <column name="numericValue" valueNumeric="1.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1592,12 +1592,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1991"/>
+            <column name="year_created" valueNumeric="1991"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203607.html"/>
-            <column name="value" valueNumeric="3.00"/>
+            <column name="numericValue" valueNumeric="3.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1606,12 +1606,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1991"/>
+            <column name="year_created" valueNumeric="1991"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203608.html"/>
-            <column name="value" valueNumeric="5.00"/>
+            <column name="numericValue" valueNumeric="5.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1620,12 +1620,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1991"/>
+            <column name="year_created" valueNumeric="1991"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203609.html"/>
-            <column name="value" valueNumeric="10.00"/>
+            <column name="numericValue" valueNumeric="10.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1634,12 +1634,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1991"/>
+            <column name="year_created" valueNumeric="1991"/>
             <column name="length" valueNumeric="105.0"/>
             <column name="width" valueNumeric="53.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203610.html"/>
-            <column name="value" valueNumeric="25.00"/>
+            <column name="numericValue" valueNumeric="25.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1648,12 +1648,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1988"/>
+            <column name="year_created" valueNumeric="1988"/>
             <column name="length" valueNumeric="133.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note202012.html"/>
-            <column name="value" valueNumeric="2000.00"/>
+            <column name="numericValue" valueNumeric="2000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1662,12 +1662,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1991"/>
+            <column name="year_created" valueNumeric="1991"/>
             <column name="length" valueNumeric="134.0"/>
             <column name="width" valueNumeric="64.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204511.html"/>
-            <column name="value" valueNumeric="5000.00"/>
+            <column name="numericValue" valueNumeric="5000.00"/>
             <column name="units" valueNumeric="3"/>
         </insert>
         <insert tableName="banknotes">
@@ -1676,12 +1676,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1992"/>
+            <column name="year_created" valueNumeric="1992"/>
             <column name="length" valueNumeric="151.0"/>
             <column name="width" valueNumeric="72.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206076.html"/>
-            <column name="value" valueNumeric="100.00"/>
+            <column name="numericValue" valueNumeric="100.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1690,12 +1690,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1992"/>
+            <column name="year_created" valueNumeric="1992"/>
             <column name="length" valueNumeric="163.0"/>
             <column name="width" valueNumeric="78.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note206071.html"/>
-            <column name="value" valueNumeric="1000.00"/>
+            <column name="numericValue" valueNumeric="1000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1704,12 +1704,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="1987"/>
+            <column name="year_created" valueNumeric="1987"/>
             <column name="length" valueNumeric="130.0"/>
             <column name="width" valueNumeric="65.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203812.html"/>
-            <column name="value" valueNumeric="200.00"/>
+            <column name="numericValue" valueNumeric="200.00"/>
             <column name="units" valueNumeric="2"/>
         </insert>
         <insert tableName="banknotes">
@@ -1718,12 +1718,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2006"/>
+            <column name="year_created" valueNumeric="2006"/>
             <column name="length" valueNumeric="137.5"/>
             <column name="width" valueNumeric="66.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note204743.html"/>
-            <column name="value" valueNumeric="20000.00"/>
+            <column name="numericValue" valueNumeric="20000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
         <insert tableName="banknotes">
@@ -1732,12 +1732,12 @@
             <column name="material_id" valueNumeric="36"/>
             <column name="condition" value="GOOD"/>
             <column name="denomination_id" valueNumeric="35"/>
-            <column name="year" valueNumeric="2014"/>
+            <column name="year_created" valueNumeric="2014"/>
             <column name="length" valueNumeric="132.0"/>
             <column name="width" valueNumeric="60.0"/>
             <column name="description" value="-"/>
             <column name="link" value="https://en.numista.com/catalogue/note203627.html"/>
-            <column name="value" valueNumeric="10000.00"/>
+            <column name="numericValue" valueNumeric="10000.00"/>
             <column name="units" valueNumeric="1"/>
         </insert>
 

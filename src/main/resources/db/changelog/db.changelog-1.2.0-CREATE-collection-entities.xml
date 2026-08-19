@@ -133,7 +133,7 @@
                 <constraints foreignKeyName="fk_coins_denomination" referencedTableName="denomination"
                              referencedColumnNames="id" nullable="false"/>
             </column>
-            <column name="year" type="integer">
+            <column name="year_created" type="integer">
                 <constraints nullable="false"/>
             </column>
             <column name="diameter" type="numeric">
@@ -141,7 +141,7 @@
             </column>
             <column name="description" type="text"/>
             <column name="link" type="text"/>
-            <column name="value" type="numeric">
+            <column name="numericValue" type="numeric">
                 <constraints nullable="false"/>
             </column>
             <column name="extra_year" type="integer"/>
@@ -168,7 +168,7 @@
                 <constraints foreignKeyName="fk_banknotes_denomination" referencedTableName="denomination"
                              referencedColumnNames="id" nullable="false"/>
             </column>
-            <column name="year" type="integer">
+            <column name="year_created" type="integer">
                 <constraints nullable="false"/>
             </column>
             <column name="length" type="numeric">
@@ -180,7 +180,7 @@
             <column name="thickness" type="numeric"/>
             <column name="description" type="text"/>
             <column name="link" type="text"/>
-            <column name="value" type="numeric">
+            <column name="numericValue" type="numeric">
                 <constraints nullable="false"/>
             </column>
             <column name="extra_year" type="integer"/>
