@@ -13,8 +13,6 @@
     <include file="db/changelog/db.changelog-1.2.0-INSERT-materials-collection-entities.xml"/>
     <include file="db/changelog/db.changelog-1.2.0-INSERT-simple-collection-entities.xml"/>
 
-<!--    <include file="db/changelog/db.changelog-1.2.1-INSERT-banknotes-collection-entities.xml"/>-->
-<!--    <include file="db/changelog/db.changelog-1.2.1-INSERT-books-collection-entities.xml"/>-->
-<!--    <include file="db/changelog/db.changelog-1.2.1-INSERT-coins-collection-entities.xml"/>-->
+    <include file="db/changelog/db.changelog-1.2.1-INSERT-real-collection-entities.xml"/>
 
 </databaseChangeLog>

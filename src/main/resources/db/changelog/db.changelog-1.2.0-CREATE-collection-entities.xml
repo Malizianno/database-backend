@@ -113,6 +113,7 @@
             <column name="link" type="text"/>
             <column name="published_year" type="integer"/>
             <column name="printed_year" type="integer"/>
+            <column name="condition" type="text"/>
         </createTable>
 
         <createTable tableName="coins">
@@ -141,13 +142,15 @@
             </column>
             <column name="description" type="text"/>
             <column name="link" type="text"/>
-            <column name="numericValue" type="numeric">
+            <column name="numeric_value" type="numeric">
                 <constraints nullable="false"/>
             </column>
-            <column name="extra_year" type="integer"/>
+            <column name="extra_year" type="string"/>
             <column name="units" type="integer">
                 <constraints nullable="false"/>
             </column>
+            <column name="weight" type="numeric"/>
+            <column name="thickness" type="numeric"/>
         </createTable>
 
         <createTable tableName="banknotes">
@@ -177,13 +180,12 @@
             <column name="width" type="numeric">
                 <constraints nullable="false"/>
             </column>
-            <column name="thickness" type="numeric"/>
             <column name="description" type="text"/>
             <column name="link" type="text"/>
-            <column name="numericValue" type="numeric">
+            <column name="numeric_value" type="numeric">
                 <constraints nullable="false"/>
             </column>
-            <column name="extra_year" type="integer"/>
+            <column name="extra_year" type="string"/>
             <column name="units" type="integer">
                 <constraints nullable="false"/>
             </column>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <!-- INSERT COLLECTION ENTITIES-->
+    <changeSet id="insert-initial-real-collection-entities" author="admin">
+        <insert tableName="collections">
+            <column name="id" value="d7717171-7fbd-45ad-887b-15874b0a0287"/>
+            <column name="name" value="Banknotes"/>
+            <column name="description" value="Personal collection of banknotes."/>
+            <column name="user_id" value="cc5f992f-e5ed-4a28-8f6f-d2ae50a4b544"/>
+            <column name="type" value="BANKNOTES"/>
+        </insert>
+        <insert tableName="collections">
+            <column name="id" value="4f1cf63c-2634-4414-b570-d80b4507ec61"/>
+            <column name="name" value="Books"/>
+            <column name="description" value="Malizia"/>
+            <column name="user_id" value="cc5f992f-e5ed-4a28-8f6f-d2ae50a4b544"/>
+            <column name="type" value="BOOKS"/>
+        </insert>
+        <insert tableName="collections">
+            <column name="id" value="5d48ccb9-98e2-439d-a47d-e4acb59c9f47"/>
+            <column name="name" value="Coins"/>
+            <column name="description" value="Personal collection of coins."/>
+            <column name="user_id" value="cc5f992f-e5ed-4a28-8f6f-d2ae50a4b544"/>
+            <column name="type" value="COINS"/>
+        </insert>
+        <insert tableName="collections">
+            <column name="id" value="dfd7ded8-2936-4663-aa0a-aa79d956f16d"/>
+            <column name="name" value="Andreea's Books"/>
+            <column name="description" value="Personal collection of coins."/>
+            <column name="user_id" value="b45c04ec-a62f-4781-86ec-9628e9ab62a8"/>
+            <column name="type" value="BOOKS"/>
+        </insert>
+    </changeSet>
+
+    <changeSet id="insert-cristian-coins-csv" author="admin">
+        <loadData tableName="coins"
+                  file="db/changelog/data/coins.csv"
+                  relativeToChangelogFile="false">
+            <column name="id" type="UUID"/>
+            <column name="collection_id" type="UUID"/>
+            <column name="material_id" type="UUID"/>
+            <column name="denomination_id" type="UUID"/>
+            <column name="condition" type="text"/>
+            <column name="year_created" type="integer"/>
+            <column name="diameter" type="numeric"/>
+            <column name="description" type="text"/>
+            <column name="link" type="text"/>
+            <column name="numeric_value" type="numeric"/>
+            <column name="extra_year" type="string"/>
+            <column name="units" type="integer"/>
+            <column name="weight" type="numeric"/>
+            <column name="thickness" type="numeric"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="insert-cristian-banknotes-csv" author="admin">
+        <loadData tableName="banknotes"
+                  file="db/changelog/data/banknotes.csv"
+                  relativeToChangelogFile="false">
+            <column name="id" type="UUID"/>
+            <column name="collection_id" type="UUID"/>
+            <column name="material_id" type="UUID"/>
+            <column name="denomination_id" type="UUID"/>
+            <column name="condition" type="text"/>
+            <column name="year_created" type="integer"/>
+            <column name="length" type="numeric"/>
+            <column name="width" type="numeric"/>
+            <column name="description" type="text"/>
+            <column name="link" type="text"/>
+            <column name="numeric_value" type="numeric"/>
+            <column name="extra_year" type="string"/>
+            <column name="units" type="integer"/>
+        </loadData>
+    </changeSet>
+
+    <changeSet id="insert-cristian-books-csv" author="admin">
+        <loadData tableName="books"
+                  file="db/changelog/data/books.csv"
+                  relativeToChangelogFile="false">
+            <column name="id" type="UUID"/>
+            <column name="collection_id" type="UUID"/>
+            <column name="domain_id" type="UUID"/>
+            <column name="language_id" type="UUID"/>
+            <column name="title" type="text"/>
+            <column name="author" type="text"/>
+            <column name="isbn" type="text"/>
+            <column name="pages" type="integer"/>
+            <column name="description" type="text"/>
+            <column name="link" type="text"/>
+            <column name="published_year" type="integer"/>
+            <column name="printed_year" type="integer"/>
+            <column name="condition" type="text"/>
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

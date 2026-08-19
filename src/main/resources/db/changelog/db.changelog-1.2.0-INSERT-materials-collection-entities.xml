@@ -159,6 +159,52 @@
             <column name="id" value="35da2f5a-1a21-4987-a4d9-ea748641b675"/>
             <column name="name" value="Polimer"/>
         </insert>
+        <insert tableName="materials">
+            <column name="id" value="12bf063f-c7c6-4738-8dd7-a18c7be1f119"/>
+            <column name="name" value="Zinc"/>
+        </insert>
+
+        <insert tableName="materials">
+            <column name="id" value="1650e291-2528-421b-893b-9e69c3eba3ef"/>
+            <column name="name" value="Cupru placat cu Nichel-Alamă"/>
+        </insert>
+        <insert tableName="materials">
+            <column name="id" value="35a86bc2-c0a8-49e6-abf2-f244dc9475eb"/>
+            <column name="name" value="Bimetalic: centru din Oțel placat cu Bronz, cerc din Oțel placat cu Nichel"/>
+        </insert>
+        <insert tableName="materials">
+            <column name="id" value="0e32cfc0-414c-4277-985b-bb934c76c5c8"/>
+            <column name="name" value="Bimetalic: centru din Aur nordic, cerc din Cupru-Nichel"/>
+        </insert>
+        <insert tableName="materials">
+            <column name="id" value="90d37468-792b-4281-87be-207a2582a630"/>
+            <column name="name" value="Bimetalic: centru din Oțel inoxidabil, cerc din Cupru-Aluminiu-Nichel"/>
+        </insert>
+        <insert tableName="materials">
+            <column name="id" value="aab27a5e-9f50-452a-b062-d1a43f45746c"/>
+            <column name="name" value="Zinc placat cu Cupru"/>
+        </insert>
+        <insert tableName="materials">
+            <column name="id" value="d08277da-be8e-4f49-8b53-f0452850f269"/>
+            <column name="name" value="Argint 0.800"/>
+        </insert>
+        <insert tableName="materials">
+            <column name="id" value="eeab63c4-18f6-42a5-a13a-2b86e4ef2afc"/>
+            <column name="name" value="Cupru placat cu Cupru-Nichel"/>
+        </insert>
+        <insert tableName="materials">
+            <column name="id" value="9c6bf37f-81d0-4fbd-8b0c-d5b81737dc73"/>
+            <column name="name" value="Argint placat cu Aur 0.925"/>
+        </insert>
+        <insert tableName="materials">
+            <column name="id" value="3fcaa1a8-336b-4f4d-b47c-b2d01434ae13"/>
+            <column name="name" value="Bimetalic: centru din Oțel placat cu Nichel-Alamă, cerc din Oțel placat cu Nichel"/>
+        </insert>
+        <insert tableName="materials">
+            <column name="id" value="e25dd592-4d39-42f3-b676-ae5e4604f1eb"/>
+            <column name="name" value="Necunoscut"/>
+        </insert>
+
     </changeSet>
 
 </databaseChangeLog>
