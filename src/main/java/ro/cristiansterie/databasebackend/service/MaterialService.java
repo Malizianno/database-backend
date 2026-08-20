@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.MaterialDTO;
 import ro.cristiansterie.databasebackend.repository.MaterialRepository;
+import ro.cristiansterie.databasebackend.util.Validator;
 import ro.cristiansterie.databasebackend.util.converter.models.MaterialModelConverter;
 
 import java.util.Set;
@@ -38,14 +39,16 @@ public class MaterialService {
 
 	@Transactional
 	public MaterialDTO update(UUID id, MaterialDTO dto) {
-		if (id == null || dto.id() == null || id.equals(dto.id())) {
+		if (dto == null || !Validator.isUUIDValid(id)) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
 
 		var entity = repo.findById(id)
 		                 .orElseThrow(() -> new EntityNotFoundException("Could not find material with ID: " + id));
+		
+		entity.setName(dto.name());
 
-		return converter.toDto(repo.save(converter.toEntity(dto)));
+		return converter.toDto(repo.save(entity));
 	}
 
 	@Transactional

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.CoinDTO;
 import ro.cristiansterie.databasebackend.repository.CoinRepository;
+import ro.cristiansterie.databasebackend.util.Validator;
 import ro.cristiansterie.databasebackend.util.converter.models.CoinModelConverter;
 
 import java.util.Set;
@@ -38,14 +39,26 @@ public class CoinService {
 
 	@Transactional
 	public CoinDTO update(UUID id, CoinDTO dto) {
-		if (id == null || dto.id() == null || id.equals(dto.id())) {
+		if (dto == null || !Validator.isUUIDValid(id)) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
 
 		var entity = repo.findById(id)
 		                 .orElseThrow(() -> new EntityNotFoundException("Could not find coin with ID: " + id));
 
-		return converter.toDto(repo.save(converter.toEntity(dto)));
+		entity.setCollectionId(dto.collectionId());
+		entity.setCondition(dto.condition());
+		entity.setLink(dto.link());
+		entity.setDiameter(dto.diameter());
+		entity.setDescription(dto.description());
+		entity.setYear(dto.year());
+		entity.setUnits(dto.units());
+		entity.setDenominationId(dto.denominationId());
+		entity.setExtraYear(dto.extraYear());
+		entity.setMaterialId(dto.materialId());
+		entity.setNumericValue(dto.numericValue());
+
+		return converter.toDto(repo.save(entity));
 	}
 
 	@Transactional

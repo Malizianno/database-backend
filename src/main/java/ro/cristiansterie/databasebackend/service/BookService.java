@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.BookDTO;
 import ro.cristiansterie.databasebackend.repository.BookRepository;
+import ro.cristiansterie.databasebackend.util.Validator;
 import ro.cristiansterie.databasebackend.util.converter.models.BookModelConverter;
 
 import java.util.Set;
@@ -38,14 +39,26 @@ public class BookService {
 
 	@Transactional
 	public BookDTO update(UUID id, BookDTO dto) {
-		if (id == null || dto.id() == null || id.equals(dto.id())) {
+		if (dto == null || !Validator.isUUIDValid(id)) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
 
 		var entity = repo.findById(id)
 		                 .orElseThrow(() -> new EntityNotFoundException("Could not find book with ID: " + id));
 
-		return converter.toDto(repo.save(converter.toEntity(dto)));
+		entity.setAuthor(dto.author());
+		entity.setIsbn(dto.isbn());
+		entity.setLink(dto.link());
+		entity.setDescription(dto.description());
+		entity.setPages(dto.pages());
+		entity.setTitle(dto.title());
+		entity.setCollectionId(dto.collectionId());
+		entity.setDomainId(dto.domainId());
+		entity.setLanguageId(dto.languageId());
+		entity.setPrintedYear(dto.printedYear());
+		entity.setPublishedYear(dto.publishedYear());
+
+		return converter.toDto(repo.save(entity));
 	}
 
 	@Transactional

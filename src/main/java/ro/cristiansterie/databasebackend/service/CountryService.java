@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.CountryDTO;
 import ro.cristiansterie.databasebackend.repository.CountryRepository;
+import ro.cristiansterie.databasebackend.util.Validator;
 import ro.cristiansterie.databasebackend.util.converter.models.CountryModelConverter;
 
 import java.util.Set;
@@ -38,14 +39,18 @@ public class CountryService {
 
 	@Transactional
 	public CountryDTO update(UUID id, CountryDTO dto) {
-		if (id == null || dto.id() == null || id.equals(dto.id())) {
+		if (dto == null || !Validator.isUUIDValid(id)) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
 
 		var entity = repo.findById(id)
 		                 .orElseThrow(() -> new EntityNotFoundException("Could not find country with ID: " + id));
 
-		return converter.toDto(repo.save(converter.toEntity(dto)));
+		entity.setName(dto.name());
+		entity.setContinent(dto.continent());
+		entity.setFlag(dto.flag());
+
+		return converter.toDto(repo.save(entity));
 	}
 
 	@Transactional

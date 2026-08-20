@@ -22,5 +22,6 @@ public class CollectionEntity {
 	private UUID userId;
 	private String name;
 	private String description;
+	@Enumerated(EnumType.STRING)
 	private CollectionType type;
 }

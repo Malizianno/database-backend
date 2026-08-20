@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.DenominationDTO;
 import ro.cristiansterie.databasebackend.repository.DenominationRepository;
+import ro.cristiansterie.databasebackend.util.Validator;
 import ro.cristiansterie.databasebackend.util.converter.models.DenominationModelConverter;
 
 import java.util.Set;
@@ -38,14 +39,17 @@ public class DenominationService {
 
 	@Transactional
 	public DenominationDTO update(UUID id, DenominationDTO dto) {
-		if (id == null || dto.id() == null || id.equals(dto.id())) {
+		if (dto == null || !Validator.isUUIDValid(id)) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
 
 		var entity = repo.findById(id)
 		                 .orElseThrow(() -> new EntityNotFoundException("Could not find denomination with ID: " + id));
 
-		return converter.toDto(repo.save(converter.toEntity(dto)));
+		entity.setTitle(dto.title());
+		entity.setCountryId(dto.countryId());
+
+		return converter.toDto(repo.save(entity));
 	}
 
 	@Transactional

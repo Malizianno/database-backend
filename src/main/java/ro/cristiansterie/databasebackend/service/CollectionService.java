@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.CollectionDTO;
 import ro.cristiansterie.databasebackend.repository.CollectionRepository;
+import ro.cristiansterie.databasebackend.util.Validator;
 import ro.cristiansterie.databasebackend.util.converter.models.CollectionModelConverter;
 
 import java.util.Set;
@@ -38,14 +39,19 @@ public class CollectionService {
 
 	@Transactional
 	public CollectionDTO update(UUID id, CollectionDTO dto) {
-		if (id == null || dto.id() == null || id.equals(dto.id())) {
+		if (dto == null || !Validator.isUUIDValid(id)) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
 
 		var entity = repo.findById(id)
 		                 .orElseThrow(() -> new EntityNotFoundException("Could not find collection with ID: " + id));
 
-		return converter.toDto(repo.save(converter.toEntity(dto)));
+		entity.setName(dto.name());
+		entity.setDescription(dto.description());
+		entity.setType(dto.type());
+		entity.setUserId(dto.userId());
+
+		return converter.toDto(repo.save(entity));
 	}
 
 	@Transactional

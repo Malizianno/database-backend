@@ -10,10 +10,10 @@ import ro.cristiansterie.databasebackend.dto.UserDTO;
 import ro.cristiansterie.databasebackend.model.RoleEntity;
 import ro.cristiansterie.databasebackend.model.UserEntity;
 import ro.cristiansterie.databasebackend.repository.UserRepository;
+import ro.cristiansterie.databasebackend.util.Validator;
 import ro.cristiansterie.databasebackend.util.converter.models.RoleModelConverter;
 import ro.cristiansterie.databasebackend.util.converter.models.UserModelConverter;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
@@ -67,8 +67,8 @@ public class UserService {
 	}
 
 	@Transactional
-	public UserDTO update(UUID id, UserDTO userDTO) {
-		if (userDTO == null || id == null) {
+	public UserDTO update(UUID id, UserDTO dto) {
+		if (dto == null || !Validator.isUUIDValid(id)) {
 			throw new EntityNotFoundException("No user to update");
 		}
 
@@ -76,17 +76,17 @@ public class UserService {
 		                      .orElseThrow(() -> new EntityNotFoundException("User not found to update"));
 
 		// Update the fields. Hibernate tracks these changes automatically ("Dirty Checking")
-		user.setUsername(userDTO.username());
-		user.setEmail(userDTO.email());
+		user.setUsername(dto.username());
+		user.setEmail(dto.email());
 
-		if (userDTO.password() != null && !userDTO.password()
+		if (dto.password() != null && !dto.password()
 		                                          .isBlank()) {
-			user.setPassword(passwordEncoder.encode(userDTO.password()));
+			user.setPassword(passwordEncoder.encode(dto.password()));
 		}
 
-		if (userDTO.roles() != null && !userDTO.roles()
+		if (dto.roles() != null && !dto.roles()
 		                                       .isEmpty()) {
-			user.setRoles(setAssignedRoles(userDTO));
+			user.setRoles(setAssignedRoles(dto));
 		}
 
 		return converter.toDto(repo.save(user));

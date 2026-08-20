@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.DomainDTO;
 import ro.cristiansterie.databasebackend.repository.DomainRepository;
+import ro.cristiansterie.databasebackend.util.Validator;
 import ro.cristiansterie.databasebackend.util.converter.models.DomainModelConverter;
 
 import java.util.Set;
@@ -38,14 +39,17 @@ public class DomainService {
 
 	@Transactional
 	public DomainDTO update(UUID id, DomainDTO dto) {
-		if (id == null || dto.id() == null || id.equals(dto.id())) {
+		if (dto == null || !Validator.isUUIDValid(id)) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
 
 		var entity = repo.findById(id)
 		                 .orElseThrow(() -> new EntityNotFoundException("Could not find domain with ID: " + id));
 
-		return converter.toDto(repo.save(converter.toEntity(dto)));
+		entity.setDescription(dto.description());
+		entity.setName(dto.name());
+
+		return converter.toDto(repo.save(entity));
 	}
 
 	@Transactional

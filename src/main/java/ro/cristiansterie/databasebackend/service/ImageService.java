@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.ImageDTO;
 import ro.cristiansterie.databasebackend.repository.ImageRepository;
+import ro.cristiansterie.databasebackend.util.Validator;
 import ro.cristiansterie.databasebackend.util.converter.models.ImageModelConverter;
 
 import java.util.Set;
@@ -38,14 +39,18 @@ public class ImageService {
 
 	@Transactional
 	public ImageDTO update(UUID id, ImageDTO dto) {
-		if (id == null || dto.id() == null || id.equals(dto.id())) {
+		if (dto == null || !Validator.isUUIDValid(id)) {
 			throw new IllegalArgumentException("Invalid ID: " + id);
 		}
 
 		var entity = repo.findById(id)
 		                 .orElseThrow(() -> new EntityNotFoundException("Could not find image with ID: " + id));
 
-		return converter.toDto(repo.save(converter.toEntity(dto)));
+		entity.setImageUrl(dto.imageUrl());
+		entity.setItemId(dto.itemId());
+		entity.setItemType(dto.itemType());
+
+		return converter.toDto(repo.save(entity));
 	}
 
 	@Transactional
