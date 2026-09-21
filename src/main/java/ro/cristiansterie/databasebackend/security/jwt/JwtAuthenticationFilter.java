@@ -13,8 +13,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import ro.cristiansterie.databasebackend.dto.UserDTO;
-import ro.cristiansterie.databasebackend.service.UserService;
 import ro.cristiansterie.databasebackend.util.AppConstants;
 
 import java.io.IOException;
