@@ -1,6 +1,5 @@
 package ro.cristiansterie.databasebackend.security.userdetails;
 
-import lombok.Getter;
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,47 +9,42 @@ import ro.cristiansterie.databasebackend.model.UserEntity;
 import java.util.ArrayList;
 import java.util.Collection;
 
-@Getter
-public class DatabaseUserDetails implements UserDetails {
-    private final UserEntity user;
-
-    public DatabaseUserDetails(UserEntity user) {
-        this.user = user;
-    }
+public record DatabaseUserDetails(
+		UserEntity user) implements UserDetails {
 
 	@Override
-    public @NonNull Collection<? extends GrantedAuthority> getAuthorities() {
-        var authorities = user.getGrantedAuthorities();
-        return authorities != null ? authorities : new ArrayList<>();
-    }
+	public @NonNull Collection<? extends GrantedAuthority> getAuthorities() {
+		var authorities = user.getGrantedAuthorities();
+		return authorities != null ? authorities : new ArrayList<>();
+	}
 
-    @Override
-    public @Nullable String getPassword() {
-        return user.getPassword();
-    }
+	@Override
+	public @Nullable String getPassword() {
+		return user.getPassword();
+	}
 
-    @Override
-    public @NonNull String getUsername() {
-        return user.getUsername();
-    }
+	@Override
+	public @NonNull String getUsername() {
+		return user.getUsername();
+	}
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
-    }
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return true;
-    }
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
-    }
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
 
-    @Override
-    public boolean isEnabled() {
-        return true;
-    }
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
 }
