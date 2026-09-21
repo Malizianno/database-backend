@@ -73,11 +73,18 @@ public class SecurityConfig {
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) {
+		var excludedEndpoints = new String[]{
+				"/auth/login",
+				"/actuator/health",
+				"/auth/bio",
+				"/auth/challenge"
+		};
+
 		return http
 				.csrf(AbstractHttpConfigurer::disable)
 				.cors(cors -> cors.configurationSource(corsConfigurationSource()))
 				.authorizeHttpRequests(auth -> auth
-						.requestMatchers("/auth/login/**", "/actuator/health")
+						.requestMatchers(excludedEndpoints)
 						.permitAll()
 						.anyRequest()
 						.authenticated()

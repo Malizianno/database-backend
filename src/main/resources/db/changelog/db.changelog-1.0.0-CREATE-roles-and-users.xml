@@ -63,4 +63,10 @@
                                  constraintName="fk_users_roles_role"/>
     </changeSet>
 
+    <changeSet id="add-column-public-key-to-users-table" author="admin">
+        <addColumn tableName="users">
+            <column name="public_key" type="VARCHAR(500)" />
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>

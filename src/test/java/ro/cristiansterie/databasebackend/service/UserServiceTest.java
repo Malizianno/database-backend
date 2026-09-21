@@ -37,6 +37,8 @@ public class UserServiceTest {
 	private RoleModelConverter roleConverter;
 	@Mock
 	private UserModelConverter converter;
+	@Mock
+	private RoleService roleService;
 
 	@InjectMocks
 	private UserService service;
@@ -104,6 +106,8 @@ public class UserServiceTest {
 		when(userRepository.save(any())).thenReturn(user);
 		when(converter.toEntity(any())).thenReturn(user);
 		when(converter.toDto(any())).thenReturn(userDTO);
+		when(roleService.findAllRoles()).thenReturn(rolesDTO.stream()
+		                                                    .toList());
 
 		// read/insert
 		UserDTO saved = service.save(userDTO);
@@ -131,6 +135,8 @@ public class UserServiceTest {
 		when(passwordEncoder.encode(any())).thenReturn("12345");
 		when(roleConverter.toEntityList(any())).thenReturn(List.of(role));
 		when(converter.toDto(any())).thenReturn(userDTO);
+		when(roleService.findAllRoles()).thenReturn(rolesDTO.stream()
+		                                                    .toList());
 
 		// read
 		UserDTO updated = service.update(userUUID, userDTO);
