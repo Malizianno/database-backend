@@ -2,11 +2,9 @@ package ro.cristiansterie.databasebackend.dto;
 
 import org.jspecify.annotations.NonNull;
 
-public record BiometricLoginRequestDTO(
+public record BiometricRegisterRequestDTO(
 		@NonNull
 		String username,
 		@NonNull
-		String originalChallenge,
-		@NonNull
-		String signature) {
+		String key) {
 }

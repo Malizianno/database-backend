@@ -18,19 +18,17 @@ import java.util.concurrent.ConcurrentHashMap;
 public class BiometricsHelperService {
 
 	private final UserService userService;
-	// XXX: use Redis for distributed systems
 	private final Map<String, String> challengeStore = new ConcurrentHashMap<>();
 
 	public BiometricsHelperService(UserService userService) {
 		this.userService = userService;
 	}
 
-	// register key for username
 	public boolean register(String username, String key) {
 		try {
 			var registeredUser = userService.save(userService.findByUsername(username)
 			                                                 .withBiometrics(key));
-			if (validateUserRegistration(registeredUser)) {
+			if (!isUserRegistrationNull(registeredUser)) {
 				return true;
 			}
 		} catch (
@@ -41,7 +39,6 @@ public class BiometricsHelperService {
 		return false;
 	}
 
-	// get a challenge
 	public String getChallenge(String username) {
 		var user = userService.findByUsername(username);
 
@@ -49,14 +46,14 @@ public class BiometricsHelperService {
 		                         .equals(username)) {
 			throw new UsernameNotFoundException("username " + username + " not found.");
 		}
+
 		String challenge = UUID.randomUUID()
 		                       .toString();
-		challengeStore.put(username, challenge);
 
+		challengeStore.put(username, challenge);
 		return challengeStore.get(username);
 	}
 
-	// verify challenge for username
 	public boolean verify(String username, String originalChallenge, String signature) {
 		String storedChallenge = challengeStore.remove(username);
 
@@ -79,7 +76,9 @@ public class BiometricsHelperService {
 		);
 	}
 
-	private boolean validateUserRegistration(UserDTO user) {
-		return user != null && user.id() != null && user.username() != null && user.publicKeyPem() != null;
+	private boolean isUserRegistrationNull(UserDTO user) {
+		return user == null ||
+				user.id() == null ||
+				user.publicKeyPem() == null;
 	}
 }
