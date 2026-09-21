@@ -3,6 +3,7 @@ package ro.cristiansterie.databasebackend.service;
 import jakarta.transaction.Transactional;
 import org.jspecify.annotations.NonNull;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
@@ -34,19 +35,30 @@ public class AuthService {
 	@Transactional
 	public LoginResponseDTO authenticateUserPass(@Validated UserPassLoginRequestDTO loginRequest) {
 		Authentication authentication = authenticationManager.authenticate(
-				new UsernamePasswordAuthenticationToken(loginRequest.username(), loginRequest.password())
+				new UsernamePasswordAuthenticationToken(
+						loginRequest.username(),
+						loginRequest.password())
 		);
 
-		return new LoginResponseDTO(authentication.getName(), authentication.getAuthorities(), jwtUtils.generateToken(authentication));
+		return new LoginResponseDTO(
+				authentication.getName(),
+				authentication.getAuthorities(),
+				jwtUtils.generateToken(authentication));
 	}
 
 	@Transactional
 	public LoginResponseDTO authenticateBiometrics(@Validated BiometricLoginRequestDTO loginRequest) {
 		Authentication authentication = authenticationManager.authenticate(
-				new BiometricsAuthenticationToken(loginRequest.username(), loginRequest.originalChallenge(), loginRequest.signature())
-		);
+				validateSignature(
+						new BiometricsAuthenticationToken(
+								loginRequest.username(),
+								loginRequest.originalChallenge(),
+								loginRequest.signature())));
 
-		return new LoginResponseDTO(authentication.getName(), authentication.getAuthorities(), jwtUtils.generateToken(authentication));
+		return new LoginResponseDTO(
+				authentication.getName(),
+				authentication.getAuthorities(),
+				jwtUtils.generateToken(authentication));
 	}
 
 	@Transactional
@@ -57,5 +69,16 @@ public class AuthService {
 	@Transactional
 	public String getChallengeBiometricsAuthentication(@NonNull String username) {
 		return biometricsHelperService.getChallenge(username);
+	}
+
+	private Authentication validateSignature(Authentication authentication) {
+		if (authentication instanceof BiometricsAuthenticationToken bat && biometricsHelperService.verify(
+				String.valueOf(bat.getPrincipal()),
+				bat.getOriginalChallenge(),
+				bat.getSignature())) {
+			return authentication;
+		}
+
+		throw new AuthenticationServiceException("Signature verification failed.");
 	}
 }

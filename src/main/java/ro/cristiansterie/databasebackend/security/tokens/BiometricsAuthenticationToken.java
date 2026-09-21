@@ -1,6 +1,7 @@
 package ro.cristiansterie.databasebackend.security.tokens;
 
 import lombok.Getter;
+import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,18 +17,18 @@ public class BiometricsAuthenticationToken extends UsernamePasswordAuthenticatio
 	private final @Nullable String originalChallenge;
 	private final @Nullable String signature;
 
-	public BiometricsAuthenticationToken(String username, @Nullable String originalChallenge, @Nullable String signature, @Nullable Collection<? extends GrantedAuthority> authorities) {
+	public BiometricsAuthenticationToken(String username, @Nullable String originalChallenge, @Nullable String signature, @NonNull Collection<? extends GrantedAuthority> authorities) {
 		super(username, signature, authorities);
 		this.originalChallenge = originalChallenge;
 		this.signature = signature;
 		super.setAuthenticated(true);
 	}
 
-	public BiometricsAuthenticationToken(@Nullable Object principal, @Nullable String originalChallenge, @Nullable String signature) {
+	public BiometricsAuthenticationToken(@Nullable String principal, @Nullable String originalChallenge, @Nullable String signature) {
 		super(principal, signature);
 		this.originalChallenge = originalChallenge;
 		this.signature = signature;
-		super.setAuthenticated(true);
+		super.setAuthenticated(false);
 	}
 
 	public static BiometricsAuthenticationToken authenticated(String username, @Nullable String originalChallenge, @Nullable String signature, Collection<? extends GrantedAuthority> authorities) {

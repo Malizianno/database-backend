@@ -64,7 +64,7 @@ public class JwtUtils {
 			return true;
 		} catch (
 				Exception e) {
-			log.error(AppConstants.JWT_INVALID_TOKEN, e.getMessage(), token);
+			log.error(AppConstants.JWT_INVALID_TOKEN, e.getMessage(), token.substring(0, 12));
 		}
 
 		return false;

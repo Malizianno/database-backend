@@ -8,11 +8,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
+import ro.cristiansterie.databasebackend.dto.UserDTO;
+import ro.cristiansterie.databasebackend.service.UserService;
 import ro.cristiansterie.databasebackend.util.AppConstants;
 
 import java.io.IOException;
@@ -22,11 +22,11 @@ import java.io.IOException;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
 	private final JwtUtils jwtUtils;
-	private final UserDetailsService userDetailsService;
+	private final UserService userService;
 
-	public JwtAuthenticationFilter(JwtUtils jwtUtils, UserDetailsService userDetailsService) {
+	public JwtAuthenticationFilter(JwtUtils jwtUtils, UserService userService) {
 		this.jwtUtils = jwtUtils;
-		this.userDetailsService = userDetailsService;
+		this.userService = userService;
 	}
 
 	@Override
@@ -41,23 +41,26 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 				String username = jwtUtils.getUsernameFromToken(token);
 
 				// Fetch full UserDetails from DB/Session Wrapper
-				UserDetails userDetails = userDetailsService.loadUserByUsername(username);
+				UserDTO userDetails = userService.findByUsername(username);
 
 				// Authenticate the user manually inside the security context
-				UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+				UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
+						userDetails.username(),
+						null,
+						userDetails.grantedAuthorities());
 
 				authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 				SecurityContextHolder.getContext()
 				                     .setAuthentication(authentication);
 			} else {
-				response = returnResponse401(response);
+				filterChain.doFilter(request, add401ToResponse(response));
 			}
 		}
 
 		filterChain.doFilter(request, response);
 	}
 
-	private HttpServletResponse returnResponse401(@NonNull HttpServletResponse response) {
+	private HttpServletResponse add401ToResponse(@NonNull HttpServletResponse response) {
 		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
 
 		try {
