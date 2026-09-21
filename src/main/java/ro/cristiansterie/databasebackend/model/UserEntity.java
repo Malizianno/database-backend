@@ -30,7 +30,7 @@ public class UserEntity {
     @Column(nullable = false)
     private String email;
 
-	@Column(name = "public_key", nullable = true)
+	@Column(name = "public_key")
 	private String publicKeyPem;
 
     @ManyToMany(fetch = FetchType.EAGER)

@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 import ro.cristiansterie.databasebackend.security.tokens.BiometricsAuthenticationToken;
-import ro.cristiansterie.databasebackend.security.utils.BiometricsHelperService;
+import ro.cristiansterie.databasebackend.security.userdetails.BiometricsHelperService;
 
 @Component
 @Slf4j

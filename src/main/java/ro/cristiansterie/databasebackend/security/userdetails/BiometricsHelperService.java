@@ -1,9 +1,10 @@
-package ro.cristiansterie.databasebackend.security.utils;
+package ro.cristiansterie.databasebackend.security.userdetails;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
+import ro.cristiansterie.databasebackend.security.utils.BiometricsUtils;
 import ro.cristiansterie.databasebackend.service.UserService;
 
 import java.nio.charset.StandardCharsets;
