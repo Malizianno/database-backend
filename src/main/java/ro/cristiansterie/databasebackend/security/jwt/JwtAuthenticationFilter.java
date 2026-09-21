@@ -8,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -22,9 +24,9 @@ import java.io.IOException;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
 	private final JwtUtils jwtUtils;
-	private final UserService userService;
+	private final UserDetailsService userService;
 
-	public JwtAuthenticationFilter(JwtUtils jwtUtils, UserService userService) {
+	public JwtAuthenticationFilter(JwtUtils jwtUtils, UserDetailsService userService) {
 		this.jwtUtils = jwtUtils;
 		this.userService = userService;
 	}
@@ -41,13 +43,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 				String username = jwtUtils.getUsernameFromToken(token);
 
 				// Fetch full UserDetails from DB/Session Wrapper
-				UserDTO userDetails = userService.findByUsername(username);
+				UserDetails userDetails = userService.loadUserByUsername(username);
 
 				// Authenticate the user manually inside the security context
 				UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-						userDetails.username(),
+						userDetails,
 						null,
-						userDetails.grantedAuthorities());
+						userDetails.getAuthorities());
 
 				authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 				SecurityContextHolder.getContext()
