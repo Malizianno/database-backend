@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import ro.cristiansterie.databasebackend.dto.LoginRequestDTO;
+import ro.cristiansterie.databasebackend.dto.BiometricLoginRequestDTO;
+import ro.cristiansterie.databasebackend.dto.UserPassLoginRequestDTO;
 import ro.cristiansterie.databasebackend.dto.LoginResponseDTO;
 import ro.cristiansterie.databasebackend.service.AuthService;
 
@@ -20,7 +21,12 @@ public class AuthController {
 	}
 
 	@PostMapping("/login")
-	public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO loginRequest) {
-		return ResponseEntity.ok(service.authenticate(loginRequest));
+	public ResponseEntity<LoginResponseDTO> login(@RequestBody UserPassLoginRequestDTO loginRequest) {
+		return ResponseEntity.ok(service.authenticateUserPass(loginRequest));
+	}
+
+	@PostMapping("/bio")
+	public ResponseEntity<LoginResponseDTO> bio(@RequestBody BiometricLoginRequestDTO loginRequest) {
+		return ResponseEntity.ok(service.authenticateBiometrics(loginRequest));
 	}
 }

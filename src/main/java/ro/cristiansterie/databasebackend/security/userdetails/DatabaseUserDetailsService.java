@@ -1,4 +1,4 @@
-package ro.cristiansterie.databasebackend.security.userpass;
+package ro.cristiansterie.databasebackend.security.userdetails;
 
 import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.NonNull;
@@ -12,11 +12,11 @@ import ro.cristiansterie.databasebackend.util.AppConstants;
 
 @Service
 @Slf4j
-public class DatabaseUserPassUserDetailsService implements UserDetailsService {
+public class DatabaseUserDetailsService implements UserDetailsService {
 
 	private final UserRepository userRepository;
 
-	public DatabaseUserPassUserDetailsService(UserRepository userRepository) {
+	public DatabaseUserDetailsService(UserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
 
@@ -25,6 +25,6 @@ public class DatabaseUserPassUserDetailsService implements UserDetailsService {
 		UserEntity user = userRepository.findByUsername(username)
 		                                .orElseThrow(() -> new UsernameNotFoundException(AppConstants.USERNAME_NOT_FOUND_MESSAGE + username));
 
-		return new DatabaseUserPassUserDetails(user);
+		return new DatabaseUserDetails(user);
 	}
 }

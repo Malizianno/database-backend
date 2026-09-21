@@ -52,7 +52,7 @@ public class UserServiceTest {
 
 		Set<RoleDTO> rolesDTO = new HashSet<>();
 		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
-		UserDTO userDTO = new UserDTO(userUUID, user.getUsername(), user.getPassword(), user.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		UserDTO userDTO = new UserDTO(userUUID, user.getUsername(), user.getPassword(), user.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
 
 		when(userRepository.findById(userUUID)).thenReturn(Optional.of(user));
 		when(converter.toDto(any())).thenReturn(userDTO);
@@ -75,8 +75,8 @@ public class UserServiceTest {
 
 		Set<RoleDTO> rolesDTO = new HashSet<>();
 		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
-		UserDTO user1DTO = new UserDTO(UUID.randomUUID(), user1.getUsername(), user1.getPassword(), user1.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
-		UserDTO user2DTO = new UserDTO(UUID.randomUUID(), user2.getUsername(), user2.getPassword(), user2.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		UserDTO user1DTO = new UserDTO(UUID.randomUUID(), user1.getUsername(), user1.getPassword(), user1.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		UserDTO user2DTO = new UserDTO(UUID.randomUUID(), user2.getUsername(), user2.getPassword(), user2.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
 
 		when(userRepository.findAll()).thenReturn(List.of(user1, user2));
 		when(converter.toDtoList(any())).thenReturn(List.of(user1DTO, user2DTO));
@@ -100,7 +100,7 @@ public class UserServiceTest {
 		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
 
 		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject", roles);
-		UserDTO userDTO = new UserDTO(UUID.randomUUID(), user.getUsername(), user.getPassword(), user.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		UserDTO userDTO = new UserDTO(UUID.randomUUID(), user.getUsername(), user.getPassword(), user.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
 		when(userRepository.save(any())).thenReturn(user);
 		when(converter.toEntity(any())).thenReturn(user);
 		when(converter.toDto(any())).thenReturn(userDTO);
@@ -126,7 +126,7 @@ public class UserServiceTest {
 
 		var userUUID = UUID.randomUUID();
 		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject", roles);
-		UserDTO userDTO = new UserDTO(userUUID, user.getUsername(), user.getPassword(), user.getEmail(), rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		UserDTO userDTO = new UserDTO(userUUID, user.getUsername(), user.getPassword(), user.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
 		when(userRepository.findById(userUUID)).thenReturn(Optional.of(user));
 		when(passwordEncoder.encode(any())).thenReturn("12345");
 		when(roleConverter.toEntityList(any())).thenReturn(List.of(role));

@@ -15,6 +15,11 @@ public record UserDTO(
 		@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 		String password,
 		String email,
+		String publicKeyPem,
 		Set<RoleDTO> roles,
 		@JsonIgnore List<GrantedAuthority> grantedAuthorities) {
+
+	public UserDTO withBiometrics(String publicKey) {
+		return new UserDTO(this.id(), this.username(), this.password(), this.email(), publicKey, this.roles(), this.grantedAuthorities());
+	}
 }

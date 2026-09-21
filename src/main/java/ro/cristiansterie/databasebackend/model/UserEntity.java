@@ -1,9 +1,7 @@
 package ro.cristiansterie.databasebackend.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.UuidGenerator;
 import org.springframework.security.core.GrantedAuthority;
 
@@ -14,6 +12,8 @@ import java.util.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class UserEntity {
 
     @Id
@@ -29,6 +29,9 @@ public class UserEntity {
 
     @Column(nullable = false)
     private String email;
+
+	@Column(name = "public_key", nullable = true)
+	private String publicKeyPem;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(

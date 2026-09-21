@@ -1,4 +1,4 @@
-package ro.cristiansterie.databasebackend.security.userpass;
+package ro.cristiansterie.databasebackend.security.userdetails;
 
 import lombok.Getter;
 import org.jspecify.annotations.NonNull;
@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @Getter
-public class DatabaseUserPassUserDetails implements UserDetails {
+public class DatabaseUserDetails implements UserDetails {
     private final UserEntity user;
 
-    public DatabaseUserPassUserDetails(UserEntity user) {
+    public DatabaseUserDetails(UserEntity user) {
         this.user = user;
     }
 

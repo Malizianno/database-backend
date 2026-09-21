@@ -5,8 +5,10 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
-import ro.cristiansterie.databasebackend.dto.LoginRequestDTO;
+import ro.cristiansterie.databasebackend.dto.BiometricLoginRequestDTO;
 import ro.cristiansterie.databasebackend.dto.LoginResponseDTO;
+import ro.cristiansterie.databasebackend.dto.UserPassLoginRequestDTO;
+import ro.cristiansterie.databasebackend.security.tokens.BiometricsAuthenticationToken;
 import ro.cristiansterie.databasebackend.security.jwt.JwtUtils;
 
 @Service
@@ -20,10 +22,21 @@ public class AuthService {
 	}
 
 	@Transactional
-	public LoginResponseDTO authenticate(LoginRequestDTO loginRequest) {
+	public LoginResponseDTO authenticateUserPass(UserPassLoginRequestDTO loginRequest) {
 		// Triggers the background UserDetailsService lookup and validation checks automatically
 		Authentication authentication = authenticationManager.authenticate(
 				new UsernamePasswordAuthenticationToken(loginRequest.username(), loginRequest.password())
+		);
+
+		// return token
+		return new LoginResponseDTO(authentication.getName(), authentication.getAuthorities(), jwtUtils.generateToken(authentication));
+	}
+
+	@Transactional
+	public LoginResponseDTO authenticateBiometrics(BiometricLoginRequestDTO loginRequest) {
+		// Triggers the background UserDetailsService lookup and validation checks automatically
+		Authentication authentication = authenticationManager.authenticate(
+				new BiometricsAuthenticationToken(loginRequest.username(), loginRequest.originalChallenge(), loginRequest.signature())
 		);
 
 		// return token
