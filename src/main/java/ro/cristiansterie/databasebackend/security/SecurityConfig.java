@@ -28,20 +28,13 @@ import java.util.List;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
-
-	private final JwtAuthenticationFilter jwtAuthenticationFilter;
-	private final RequestLogger requestLogger;
 	private final BiometricsAuthenticationProvider biometricsAuthenticationProvider;
 	private final DatabaseUserPassAuthenticationProvider databaseUserPassAuthenticationProvider;
 
 	public SecurityConfig(
-			JwtAuthenticationFilter jwtAuthenticationFilter,
-			RequestLogger requestLogger,
 			BiometricsAuthenticationProvider biometricsAuthenticationProvider,
 			DatabaseUserPassAuthenticationProvider databaseUserPassAuthenticationProvider
 	) {
-		this.jwtAuthenticationFilter = jwtAuthenticationFilter;
-		this.requestLogger = requestLogger;
 		this.biometricsAuthenticationProvider = biometricsAuthenticationProvider;
 		this.databaseUserPassAuthenticationProvider = databaseUserPassAuthenticationProvider;
 	}
@@ -85,7 +78,11 @@ public class SecurityConfig {
 	}
 
 	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) {
+	public SecurityFilterChain securityFilterChain(
+			HttpSecurity http,
+			JwtAuthenticationFilter jwtAuthenticationFilter,
+			RequestLogger requestLogger
+	) {
 		var excludedEndpoints = new String[]{
 				"/auth/login",
 				"/actuator/health",
