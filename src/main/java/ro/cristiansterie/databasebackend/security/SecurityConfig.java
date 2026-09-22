@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.security;
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -9,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
@@ -18,6 +20,7 @@ import ro.cristiansterie.databasebackend.security.jwt.JwtAuthenticationFilter;
 import ro.cristiansterie.databasebackend.security.log.RequestLogger;
 import ro.cristiansterie.databasebackend.security.providers.BiometricsAuthenticationProvider;
 import ro.cristiansterie.databasebackend.security.providers.DatabaseUserPassAuthenticationProvider;
+import ro.cristiansterie.databasebackend.util.AppConstants;
 
 import java.util.List;
 
@@ -50,6 +53,16 @@ public class SecurityConfig {
 		return new ProviderManager(List.of(databaseUserPassAuthenticationProvider, biometricsAuthenticationProvider));
 	}
 
+	@Bean
+	public AuthenticationEntryPoint authenticationEntryPoint() {
+		return (request, response, authException) -> {
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			response.setContentType(AppConstants.RESPONSE_TYPE);
+			response.setCharacterEncoding(AppConstants.RESPONSE_CHARACTER_ENCODING);
+			response.getWriter()
+			        .write(AppConstants.INVALID_OR_EXPIRED_JWT_TOKEN);
+		};
+	}
 
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
@@ -83,6 +96,7 @@ public class SecurityConfig {
 		return http
 				.csrf(AbstractHttpConfigurer::disable)
 				.cors(cors -> cors.configurationSource(corsConfigurationSource()))
+				.exceptionHandling(ex -> ex.authenticationEntryPoint(authenticationEntryPoint()))
 				.authorizeHttpRequests(auth -> auth
 						.requestMatchers(excludedEndpoints)
 						.permitAll()
@@ -93,7 +107,6 @@ public class SecurityConfig {
 				.authenticationManager(authenticationManager(databaseUserPassAuthenticationProvider, biometricsAuthenticationProvider))
 				.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
 				.addFilterBefore(requestLogger, UsernamePasswordAuthenticationFilter.class)
-//				.httpBasic(Customizer.withDefaults()) // XXX: to remove after login implementation;
 				.build();
 	}
 }

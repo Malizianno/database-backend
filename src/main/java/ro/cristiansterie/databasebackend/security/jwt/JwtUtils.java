@@ -64,9 +64,13 @@ public class JwtUtils {
 			return true;
 		} catch (
 				Exception e) {
-			log.error(AppConstants.JWT_INVALID_TOKEN, e.getMessage(), token.substring(0, 12));
+			log.error(AppConstants.JWT_INVALID_TOKEN, e.getMessage(), truncateToken(token));
 		}
 
 		return false;
+	}
+
+	private String truncateToken(String token) {
+		return token.length() > 12 ? token.substring(0, 12) : token;
 	}
 }
