@@ -1,17 +1,16 @@
 package ro.cristiansterie.databasebackend.security;
 
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.ProviderManager;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
@@ -19,8 +18,9 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import ro.cristiansterie.databasebackend.security.jwt.JwtAuthenticationFilter;
 import ro.cristiansterie.databasebackend.security.log.RequestLogger;
-import ro.cristiansterie.databasebackend.security.userpass.DatabaseUserPassAuthenticationProvider;
-import ro.cristiansterie.databasebackend.security.userpass.DatabaseUserPassUserDetailsService;
+import ro.cristiansterie.databasebackend.security.providers.BiometricsAuthenticationProvider;
+import ro.cristiansterie.databasebackend.security.providers.DatabaseUserPassAuthenticationProvider;
+import ro.cristiansterie.databasebackend.util.AppConstants;
 
 import java.util.List;
 
@@ -28,31 +28,33 @@ import java.util.List;
 @EnableWebSecurity
 @EnableMethodSecurity
 public class SecurityConfig {
+	private final BiometricsAuthenticationProvider biometricsAuthenticationProvider;
+	private final DatabaseUserPassAuthenticationProvider databaseUserPassAuthenticationProvider;
 
-	private final DatabaseUserPassUserDetailsService userDetailsService;
-	private final JwtAuthenticationFilter jwtAuthenticationFilter;
-	private final RequestLogger requestLogger;
-
-	public SecurityConfig(DatabaseUserPassUserDetailsService userDetailsService, JwtAuthenticationFilter jwtAuthenticationFilter, RequestLogger requestLogger) {
-		this.userDetailsService = userDetailsService;
-		this.jwtAuthenticationFilter = jwtAuthenticationFilter;
-		this.requestLogger = requestLogger;
+	public SecurityConfig(
+			BiometricsAuthenticationProvider biometricsAuthenticationProvider,
+			DatabaseUserPassAuthenticationProvider databaseUserPassAuthenticationProvider
+	) {
+		this.biometricsAuthenticationProvider = biometricsAuthenticationProvider;
+		this.databaseUserPassAuthenticationProvider = databaseUserPassAuthenticationProvider;
 	}
 
 	@Bean
-	public AuthenticationManager authenticationManager() {
-		// XXX: implement here another way for login like, face or another methods should be injected here
-		return new ProviderManager(List.of(databaseUserPassAuthenticationProvider()));
+	public AuthenticationManager authenticationManager(
+			DatabaseUserPassAuthenticationProvider databaseUserPassAuthenticationProvider,
+			BiometricsAuthenticationProvider biometricsAuthenticationProvider) {
+		return new ProviderManager(List.of(databaseUserPassAuthenticationProvider, biometricsAuthenticationProvider));
 	}
 
 	@Bean
-	public DatabaseUserPassAuthenticationProvider databaseUserPassAuthenticationProvider() {
-		return new DatabaseUserPassAuthenticationProvider(userDetailsService, passwordEncoder());
-	}
-
-	@Bean
-	public PasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
+	public AuthenticationEntryPoint authenticationEntryPoint() {
+		return (request, response, authException) -> {
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			response.setContentType(AppConstants.RESPONSE_TYPE);
+			response.setCharacterEncoding(AppConstants.RESPONSE_CHARACTER_ENCODING);
+			response.getWriter()
+			        .write(AppConstants.INVALID_OR_EXPIRED_JWT_TOKEN);
+		};
 	}
 
 	@Bean
@@ -75,23 +77,33 @@ public class SecurityConfig {
 		return source;
 	}
 
-
 	@Bean
-	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+	public SecurityFilterChain securityFilterChain(
+			HttpSecurity http,
+			JwtAuthenticationFilter jwtAuthenticationFilter,
+			RequestLogger requestLogger
+	) {
+		var excludedEndpoints = new String[]{
+				"/auth/login",
+				"/actuator/health",
+				"/auth/bio",
+				"/auth/challenge"
+		};
+
 		return http
 				.csrf(AbstractHttpConfigurer::disable)
 				.cors(cors -> cors.configurationSource(corsConfigurationSource()))
+				.exceptionHandling(ex -> ex.authenticationEntryPoint(authenticationEntryPoint()))
 				.authorizeHttpRequests(auth -> auth
-						.requestMatchers("/auth/login", "/actuator/health")
+						.requestMatchers(excludedEndpoints)
 						.permitAll()
 						.anyRequest()
 						.authenticated()
 				)
 				.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-				.authenticationManager(authenticationManager())
+				.authenticationManager(authenticationManager(databaseUserPassAuthenticationProvider, biometricsAuthenticationProvider))
 				.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
 				.addFilterBefore(requestLogger, UsernamePasswordAuthenticationFilter.class)
-				.httpBasic(Customizer.withDefaults()) // XXX: to remove after login implementation;
 				.build();
 	}
 }
