@@ -22,6 +22,7 @@ public class BanknoteEntity {
 	private UUID collectionId;
 	private UUID materialId;
 	private UUID denominationId;
+	@Enumerated(EnumType.STRING)
 	private CollectionItemConditionType condition;
 	@Column(name = "year_created")
 	private Integer year;

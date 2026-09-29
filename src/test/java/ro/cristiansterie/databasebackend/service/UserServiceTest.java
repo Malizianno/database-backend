@@ -1,15 +1,12 @@
 package ro.cristiansterie.databasebackend.service;
 
-import jakarta.transaction.Transactional;
+import jakarta.persistence.EntityNotFoundException;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.test.context.ActiveProfiles;
 import ro.cristiansterie.databasebackend.dto.RoleDTO;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
 import ro.cristiansterie.databasebackend.model.RoleEntity;
@@ -18,14 +15,16 @@ import ro.cristiansterie.databasebackend.repository.UserRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.RoleModelConverter;
 import ro.cristiansterie.databasebackend.util.converter.models.UserModelConverter;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.any;
-import static org.mockito.Mockito.when;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
-@SpringBootTest
-@ActiveProfiles("test")
 @ExtendWith(MockitoExtension.class)
 public class UserServiceTest {
 
@@ -42,6 +41,11 @@ public class UserServiceTest {
 
 	@InjectMocks
 	private UserService service;
+
+	@BeforeEach
+	void setUp() {
+		service = new UserService(repository, converter, roleConverter, passwordEncoder, roleService);
+	}
 
 	@Test
 	@Transactional
@@ -146,15 +150,58 @@ public class UserServiceTest {
 	}
 
 	@Test
-	@Transactional
-	void testDelete() {
-		// insert
-		var userUUID = UUID.randomUUID();
-		when(userRepository.existsById(userUUID)).thenReturn(true);
-		// read
-		service.delete(userUUID);
-		// assert
-		assertThat(userRepository.findAll()
-		                         .size()).isEqualTo(0);
+	void leavesPasswordAndRolesUnchangedWhenUpdateOmitsThem() {
+		var id = UUID.randomUUID();
+		var existingRole = new RoleEntity(UUID.randomUUID(), "USER", "Users");
+		var existing = user("alice", "old-hash", "old@example.test");
+		existing.setRoles(Set.of(existingRole));
+		var request = new UserDTO(id, "alice-new", "  ", "alice-new@example.test", null, Set.of(), null);
+		when(repository.findById(id)).thenReturn(Optional.of(existing));
+		when(repository.save(existing)).thenReturn(existing);
+		when(converter.toDto(existing)).thenReturn(request);
+
+		service.update(id, request);
+
+		assertThat(existing.getPassword()).isEqualTo("old-hash");
+		assertThat(existing.getRoles()).containsExactly(existingRole);
+		verifyNoInteractions(passwordEncoder, roleService, roleConverter);
+	}
+
+	@Test
+	void updateRejectsInvalidIdAndMissingUser() {
+		var request = dto(UUID.randomUUID(), "alice", "password", Set.of());
+		assertThatThrownBy(() -> service.update(null, request))
+				.isInstanceOf(EntityNotFoundException.class).hasMessage("No user to update");
+		assertThatThrownBy(() -> service.update(UUID.randomUUID(), null))
+				.isInstanceOf(EntityNotFoundException.class).hasMessage("No user to update");
+
+		var id = UUID.randomUUID();
+		when(repository.findById(id)).thenReturn(Optional.empty());
+		assertThatThrownBy(() -> service.update(id, request))
+				.isInstanceOf(EntityNotFoundException.class).hasMessage("User not found to update");
+	}
+
+	@Test
+	void deletesExistingUserAndRejectsMissingUser() {
+		var id = UUID.randomUUID();
+		when(repository.existsById(id)).thenReturn(true);
+
+		assertThat(service.delete(id)).isTrue();
+		verify(repository).deleteById(id);
+
+		var missingId = UUID.randomUUID();
+		when(repository.existsById(missingId)).thenReturn(false);
+		assertThatThrownBy(() -> service.delete(missingId))
+				.isInstanceOf(EntityNotFoundException.class)
+				.hasMessage("User not found with id: " + missingId);
+		verify(repository, never()).deleteById(missingId);
+	}
+
+	private static UserEntity user(String username, String password, String email) {
+		return new UserEntity(username, password, email, Set.of());
+	}
+
+	private static UserDTO dto(UUID id, String username, String password, Set<RoleDTO> roles) {
+		return new UserDTO(id, username, password, username + "@example.test", null, roles, null);
 	}
 }
