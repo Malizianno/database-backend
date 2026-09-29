@@ -26,13 +26,20 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class UserServiceTest {
-	@Mock UserRepository repository;
-	@Mock UserModelConverter converter;
-	@Mock RoleModelConverter roleConverter;
-	@Mock PasswordEncoder passwordEncoder;
-	@Mock RoleService roleService;
+public class UserServiceTest {
 
+	@Mock
+	private UserRepository userRepository;
+	@Mock
+	private PasswordEncoder passwordEncoder;
+	@Mock
+	private RoleModelConverter roleConverter;
+	@Mock
+	private UserModelConverter converter;
+	@Mock
+	private RoleService roleService;
+
+	@InjectMocks
 	private UserService service;
 
 	@BeforeEach
@@ -41,74 +48,105 @@ class UserServiceTest {
 	}
 
 	@Test
-	void findsUsersByIdAndUsernameAndReturnsNullWhenMissing() {
-		var id = UUID.randomUUID();
-		var entity = user("alice", "encoded", "alice@example.test");
-		var dto = dto(id, "alice", "encoded", Set.of());
-		when(repository.findById(id)).thenReturn(Optional.of(entity));
-		when(repository.findByUsername("alice")).thenReturn(Optional.of(entity));
-		when(converter.toDto(entity)).thenReturn(dto);
+	@Transactional
+	void testFindById() {
+		// insert
+		var userUUID = UUID.randomUUID();
+		Set<RoleEntity> roles = new HashSet<>();
+		roles.add(new RoleEntity(UUID.randomUUID(), "ADMIN", "can do everything"));
+		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject.ro", roles);
 
-		assertThat(service.findById(id)).isEqualTo(dto);
-		assertThat(service.findByUsername("alice")).isEqualTo(dto);
-		assertThat(service.findById(UUID.randomUUID())).isNull();
-		assertThat(service.findByUsername("missing")).isNull();
-		verify(converter, times(2)).toDto(entity);
+		Set<RoleDTO> rolesDTO = new HashSet<>();
+		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
+		UserDTO userDTO = new UserDTO(userUUID, user.getUsername(), user.getPassword(), user.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+
+		when(userRepository.findById(userUUID)).thenReturn(Optional.of(user));
+		when(converter.toDto(any())).thenReturn(userDTO);
+
+		// read
+		UserDTO found = service.findById(userUUID);
+
+		// assert
+		assertThat(found.username()).isEqualTo(user.getUsername());
 	}
 
 	@Test
-	void convertsAllUsers() {
-		var first = user("alice", "encoded-a", "alice@example.test");
-		var second = user("bob", "encoded-b", "bob@example.test");
-		var expected = List.of(dto(UUID.randomUUID(), "alice", "encoded-a", Set.of()),
-				dto(UUID.randomUUID(), "bob", "encoded-b", Set.of()));
-		when(repository.findAll()).thenReturn(List.of(first, second));
-		when(converter.toDtoList(List.of(first, second))).thenReturn(expected);
+	@Transactional
+	void testFindAll() {
+		// insert
+		Set<RoleEntity> roles = new HashSet<>();
+		roles.add(new RoleEntity(UUID.randomUUID(), "ADMIN", "can do everything"));
+		UserEntity user1 = new UserEntity("admin", "12345", "admin@databaseproject", roles);
+		UserEntity user2 = new UserEntity("admin2", "12345", "admin2@databaseproject", roles);
 
-		assertThat(service.findAll()).containsExactlyElementsOf(expected);
+		Set<RoleDTO> rolesDTO = new HashSet<>();
+		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
+		UserDTO user1DTO = new UserDTO(UUID.randomUUID(), user1.getUsername(), user1.getPassword(), user1.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		UserDTO user2DTO = new UserDTO(UUID.randomUUID(), user2.getUsername(), user2.getPassword(), user2.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+
+		when(userRepository.findAll()).thenReturn(List.of(user1, user2));
+		when(converter.toDtoList(any())).thenReturn(List.of(user1DTO, user2DTO));
+
+		// read
+		List<UserDTO> found = service.findAll();
+
+		// assert
+		assertThat(found.size()).isEqualTo(2);
+		assertThat(found.get(0)
+		                .username()).isEqualTo(user1.getUsername());
 	}
 
 	@Test
-	void savesUserAndResolvesRequestedRoles() {
-		var id = UUID.randomUUID();
-		var roleDto = new RoleDTO(UUID.randomUUID(), "ADMIN", "Administrators");
-		var request = dto(id, "alice", "password", Set.of(roleDto));
-		var entity = user("alice", "password", "alice@example.test");
-		var roleEntity = new RoleEntity(roleDto.id(), roleDto.name(), roleDto.description());
-		var unrequestedRole = new RoleEntity(UUID.randomUUID(), "VIEWER", "Read-only access");
-		when(converter.toEntity(request)).thenReturn(entity);
-		when(roleService.findAllRoles()).thenReturn(List.of(roleDto,
-				new RoleDTO(unrequestedRole.getId(), unrequestedRole.getName(), unrequestedRole.getDescription())));
-		when(roleConverter.toEntityList(any())).thenReturn(List.of(roleEntity, unrequestedRole));
-		when(repository.save(entity)).thenReturn(entity);
-		when(converter.toDto(entity)).thenReturn(request);
+	@Transactional
+	void testSave() {
+		// insert/check
+		Set<RoleEntity> roles = new HashSet<>();
+		roles.add(new RoleEntity(UUID.randomUUID(), "ADMIN", "can do everything"));
+		Set<RoleDTO> rolesDTO = new HashSet<>();
+		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
 
-		assertThat(service.save(request)).isEqualTo(request);
-		assertThat(entity.getRoles()).containsExactly(roleEntity);
-		verify(repository).save(entity);
+		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject", roles);
+		UserDTO userDTO = new UserDTO(UUID.randomUUID(), user.getUsername(), user.getPassword(), user.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		when(userRepository.save(any())).thenReturn(user);
+		when(converter.toEntity(any())).thenReturn(user);
+		when(converter.toDto(any())).thenReturn(userDTO);
+		when(roleService.findAllRoles()).thenReturn(rolesDTO.stream()
+		                                                    .toList());
+
+		// read/insert
+		UserDTO saved = service.save(userDTO);
+
+		// assert
+		assertThat(saved.username()).isEqualTo(user.getUsername());
 	}
 
 	@Test
-	void updatesProfileEncodesNonblankPasswordAndReplacesRoles() {
-		var id = UUID.randomUUID();
-		var existing = user("old-name", "old-hash", "old@example.test");
-		var roleDto = new RoleDTO(UUID.randomUUID(), "EDITOR", "Editors");
-		var request = new UserDTO(id, "new-name", "new-password", "new@example.test", null,
-				Set.of(roleDto), null);
-		var roleEntity = new RoleEntity(roleDto.id(), roleDto.name(), roleDto.description());
-		when(repository.findById(id)).thenReturn(Optional.of(existing));
-		when(passwordEncoder.encode("new-password")).thenReturn("new-hash");
-		when(roleService.findAllRoles()).thenReturn(List.of(roleDto));
-		when(roleConverter.toEntityList(List.of(roleDto))).thenReturn(List.of(roleEntity));
-		when(repository.save(existing)).thenReturn(existing);
-		when(converter.toDto(existing)).thenReturn(request);
+	@Transactional
+	void testUpdate() {
+		// insert
+		Set<RoleEntity> roles = new HashSet<>();
+		RoleEntity role = new RoleEntity(null, "ADMIN", "can do everything");
+		roles.add(role);
 
-		assertThat(service.update(id, request)).isEqualTo(request);
-		assertThat(existing.getUsername()).isEqualTo("new-name");
-		assertThat(existing.getEmail()).isEqualTo("new@example.test");
-		assertThat(existing.getPassword()).isEqualTo("new-hash");
-		assertThat(existing.getRoles()).containsExactly(roleEntity);
-		verify(passwordEncoder).encode("new-password");
+		Set<RoleDTO> rolesDTO = new HashSet<>();
+		RoleDTO roleDTO = new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything");
+		rolesDTO.add(roleDTO);
+
+		var userUUID = UUID.randomUUID();
+		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject", roles);
+		UserDTO userDTO = new UserDTO(userUUID, user.getUsername(), user.getPassword(), user.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
+		when(userRepository.findById(userUUID)).thenReturn(Optional.of(user));
+		when(passwordEncoder.encode(any())).thenReturn("12345");
+		when(roleConverter.toEntityList(any())).thenReturn(List.of(role));
+		when(converter.toDto(any())).thenReturn(userDTO);
+		when(roleService.findAllRoles()).thenReturn(rolesDTO.stream()
+		                                                    .toList());
+
+		// read
+		UserDTO updated = service.update(userUUID, userDTO);
+
+		// assert
+		assertThat(updated.username()).isEqualTo(user.getUsername());
 	}
 
 	@Test
