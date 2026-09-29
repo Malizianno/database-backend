@@ -1,15 +1,12 @@
 package ro.cristiansterie.databasebackend.service;
 
-import jakarta.transaction.Transactional;
+import jakarta.persistence.EntityNotFoundException;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.test.context.ActiveProfiles;
 import ro.cristiansterie.databasebackend.dto.RoleDTO;
 import ro.cristiansterie.databasebackend.dto.UserDTO;
 import ro.cristiansterie.databasebackend.model.RoleEntity;
@@ -18,143 +15,155 @@ import ro.cristiansterie.databasebackend.repository.UserRepository;
 import ro.cristiansterie.databasebackend.util.converter.models.RoleModelConverter;
 import ro.cristiansterie.databasebackend.util.converter.models.UserModelConverter;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.any;
-import static org.mockito.Mockito.when;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.*;
 
-@SpringBootTest
-@ActiveProfiles("test")
 @ExtendWith(MockitoExtension.class)
-public class UserServiceTest {
+class UserServiceTest {
+	@Mock UserRepository repository;
+	@Mock UserModelConverter converter;
+	@Mock RoleModelConverter roleConverter;
+	@Mock PasswordEncoder passwordEncoder;
+	@Mock RoleService roleService;
 
-	@Mock
-	private UserRepository userRepository;
-	@Mock
-	private PasswordEncoder passwordEncoder;
-	@Mock
-	private RoleModelConverter roleConverter;
-	@Mock
-	private UserModelConverter converter;
-	@Mock
-	private RoleService roleService;
-
-	@InjectMocks
 	private UserService service;
 
-	@Test
-	@Transactional
-	void testFindById() {
-		// insert
-		var userUUID = UUID.randomUUID();
-		Set<RoleEntity> roles = new HashSet<>();
-		roles.add(new RoleEntity(UUID.randomUUID(), "ADMIN", "can do everything"));
-		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject.ro", roles);
-
-		Set<RoleDTO> rolesDTO = new HashSet<>();
-		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
-		UserDTO userDTO = new UserDTO(userUUID, user.getUsername(), user.getPassword(), user.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
-
-		when(userRepository.findById(userUUID)).thenReturn(Optional.of(user));
-		when(converter.toDto(any())).thenReturn(userDTO);
-
-		// read
-		UserDTO found = service.findById(userUUID);
-
-		// assert
-		assertThat(found.username()).isEqualTo(user.getUsername());
+	@BeforeEach
+	void setUp() {
+		service = new UserService(repository, converter, roleConverter, passwordEncoder, roleService);
 	}
 
 	@Test
-	@Transactional
-	void testFindAll() {
-		// insert
-		Set<RoleEntity> roles = new HashSet<>();
-		roles.add(new RoleEntity(UUID.randomUUID(), "ADMIN", "can do everything"));
-		UserEntity user1 = new UserEntity("admin", "12345", "admin@databaseproject", roles);
-		UserEntity user2 = new UserEntity("admin2", "12345", "admin2@databaseproject", roles);
+	void findsUsersByIdAndUsernameAndReturnsNullWhenMissing() {
+		var id = UUID.randomUUID();
+		var entity = user("alice", "encoded", "alice@example.test");
+		var dto = dto(id, "alice", "encoded", Set.of());
+		when(repository.findById(id)).thenReturn(Optional.of(entity));
+		when(repository.findByUsername("alice")).thenReturn(Optional.of(entity));
+		when(converter.toDto(entity)).thenReturn(dto);
 
-		Set<RoleDTO> rolesDTO = new HashSet<>();
-		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
-		UserDTO user1DTO = new UserDTO(UUID.randomUUID(), user1.getUsername(), user1.getPassword(), user1.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
-		UserDTO user2DTO = new UserDTO(UUID.randomUUID(), user2.getUsername(), user2.getPassword(), user2.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
-
-		when(userRepository.findAll()).thenReturn(List.of(user1, user2));
-		when(converter.toDtoList(any())).thenReturn(List.of(user1DTO, user2DTO));
-
-		// read
-		List<UserDTO> found = service.findAll();
-
-		// assert
-		assertThat(found.size()).isEqualTo(2);
-		assertThat(found.get(0)
-		                .username()).isEqualTo(user1.getUsername());
+		assertThat(service.findById(id)).isEqualTo(dto);
+		assertThat(service.findByUsername("alice")).isEqualTo(dto);
+		assertThat(service.findById(UUID.randomUUID())).isNull();
+		assertThat(service.findByUsername("missing")).isNull();
+		verify(converter, times(2)).toDto(entity);
 	}
 
 	@Test
-	@Transactional
-	void testSave() {
-		// insert/check
-		Set<RoleEntity> roles = new HashSet<>();
-		roles.add(new RoleEntity(UUID.randomUUID(), "ADMIN", "can do everything"));
-		Set<RoleDTO> rolesDTO = new HashSet<>();
-		rolesDTO.add(new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything"));
+	void convertsAllUsers() {
+		var first = user("alice", "encoded-a", "alice@example.test");
+		var second = user("bob", "encoded-b", "bob@example.test");
+		var expected = List.of(dto(UUID.randomUUID(), "alice", "encoded-a", Set.of()),
+				dto(UUID.randomUUID(), "bob", "encoded-b", Set.of()));
+		when(repository.findAll()).thenReturn(List.of(first, second));
+		when(converter.toDtoList(List.of(first, second))).thenReturn(expected);
 
-		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject", roles);
-		UserDTO userDTO = new UserDTO(UUID.randomUUID(), user.getUsername(), user.getPassword(), user.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
-		when(userRepository.save(any())).thenReturn(user);
-		when(converter.toEntity(any())).thenReturn(user);
-		when(converter.toDto(any())).thenReturn(userDTO);
-		when(roleService.findAllRoles()).thenReturn(rolesDTO.stream()
-		                                                    .toList());
-
-		// read/insert
-		UserDTO saved = service.save(userDTO);
-
-		// assert
-		assertThat(saved.username()).isEqualTo(user.getUsername());
+		assertThat(service.findAll()).containsExactlyElementsOf(expected);
 	}
 
 	@Test
-	@Transactional
-	void testUpdate() {
-		// insert
-		Set<RoleEntity> roles = new HashSet<>();
-		RoleEntity role = new RoleEntity(null, "ADMIN", "can do everything");
-		roles.add(role);
+	void savesUserAndResolvesRequestedRoles() {
+		var id = UUID.randomUUID();
+		var roleDto = new RoleDTO(UUID.randomUUID(), "ADMIN", "Administrators");
+		var request = dto(id, "alice", "password", Set.of(roleDto));
+		var entity = user("alice", "password", "alice@example.test");
+		var roleEntity = new RoleEntity(roleDto.id(), roleDto.name(), roleDto.description());
+		var unrequestedRole = new RoleEntity(UUID.randomUUID(), "VIEWER", "Read-only access");
+		when(converter.toEntity(request)).thenReturn(entity);
+		when(roleService.findAllRoles()).thenReturn(List.of(roleDto,
+				new RoleDTO(unrequestedRole.getId(), unrequestedRole.getName(), unrequestedRole.getDescription())));
+		when(roleConverter.toEntityList(any())).thenReturn(List.of(roleEntity, unrequestedRole));
+		when(repository.save(entity)).thenReturn(entity);
+		when(converter.toDto(entity)).thenReturn(request);
 
-		Set<RoleDTO> rolesDTO = new HashSet<>();
-		RoleDTO roleDTO = new RoleDTO(UUID.randomUUID(), "ADMIN", "can do everything");
-		rolesDTO.add(roleDTO);
-
-		var userUUID = UUID.randomUUID();
-		UserEntity user = new UserEntity("admin", "12345", "admin@databaseproject", roles);
-		UserDTO userDTO = new UserDTO(userUUID, user.getUsername(), user.getPassword(), user.getEmail(), null, rolesDTO, List.of(new SimpleGrantedAuthority("ADMIN")));
-		when(userRepository.findById(userUUID)).thenReturn(Optional.of(user));
-		when(passwordEncoder.encode(any())).thenReturn("12345");
-		when(roleConverter.toEntityList(any())).thenReturn(List.of(role));
-		when(converter.toDto(any())).thenReturn(userDTO);
-		when(roleService.findAllRoles()).thenReturn(rolesDTO.stream()
-		                                                    .toList());
-
-		// read
-		UserDTO updated = service.update(userUUID, userDTO);
-
-		// assert
-		assertThat(updated.username()).isEqualTo(user.getUsername());
+		assertThat(service.save(request)).isEqualTo(request);
+		assertThat(entity.getRoles()).containsExactly(roleEntity);
+		verify(repository).save(entity);
 	}
 
 	@Test
-	@Transactional
-	void testDelete() {
-		// insert
-		var userUUID = UUID.randomUUID();
-		when(userRepository.existsById(userUUID)).thenReturn(true);
-		// read
-		service.delete(userUUID);
-		// assert
-		assertThat(userRepository.findAll()
-		                         .size()).isEqualTo(0);
+	void updatesProfileEncodesNonblankPasswordAndReplacesRoles() {
+		var id = UUID.randomUUID();
+		var existing = user("old-name", "old-hash", "old@example.test");
+		var roleDto = new RoleDTO(UUID.randomUUID(), "EDITOR", "Editors");
+		var request = new UserDTO(id, "new-name", "new-password", "new@example.test", null,
+				Set.of(roleDto), null);
+		var roleEntity = new RoleEntity(roleDto.id(), roleDto.name(), roleDto.description());
+		when(repository.findById(id)).thenReturn(Optional.of(existing));
+		when(passwordEncoder.encode("new-password")).thenReturn("new-hash");
+		when(roleService.findAllRoles()).thenReturn(List.of(roleDto));
+		when(roleConverter.toEntityList(List.of(roleDto))).thenReturn(List.of(roleEntity));
+		when(repository.save(existing)).thenReturn(existing);
+		when(converter.toDto(existing)).thenReturn(request);
+
+		assertThat(service.update(id, request)).isEqualTo(request);
+		assertThat(existing.getUsername()).isEqualTo("new-name");
+		assertThat(existing.getEmail()).isEqualTo("new@example.test");
+		assertThat(existing.getPassword()).isEqualTo("new-hash");
+		assertThat(existing.getRoles()).containsExactly(roleEntity);
+		verify(passwordEncoder).encode("new-password");
+	}
+
+	@Test
+	void leavesPasswordAndRolesUnchangedWhenUpdateOmitsThem() {
+		var id = UUID.randomUUID();
+		var existingRole = new RoleEntity(UUID.randomUUID(), "USER", "Users");
+		var existing = user("alice", "old-hash", "old@example.test");
+		existing.setRoles(Set.of(existingRole));
+		var request = new UserDTO(id, "alice-new", "  ", "alice-new@example.test", null, Set.of(), null);
+		when(repository.findById(id)).thenReturn(Optional.of(existing));
+		when(repository.save(existing)).thenReturn(existing);
+		when(converter.toDto(existing)).thenReturn(request);
+
+		service.update(id, request);
+
+		assertThat(existing.getPassword()).isEqualTo("old-hash");
+		assertThat(existing.getRoles()).containsExactly(existingRole);
+		verifyNoInteractions(passwordEncoder, roleService, roleConverter);
+	}
+
+	@Test
+	void updateRejectsInvalidIdAndMissingUser() {
+		var request = dto(UUID.randomUUID(), "alice", "password", Set.of());
+		assertThatThrownBy(() -> service.update(null, request))
+				.isInstanceOf(EntityNotFoundException.class).hasMessage("No user to update");
+		assertThatThrownBy(() -> service.update(UUID.randomUUID(), null))
+				.isInstanceOf(EntityNotFoundException.class).hasMessage("No user to update");
+
+		var id = UUID.randomUUID();
+		when(repository.findById(id)).thenReturn(Optional.empty());
+		assertThatThrownBy(() -> service.update(id, request))
+				.isInstanceOf(EntityNotFoundException.class).hasMessage("User not found to update");
+	}
+
+	@Test
+	void deletesExistingUserAndRejectsMissingUser() {
+		var id = UUID.randomUUID();
+		when(repository.existsById(id)).thenReturn(true);
+
+		assertThat(service.delete(id)).isTrue();
+		verify(repository).deleteById(id);
+
+		var missingId = UUID.randomUUID();
+		when(repository.existsById(missingId)).thenReturn(false);
+		assertThatThrownBy(() -> service.delete(missingId))
+				.isInstanceOf(EntityNotFoundException.class)
+				.hasMessage("User not found with id: " + missingId);
+		verify(repository, never()).deleteById(missingId);
+	}
+
+	private static UserEntity user(String username, String password, String email) {
+		return new UserEntity(username, password, email, Set.of());
+	}
+
+	private static UserDTO dto(UUID id, String username, String password, Set<RoleDTO> roles) {
+		return new UserDTO(id, username, password, username + "@example.test", null, roles, null);
 	}
 }

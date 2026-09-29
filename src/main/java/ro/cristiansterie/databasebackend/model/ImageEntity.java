@@ -20,6 +20,7 @@ public class ImageEntity {
 	@UuidGenerator
     private UUID id;
 	private UUID itemId;
-	private CollectionType itemType;
+    @Enumerated(EnumType.STRING)
+    private CollectionType itemType;
 	private String imageUrl;
 }
