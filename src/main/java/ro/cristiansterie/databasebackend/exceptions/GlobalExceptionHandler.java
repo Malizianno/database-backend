@@ -5,12 +5,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.ProviderNotFoundException;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import ro.cristiansterie.databasebackend.dto.ErrorResponseDTO;
 
 @RestControllerAdvice
+@SuppressWarnings("unused")
 public class GlobalExceptionHandler {
 
 	@ExceptionHandler(IllegalArgumentException.class)
@@ -29,7 +31,7 @@ public class GlobalExceptionHandler {
 			UsernameNotFoundException.class,
 			AuthenticationServiceException.class
 	})
-	public ResponseEntity<ErrorResponseDTO> handleUnauthorized(IllegalArgumentException ex) {
+	public ResponseEntity<ErrorResponseDTO> handleUnauthorized(AuthenticationException ex) {
 		return new ResponseEntity<>(
 				new ErrorResponseDTO(
 						ex.getMessage(),
