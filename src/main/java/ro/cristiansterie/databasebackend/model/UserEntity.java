@@ -41,6 +41,7 @@ public class UserEntity {
     )
     private Set<RoleEntity> roles = new HashSet<>();
 
+	// required in tests
     public UserEntity(String username, String password, String email, Set<RoleEntity> roles) {
         setUsername(username);
         setPassword(password);

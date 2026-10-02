@@ -42,14 +42,6 @@ public class UserServiceTest {
 	@InjectMocks
 	private UserService service;
 
-	private static UserEntity user(String username, String password, String email) {
-		return new UserEntity(username, password, email, Set.of());
-	}
-
-	private static UserDTO dto(UUID id, String username, String password, Set<RoleDTO> roles) {
-		return new UserDTO(id, username, password, username + "@example.test", null, roles, null);
-	}
-
 	@BeforeEach
 	void setUp() {
 		service = new UserService(userRepository, converter, roleConverter, passwordEncoder, roleService);
@@ -161,8 +153,7 @@ public class UserServiceTest {
 	void leavesPasswordAndRolesUnchangedWhenUpdateOmitsThem() {
 		var id = UUID.randomUUID();
 		var existingRole = new RoleEntity(UUID.randomUUID(), "USER", "Users");
-		var existing = user("alice", "old-hash", "old@example.test");
-		existing.setRoles(Set.of(existingRole));
+		var existing = new UserEntity("alice", "old-hash", "old@example.test", Set.of(existingRole));
 		var request = new UserDTO(id, "alice-new", "  ", "alice-new@example.test", null, Set.of(), null);
 		when(userRepository.findById(id)).thenReturn(Optional.of(existing));
 		when(userRepository.save(existing)).thenReturn(existing);
@@ -177,7 +168,7 @@ public class UserServiceTest {
 
 	@Test
 	void updateRejectsInvalidIdAndMissingUser() {
-		var request = dto(UUID.randomUUID(), "alice", "password", Set.of());
+		var request = new UserDTO(UUID.randomUUID(), "mike", "password", null, null, null, null);
 		assertThatThrownBy(() -> service.update(null, request))
 				.isInstanceOf(EntityNotFoundException.class)
 				.hasMessage("No user to update");
