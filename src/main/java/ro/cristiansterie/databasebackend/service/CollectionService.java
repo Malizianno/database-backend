@@ -36,9 +36,8 @@ public class CollectionService {
 
 	@Transactional
 	public CollectionDTO update(UUID id, CollectionDTO dto) {
-		if (dto == null || !Validator.isUUIDValid(id)) {
+		if (dto == null || !Validator.isUUIDValid(id))
 			throw new IllegalArgumentException("Invalid ID: " + id);
-		}
 
 		var entity = repo.findById(id)
 		                 .orElseThrow(() -> new EntityNotFoundException("Could not find collection with ID: " + id));
@@ -53,6 +52,12 @@ public class CollectionService {
 
 	@Transactional
 	public void delete(UUID id) {
+		if (!Validator.isUUIDValid(id))
+			throw new IllegalArgumentException("Invalid ID: " + id);
+
+		if (!repo.existsById(id))
+			throw new IllegalArgumentException("Could not find banknote with ID: " + id);
+
 		repo.deleteById(id);
 	}
 }

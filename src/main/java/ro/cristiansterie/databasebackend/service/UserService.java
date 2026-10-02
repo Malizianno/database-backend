@@ -1,6 +1,5 @@
 package ro.cristiansterie.databasebackend.service;
 
-import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -62,24 +61,23 @@ public class UserService {
 
 	@Transactional
 	public UserDTO update(UUID id, UserDTO dto) {
-		if (dto == null || !Validator.isUUIDValid(id)) {
-			throw new EntityNotFoundException("No user to update");
-		}
+		if (dto == null || !Validator.isUUIDValid(id))
+			throw new IllegalArgumentException("No user to update");
 
 		UserEntity user = repo.findById(id)
-		                      .orElseThrow(() -> new EntityNotFoundException("User not found to update"));
+		                      .orElseThrow(() -> new IllegalArgumentException("User not found to update"));
 
 		// Update the fields. Hibernate tracks these changes automatically ("Dirty Checking")
 		user.setUsername(dto.username());
 		user.setEmail(dto.email());
 
 		if (dto.password() != null && !dto.password()
-		                                          .isBlank()) {
+		                                  .isBlank()) {
 			user.setPassword(passwordEncoder.encode(dto.password()));
 		}
 
 		if (dto.roles() != null && !dto.roles()
-		                                       .isEmpty()) {
+		                               .isEmpty()) {
 			user.setRoles(setAssignedRoles(dto));
 		}
 
@@ -89,7 +87,7 @@ public class UserService {
 	@Transactional
 	public Boolean delete(UUID id) {
 		if (!repo.existsById(id)) {
-			throw new EntityNotFoundException("User not found with id: " + id);
+			throw new IllegalArgumentException("User not found with id: " + id);
 		}
 
 		repo.deleteById(id);

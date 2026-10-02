@@ -36,13 +36,12 @@ public class MaterialService {
 
 	@Transactional
 	public MaterialDTO update(UUID id, MaterialDTO dto) {
-		if (dto == null || !Validator.isUUIDValid(id)) {
+		if (dto == null || !Validator.isUUIDValid(id))
 			throw new IllegalArgumentException("Invalid ID: " + id);
-		}
 
 		var entity = repo.findById(id)
 		                 .orElseThrow(() -> new EntityNotFoundException("Could not find material with ID: " + id));
-		
+
 		entity.setName(dto.name());
 
 		return converter.toDto(repo.save(entity));
@@ -50,6 +49,12 @@ public class MaterialService {
 
 	@Transactional
 	public void delete(UUID id) {
+		if (!Validator.isUUIDValid(id))
+			throw new IllegalArgumentException("Invalid ID: " + id);
+
+		if (!repo.existsById(id))
+			throw new IllegalArgumentException("Could not find banknote with ID: " + id);
+
 		repo.deleteById(id);
 	}
 }
