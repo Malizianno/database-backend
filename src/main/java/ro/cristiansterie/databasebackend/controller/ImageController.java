@@ -5,7 +5,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ro.cristiansterie.databasebackend.dto.ImageDTO;
 import ro.cristiansterie.databasebackend.service.ImageService;
-import ro.cristiansterie.databasebackend.service.LanguageService;
 
 import java.util.Set;
 import java.util.UUID;
