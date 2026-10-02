@@ -1,6 +1,7 @@
 package ro.cristiansterie.databasebackend.dto;
 
-import org.jspecify.annotations.NonNull;
+
+import lombok.NonNull;
 
 public record BiometricRegisterRequestDTO(
 		@NonNull
