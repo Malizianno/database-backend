@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ro.cristiansterie.databasebackend.dto.ImageDTO;
@@ -11,12 +12,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/images")
+@RequiredArgsConstructor
 public class ImageController {
 	private final ImageService service;
-
-	public ImageController(ImageService service) {
-		this.service = service;
-	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<ImageDTO> findById(@PathVariable UUID id) {

@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ro.cristiansterie.databasebackend.dto.DenominationDTO;
@@ -10,12 +11,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/denominations")
+@RequiredArgsConstructor
 public class DenominationController {
 	private final DenominationService service;
-
-	public DenominationController(DenominationService service) {
-		this.service = service;
-	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<DenominationDTO> findById(@PathVariable UUID id) {

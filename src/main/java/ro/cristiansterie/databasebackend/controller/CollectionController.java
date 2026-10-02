@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ro.cristiansterie.databasebackend.dto.CollectionDTO;
@@ -10,12 +11,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/collections")
+@RequiredArgsConstructor
 public class CollectionController {
 	private final CollectionService service;
-
-	public CollectionController(CollectionService service) {
-		this.service = service;
-	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<CollectionDTO> findById(@PathVariable UUID id) {

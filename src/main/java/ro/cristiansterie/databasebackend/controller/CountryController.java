@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ro.cristiansterie.databasebackend.dto.CountryDTO;
@@ -10,12 +11,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/countries")
+@RequiredArgsConstructor
 public class CountryController {
 	private final CountryService service;
-
-	public CountryController(CountryService service) {
-		this.service = service;
-	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<CountryDTO> findById(@PathVariable UUID id) {

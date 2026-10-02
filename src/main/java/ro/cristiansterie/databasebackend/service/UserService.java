@@ -1,6 +1,7 @@
 package ro.cristiansterie.databasebackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class UserService {
 
 	private final UserRepository repo;
@@ -28,14 +30,6 @@ public class UserService {
 	private final RoleModelConverter roleConverter;
 	private final PasswordEncoder passwordEncoder;
 	private final RoleService roleService;
-
-	public UserService(UserRepository repo, UserModelConverter converter, RoleModelConverter roleConverter, PasswordEncoder passwordEncoder, RoleService roleService) {
-		this.repo = repo;
-		this.converter = converter;
-		this.roleConverter = roleConverter;
-		this.passwordEncoder = passwordEncoder;
-		this.roleService = roleService;
-	}
 
 	@Transactional(readOnly = true)
 	public List<UserDTO> findAll() {

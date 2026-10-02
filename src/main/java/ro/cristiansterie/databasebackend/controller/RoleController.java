@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,12 +13,9 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/roles")
+@RequiredArgsConstructor
 public class RoleController {
 	public final RoleService service;
-
-	public RoleController(RoleService service) {
-		this.service = service;
-	}
 
 	@GetMapping("/")
 	@PreAuthorize("isAuthenticated()")

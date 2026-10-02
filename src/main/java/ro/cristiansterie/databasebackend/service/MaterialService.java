@@ -1,6 +1,7 @@
 package ro.cristiansterie.databasebackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.MaterialDTO;
@@ -12,14 +13,10 @@ import java.util.Set;
 import java.util.UUID;
 
 @Service
+@RequiredArgsConstructor
 public class MaterialService {
 	private final MaterialRepository repo;
 	private final MaterialModelConverter converter;
-
-	public MaterialService(MaterialRepository repo, MaterialModelConverter converter) {
-		this.repo = repo;
-		this.converter = converter;
-	}
 
 	@Transactional(readOnly = true)
 	public MaterialDTO findById(UUID id) {

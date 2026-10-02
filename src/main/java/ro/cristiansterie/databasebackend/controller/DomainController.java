@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ro.cristiansterie.databasebackend.dto.DomainDTO;
@@ -11,12 +12,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/domains")
+@RequiredArgsConstructor
 public class DomainController {
 	private final DomainService service;
-
-	public DomainController(DomainService service) {
-		this.service = service;
-	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<DomainDTO> findById(@PathVariable UUID id) {

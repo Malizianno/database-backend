@@ -1,6 +1,7 @@
 package ro.cristiansterie.databasebackend.service;
 
 import jakarta.persistence.EntityNotFoundException;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import ro.cristiansterie.databasebackend.dto.DenominationDTO;
@@ -12,14 +13,10 @@ import java.util.Set;
 import java.util.UUID;
 
 @Service
+@RequiredArgsConstructor
 public class DenominationService {
 	private final DenominationRepository repo;
 	private final DenominationModelConverter converter;
-
-	public DenominationService(DenominationRepository repo, DenominationModelConverter converter) {
-		this.repo = repo;
-		this.converter = converter;
-	}
 
 	@Transactional(readOnly = true)
 	public DenominationDTO findById(UUID id) {
