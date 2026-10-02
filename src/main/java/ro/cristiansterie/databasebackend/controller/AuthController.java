@@ -1,7 +1,9 @@
 package ro.cristiansterie.databasebackend.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import ro.cristiansterie.databasebackend.dto.BiometricLoginRequestDTO;
@@ -18,22 +20,42 @@ public class AuthController {
 	private final AuthService service;
 
 	@PostMapping("/login")
-	public ResponseEntity<LoginResponseDTO> login(@Validated @RequestBody UserPassLoginRequestDTO loginRequest) {
+	@PreAuthorize("#username == authentication.principal.user.username")
+	public ResponseEntity<LoginResponseDTO> login(@Validated @RequestBody UserPassLoginRequestDTO loginRequest, @RequestParam String username) {
+		if (username == null)
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+			                     .build();
+
 		return ResponseEntity.ok(service.authenticateUserPass(loginRequest));
 	}
 
 	@PostMapping("/bio")
-	public ResponseEntity<LoginResponseDTO> bio(@Validated @RequestBody BiometricLoginRequestDTO loginRequest) {
+	@PreAuthorize("#username == authentication.principal.user.username")
+	public ResponseEntity<LoginResponseDTO> bio(@Validated @RequestBody BiometricLoginRequestDTO loginRequest, @RequestParam String username) {
+		if (username == null)
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+			                     .build();
+
 		return ResponseEntity.ok(service.authenticateBiometrics(loginRequest));
 	}
 
 	@PostMapping("/bio/register")
-	public ResponseEntity<Boolean> register(@Validated @RequestBody BiometricRegisterRequestDTO registerRequest) {
+	@PreAuthorize("#username == authentication.principal.user.username")
+	public ResponseEntity<Boolean> register(@Validated @RequestBody BiometricRegisterRequestDTO registerRequest, @RequestParam String username) {
+		if (username == null)
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+			                     .build();
+
 		return ResponseEntity.ok(service.registerBiometricAuthentication(registerRequest));
 	}
 
 	@GetMapping("/bio/challenge")
+	@PreAuthorize("#username == authentication.principal.user.username")
 	public ResponseEntity<String> challenger(@Validated @RequestParam String username) {
+		if (username == null)
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+			                     .build();
+
 		return ResponseEntity.ok(service.getChallengeBiometricsAuthentication(username));
 	}
 }
