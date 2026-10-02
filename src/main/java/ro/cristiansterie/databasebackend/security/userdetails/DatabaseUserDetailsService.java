@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.security.userdetails;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.NonNull;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,13 +13,10 @@ import ro.cristiansterie.databasebackend.util.AppConstants;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class DatabaseUserDetailsService implements UserDetailsService {
 
 	private final UserRepository userRepository;
-
-	public DatabaseUserDetailsService(UserRepository userRepository) {
-		this.userRepository = userRepository;
-	}
 
 	@Override
 	public @NonNull UserDetails loadUserByUsername(@NonNull String username) throws UsernameNotFoundException {

@@ -1,6 +1,7 @@
 package ro.cristiansterie.databasebackend.security;
 
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -27,17 +28,10 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
+@RequiredArgsConstructor
 public class SecurityConfig {
 	private final BiometricsAuthenticationProvider biometricsAuthenticationProvider;
 	private final DatabaseUserPassAuthenticationProvider databaseUserPassAuthenticationProvider;
-
-	public SecurityConfig(
-			BiometricsAuthenticationProvider biometricsAuthenticationProvider,
-			DatabaseUserPassAuthenticationProvider databaseUserPassAuthenticationProvider
-	) {
-		this.biometricsAuthenticationProvider = biometricsAuthenticationProvider;
-		this.databaseUserPassAuthenticationProvider = databaseUserPassAuthenticationProvider;
-	}
 
 	@Bean
 	public AuthenticationManager authenticationManager(
@@ -87,7 +81,7 @@ public class SecurityConfig {
 				"/auth/login",
 				"/actuator/health",
 				"/auth/bio",
-				"/auth/challenge"
+				"/auth/bio/challenge"
 		};
 
 		return http

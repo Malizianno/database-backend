@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -11,13 +12,10 @@ import ro.cristiansterie.databasebackend.service.AuthService;
 
 @RestController
 @RequestMapping("/auth")
+@RequiredArgsConstructor
 public class AuthController {
 
 	private final AuthService service;
-
-	public AuthController(AuthService service) {
-		this.service = service;
-	}
 
 	@PostMapping("/login")
 	public ResponseEntity<LoginResponseDTO> login(@Validated @RequestBody UserPassLoginRequestDTO loginRequest) {

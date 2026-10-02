@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.security.userdetails;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
@@ -15,14 +16,11 @@ import java.util.concurrent.ConcurrentHashMap;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class BiometricsHelperService {
 
 	private final UserService userService;
 	private final Map<String, String> challengeStore = new ConcurrentHashMap<>();
-
-	public BiometricsHelperService(UserService userService) {
-		this.userService = userService;
-	}
 
 	public boolean register(String username, String key) {
 		try {

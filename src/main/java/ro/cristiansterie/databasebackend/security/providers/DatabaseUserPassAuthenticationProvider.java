@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.security.providers;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.NonNull;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -16,14 +17,10 @@ import java.util.Objects;
 
 @Component
 @Slf4j
+@RequiredArgsConstructor
 public class DatabaseUserPassAuthenticationProvider implements AuthenticationProvider {
 	private final UserDetailsService userDetailsService;
 	private final PasswordEncoder passwordEncoder;
-
-	public DatabaseUserPassAuthenticationProvider(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
-		this.userDetailsService = userDetailsService;
-		this.passwordEncoder = passwordEncoder;
-	}
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {

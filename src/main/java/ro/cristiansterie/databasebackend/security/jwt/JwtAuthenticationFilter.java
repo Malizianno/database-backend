@@ -4,6 +4,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.NonNull;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -23,21 +24,12 @@ import java.io.IOException;
 
 @Component
 @Slf4j
+@RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
 	private final JwtUtils jwtUtils;
 	private final UserDetailsService userService;
 	private final AuthenticationEntryPoint authenticationEntryPoint;
-
-	public JwtAuthenticationFilter(
-			JwtUtils jwtUtils,
-			UserDetailsService userService,
-			AuthenticationEntryPoint authenticationEntryPoint
-	) {
-		this.jwtUtils = jwtUtils;
-		this.userService = userService;
-		this.authenticationEntryPoint = authenticationEntryPoint;
-	}
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {

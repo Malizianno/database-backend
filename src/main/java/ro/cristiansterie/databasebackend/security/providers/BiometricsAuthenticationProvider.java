@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.security.providers;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.jspecify.annotations.NonNull;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -13,13 +14,10 @@ import ro.cristiansterie.databasebackend.security.tokens.BiometricsAuthenticatio
 
 @Component
 @Slf4j
+@RequiredArgsConstructor
 public class BiometricsAuthenticationProvider implements AuthenticationProvider {
 	
 	private final UserDetailsService userDetailsService;
-
-	public BiometricsAuthenticationProvider(UserDetailsService userDetailsService) {
-		this.userDetailsService = userDetailsService;
-	}
 
 	@Override
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {

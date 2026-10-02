@@ -2,6 +2,7 @@ package ro.cristiansterie.databasebackend.security.jwt;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
@@ -16,13 +17,10 @@ import java.util.List;
 
 @Component
 @Slf4j
+@RequiredArgsConstructor
 public class JwtUtils {
 
 	private final JWTProperties props;
-
-	public JwtUtils(JWTProperties props) {
-		this.props = props;
-	}
 
 	private SecretKey getSigningKey() {
 		return Keys.hmacShaKeyFor(props.getSecretKey()

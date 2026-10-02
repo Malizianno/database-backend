@@ -1,6 +1,7 @@
 package ro.cristiansterie.databasebackend.service;
 
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.jspecify.annotations.NonNull;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationServiceException;
@@ -17,20 +18,11 @@ import ro.cristiansterie.databasebackend.security.tokens.BiometricsAuthenticatio
 import ro.cristiansterie.databasebackend.security.userdetails.BiometricsHelperService;
 
 @Service
+@RequiredArgsConstructor
 public class AuthService {
 	private final AuthenticationManager authenticationManager;
 	private final JwtUtils jwtUtils;
 	private final BiometricsHelperService biometricsHelperService;
-
-	public AuthService(
-			AuthenticationManager authenticationManager,
-			JwtUtils jwtUtils,
-			BiometricsHelperService biometricsHelperService
-	) {
-		this.authenticationManager = authenticationManager;
-		this.jwtUtils = jwtUtils;
-		this.biometricsHelperService = biometricsHelperService;
-	}
 
 	@Transactional
 	public LoginResponseDTO authenticateUserPass(@Validated UserPassLoginRequestDTO loginRequest) {

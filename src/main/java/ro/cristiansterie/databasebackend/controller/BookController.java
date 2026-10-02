@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ro.cristiansterie.databasebackend.dto.BookDTO;
@@ -10,12 +11,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/books")
+@RequiredArgsConstructor
 public class BookController {
 	private final BookService service;
-
-	public BookController(BookService service) {
-		this.service = service;
-	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<BookDTO> findById(@PathVariable UUID id) {

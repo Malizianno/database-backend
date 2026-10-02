@@ -1,5 +1,6 @@
 package ro.cristiansterie.databasebackend.controller;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import ro.cristiansterie.databasebackend.dto.CoinDTO;
@@ -10,12 +11,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/coins")
+@RequiredArgsConstructor
 public class CoinController {
 	private final CoinService service;
-
-	public CoinController(CoinService service) {
-		this.service = service;
-	}
 
 	@GetMapping("/{id}")
 	public ResponseEntity<CoinDTO> findById(@PathVariable UUID id) {
